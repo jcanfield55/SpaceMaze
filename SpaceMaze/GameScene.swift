@@ -51,7 +51,6 @@ class GameScene: SKScene {
                 self.character.runAction(action)
             }
         }
-        println("Position: \(self.character.position)")
     }
     
     // Figures out which way the user wants to move the character based on which
@@ -61,7 +60,8 @@ class GameScene: SKScene {
         let frame:CGRect = node.frame
         let height = CGRectGetHeight(frame)
         let width = CGRectGetWidth(frame)
-        
+        println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
+       
         if (location.y/height < 0.25) {
             return TouchCommand.MOVE_DOWN
         }
