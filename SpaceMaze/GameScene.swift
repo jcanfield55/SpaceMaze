@@ -34,6 +34,9 @@ class GameScene: SKScene {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
+        let height = CGRectGetHeight(self.frame)
+        let width = CGRectGetWidth(self.frame)
+        
         for touch in touches {
             let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
             
@@ -43,12 +46,39 @@ class GameScene: SKScene {
             // Here is where you need to insert you code to set how much
             // to move in the x direction (left / right) or the y direction (up / down)
             if (command == TouchCommand.MOVE_UP) {
-              //  move_y = 30
+                move_y = 30
+                self.character.zRotation = 0
+            }
+            if (command == TouchCommand.MOVE_DOWN) {
+                move_y = -30
+                self.character.zRotation = PI
+            }
+            if (command == TouchCommand.MOVE_LEFT) {
+                move_x = -30
+                self.character.zRotation = PI * 0.5
+            }
+            if (command == TouchCommand.MOVE_RIGHT) {
+                move_x = 30
+                self.character.zRotation = PI * 1.5
             }
             
             if (move_x != 0 || move_y != 0) {
                 let action:SKAction = SKAction.moveByX(move_x, y: move_y, duration: 0.25)
                 self.character.runAction(action)
+                var position:CGPoint = self.character.position
+                if (position.x >= width) {
+                    position.x = position.x - width
+                }
+                if position.x < 0 {
+                    position.x = width - position.x
+                }
+                if position.y >= height {
+                    position.y = position.y - height
+                }
+                if position.y < 0 {
+                    position.y = height - position.y
+                }
+                self.character.position = position
             }
         }
     }
