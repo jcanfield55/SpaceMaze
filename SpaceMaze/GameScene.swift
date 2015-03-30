@@ -27,14 +27,14 @@ class GameScene: SKScene {
         self.backgroundColor = color
         
         // Create tunnels
-        // Lesson 2b - create tunnels for the maze pattern you want
-        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
+        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5)
         self.addChild(tunnel1.tunnelSpriteNode)
-        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2)
         self.addChild(tunnel2.tunnelSpriteNode)
-        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6)
         self.addChild(tunnel3.tunnelSpriteNode)
-        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5, colorAlpha: 0.2)
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5)
         self.addChild(tunnel4.tunnelSpriteNode)
         
         // Create character
@@ -77,17 +77,4 @@ class GameScene: SKScene {
         return TouchCommand.NO_COMMAND
     }
 
-    /*
-     
-        Hey! I finished all that. What do I do now?
-
-        1. Change your spaceship to a PacMan or...
-        2. Change the color of your background.
-        3. Make your spaceship rotate when you move it. A hint:
-                self.character.zRotation = PI * 0.5
-        4. Make your game "wrap" -- when the spaceship goes off the right side of the screen,
-            have it reappear on the left. A hint:
-                location.x = location.x % width
-    
-    */
 }

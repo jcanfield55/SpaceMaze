@@ -29,7 +29,7 @@ class Tunnel {
     /* Initializer method */
     // Lesson 2c - add the ability to create "invisible" or mostly invisible tunnels.  
     // Add some invisible (secret) tunnels to your maze
-    init(orientation:TunnelOrientation, length:Int, gridX:Int, gridY:Int, colorAlpha:CGFloat) {
+    init(orientation:TunnelOrientation, length:Int, gridX:Int, gridY:Int) {
         self.orientation = orientation
         self.length = length
         
@@ -54,7 +54,7 @@ class Tunnel {
         connectingPositions = [Int?](count:length, repeatedValue:nil)
         
         // Create tunnelSpriteNode
-        let tunnelColor = UIColor(white: 1.0, alpha: colorAlpha)
+        let tunnelColor = UIColor(white: 1.0, alpha: 1.0)
         tunnelSpriteNode = SKSpriteNode(color: tunnelColor, size: tunnelSize)
         tunnelSpriteNode.position = self.tunnelCenter
         
