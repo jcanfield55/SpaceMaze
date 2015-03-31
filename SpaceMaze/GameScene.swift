@@ -39,7 +39,7 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = Character(imageNamed:"PacMan", currentTunnel:tunnel1, tunnelPosition:3)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
     }
