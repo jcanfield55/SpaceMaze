@@ -17,53 +17,43 @@ enum TouchCommand {
     NO_COMMAND
 }
 class GameScene: SKScene {
-    /* A useful constant we'll use later */
-    let PI = CGFloat(M_PI)
     
     /* Properties */
-    let character = SKSpriteNode(imageNamed: "Spaceship")  // use Spaceship.png file for the image of the sprite
     let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    var character:Character?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         self.backgroundColor = color
-        character.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        character.setScale(0.10)
-        self.addChild(character)   // Make sprite visible
+        
+        // Create tunnels
+    
+        // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
+        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5)
+        self.addChild(tunnel1.tunnelSpriteNode)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2)
+        self.addChild(tunnel2.tunnelSpriteNode)
+        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6)
+        self.addChild(tunnel3.tunnelSpriteNode)
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5)
+
+        // Create character
+        // Place the sprite in a tunnel
+        let newCharacter = Character(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        self.character = newCharacter
+        self.addChild(newCharacter)   // Make sprite visible
     }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
+        
         for touch in touches {
             let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
             
-            var move_x:CGFloat = 0
-            var move_y:CGFloat = 0
-            
-            // Here is where you need to insert you code to set how much
-            // to move in the x direction (left / right) or the y direction (up / down)
-            if (command == TouchCommand.MOVE_UP) {
-                move_y = 30
-                self.character.zRotation = 0
-            }
-            if (command == TouchCommand.MOVE_DOWN) {
-                move_y = -30
-                self.character.zRotation = PI
-            }
-            if (command == TouchCommand.MOVE_LEFT) {
-                move_x = -30
-                self.character.zRotation = PI * 0.5
-            }
-            if (command == TouchCommand.MOVE_RIGHT) {
-                move_x = 30
-                self.character.zRotation = PI * (0 - 0.5)
-            }
-            // println(self.character.zRotation)
-            if (move_x != 0 || move_y != 0) {
-                let action:SKAction = SKAction.moveByX(move_x, y: move_y, duration: 0.25)
-                self.character.runAction(action)
-            }
+            self.character?.moveCharacter(command)
         }
     }
+    
     // Figures out which way the user wants to move the character based on which
     // edge of the screen the user touched.
     func commandForTouch(touch:UITouch, node:SKNode) -> TouchCommand {
@@ -72,9 +62,6 @@ class GameScene: SKScene {
         let height = CGRectGetHeight(frame)
         let width = CGRectGetWidth(frame)
         // println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
-        wrap(node)
-        println("X: \(character.position.x)")
-        println("Y: \(character.position.y)")
         if (location.y/height < 0.25) {
             return TouchCommand.MOVE_DOWN
         }
@@ -95,34 +82,21 @@ class GameScene: SKScene {
         let rightEdge = CGRectGetMaxX(frame)
         let topEdge = CGRectGetMaxY(frame)
         let bottomEdge = CGRectGetMinY(frame)
-        let xPos = character.position.x
-        let yPos = character.position.y
+        let xPos = self.character?.position.x
+        let yPos = self.character?.position.y
         println("Left Edge: \(leftEdge)")
         println("Right Edge:  \(rightEdge)")
         println("Top Edge: \(topEdge)")
         println("Bottom Edge: \(bottomEdge)")
         if (xPos > rightEdge) {
-            character.position.x = leftEdge
+            character?.position.x = leftEdge
         }else if (yPos > topEdge) {
-            character.position.y = bottomEdge
+            character?.position.y = bottomEdge
         }else if (xPos < leftEdge) {
-            character.position.x = rightEdge
+            character?.position.x = rightEdge
         }else if (yPos < bottomEdge) {
-            character.position.y = topEdge
+            character?.position.y = topEdge
         }
     }
     
-    /*
-     
-        Hey! I finished all that. What do I do now?
-
-        1. Change your spaceship to a PacMan or...
-        2. Change the color of your background.
-        3. Make your spaceship rotate when you move it. A hint:
-                self.character.zRotation = PI * 0.5
-        4. Make your game "wrap" -- when the spaceship goes off the right side of the screen,
-            have it reappear on the left. A hint:
-                location.x = location.x % width
-    
-    */
 }
