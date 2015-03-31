@@ -19,8 +19,8 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let character = SKSpriteNode(imageNamed: "PacMan")  // use Spaceship.png file for the image of the sprite
     let color = UIColor(red:0.25, green:0.25, blue:0.50, alpha:1.0)
+    var character:Character?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -49,33 +49,7 @@ class GameScene: SKScene {
         
         for touch in touches {
             let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
-            
-            var move_x:CGFloat = 0
-            var move_y:CGFloat = 0
-            
-            // Here is where you need to insert you code to set how much
-            // to move in the x direction (left / right) or the y direction (up / down)
-            if (command == TouchCommand.MOVE_UP) {
-                move_y = 30
-                self.character.zRotation = PI * 2
-            }
-            if (command == TouchCommand.MOVE_DOWN) {
-                move_y = -30
-                self.character.zRotation = PI * 1
-            }
-            if (command == TouchCommand.MOVE_LEFT) {
-                move_x = -30
-                self.character.zRotation = PI * 0.5
-            }
-            if (command == TouchCommand.MOVE_RIGHT) {
-                move_x = 30
-                self.character.zRotation = PI * 1.5
-
-            }
-            if (move_x != 0 || move_y != 0) {
-                let action:SKAction = SKAction.moveByX(move_x, y: move_y, duration: 0.25)
-                self.character.runAction(action)
-            }
+            self.character?.moveCharacter(command)
         }
     }
     
@@ -103,17 +77,4 @@ class GameScene: SKScene {
         return TouchCommand.NO_COMMAND
     }
 
-    /*
-     
-        Hey! I finished all that. What do I do now?
-
-        1. Change your spaceship to a PacMan or...
-        2. Change the color of your background.
-        3. Make your spaceship rotate when you move it. A hint:
-                self.character.zRotation = PI * 0.5
-        4. Make your game "wrap" -- when the spaceship goes off the right side of the screen,
-            have it reappear on the left. A hint:
-                location.x = location.x % width
-    
-    */
 }
