@@ -4,7 +4,7 @@
 //
 //  Created by Diana Smetters on 3/24/15.
 //  Copyright (c) 2015 Diana Smetters. All rights reserved.
-//
+//  Updated by Lorenzo and Aidan
 
 import SpriteKit
 
@@ -21,8 +21,8 @@ class GameScene: SKScene {
     let PI = CGFloat(M_PI)
     
     /* Properties */
-    let character = SKSpriteNode(imageNamed: "Spaceship")  // use Spaceship.png file for the image of the sprite
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let character = SKSpriteNode(imageNamed: "PacMan")  // use Spaceship.png file for the image of the sprite
+    let color = UIColor(red:0.5, green:0, blue:0.5, alpha:1.0)
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -43,9 +43,28 @@ class GameScene: SKScene {
             // Here is where you need to insert you code to set how much
             // to move in the x direction (left / right) or the y direction (up / down)
             if (command == TouchCommand.MOVE_UP) {
-              //  move_y = 30
+                self.character.zRotation = 0 * PI
+                move_y = 30
+            }
+            if (command == TouchCommand.MOVE_DOWN) {
+                self.character.zRotation = 1.0 * PI
+                move_y = -30
+            }
+            if (command == TouchCommand.MOVE_LEFT) {
+                self.character.zRotation = 0.5 * PI
+                move_x = -30
+            }
+            if (command == TouchCommand.MOVE_RIGHT) {
+                self.character.zRotation = 1.5 * PI
+                move_x = 30
             }
             
+            self.character.position.x = self.character.position.x % 320
+            if (self.character.position.x == 0) {
+                self.character.position.x = 320
+            }
+            println("Touch position: \(self.character.position)")
+
             if (move_x != 0 || move_y != 0) {
                 let action:SKAction = SKAction.moveByX(move_x, y: move_y, duration: 0.25)
                 self.character.runAction(action)
@@ -60,18 +79,18 @@ class GameScene: SKScene {
         let frame:CGRect = node.frame
         let height = CGRectGetHeight(frame)
         let width = CGRectGetWidth(frame)
-        println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
+        //println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
        
-        if (location.y/height < 0.25) {
+        if (location.y/height < 0.3) {
             return TouchCommand.MOVE_DOWN
         }
-        if (location.y/height > 0.75) {
+        if (location.y/height > 0.8) {
             return TouchCommand.MOVE_UP
         }
-        if (location.x/width < 0.25) {
+        if (location.x/width < /*0.25*/0.5) {
             return TouchCommand.MOVE_LEFT
         }
-        if (location.x/width > 0.75) {
+        if (location.x/width > 0.3) {
             return TouchCommand.MOVE_RIGHT
         }
         return TouchCommand.NO_COMMAND
