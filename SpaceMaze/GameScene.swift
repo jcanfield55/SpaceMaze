@@ -21,8 +21,8 @@ class GameScene: SKScene {
     let PI = CGFloat(M_PI)
     
     /* Properties */
-    let character = SKSpriteNode(imageNamed: "Spaceship")  // use Spaceship.png file for the image of the sprite
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let character = SKSpriteNode(imageNamed: "PacMan")  // use Spaceship.png file for the image of the sprite
+    let color = UIColor(red:0.25, green:0.25, blue:0.50, alpha:1.0)
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -43,9 +43,22 @@ class GameScene: SKScene {
             // Here is where you need to insert you code to set how much
             // to move in the x direction (left / right) or the y direction (up / down)
             if (command == TouchCommand.MOVE_UP) {
-              //  move_y = 30
+                move_y = 30
+                self.character.zRotation = PI * 2
             }
-            
+            if (command == TouchCommand.MOVE_DOWN) {
+                move_y = -30
+                self.character.zRotation = PI * 1
+            }
+            if (command == TouchCommand.MOVE_LEFT) {
+                move_x = -30
+                self.character.zRotation = PI * 0.5
+            }
+            if (command == TouchCommand.MOVE_RIGHT) {
+                move_x = 30
+                self.character.zRotation = PI * 1.5
+
+            }
             if (move_x != 0 || move_y != 0) {
                 let action:SKAction = SKAction.moveByX(move_x, y: move_y, duration: 0.25)
                 self.character.runAction(action)
