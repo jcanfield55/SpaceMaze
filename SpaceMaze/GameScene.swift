@@ -31,7 +31,6 @@ class GameScene: SKScene {
         character.setScale(0.10)
         self.addChild(character)   // Make sprite visible
     }
-    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         for touch in touches {
@@ -43,16 +42,28 @@ class GameScene: SKScene {
             // Here is where you need to insert you code to set how much
             // to move in the x direction (left / right) or the y direction (up / down)
             if (command == TouchCommand.MOVE_UP) {
-              //  move_y = 30
+                move_y = 30
+                self.character.zRotation = 0
             }
-            
+            if (command == TouchCommand.MOVE_DOWN) {
+                move_y = -30
+                self.character.zRotation = PI
+            }
+            if (command == TouchCommand.MOVE_LEFT) {
+                move_x = -30
+                self.character.zRotation = PI * 0.5
+            }
+            if (command == TouchCommand.MOVE_RIGHT) {
+                move_x = 30
+                self.character.zRotation = PI * (0 - 0.5)
+            }
+            // println(self.character.zRotation)
             if (move_x != 0 || move_y != 0) {
                 let action:SKAction = SKAction.moveByX(move_x, y: move_y, duration: 0.25)
                 self.character.runAction(action)
             }
         }
     }
-    
     // Figures out which way the user wants to move the character based on which
     // edge of the screen the user touched.
     func commandForTouch(touch:UITouch, node:SKNode) -> TouchCommand {
@@ -60,8 +71,10 @@ class GameScene: SKScene {
         let frame:CGRect = node.frame
         let height = CGRectGetHeight(frame)
         let width = CGRectGetWidth(frame)
-        println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
-       
+        // println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
+        wrap(node)
+        println("X: \(character.position.x)")
+        println("Y: \(character.position.y)")
         if (location.y/height < 0.25) {
             return TouchCommand.MOVE_DOWN
         }
@@ -76,7 +89,29 @@ class GameScene: SKScene {
         }
         return TouchCommand.NO_COMMAND
     }
-
+    func wrap(node:SKNode) {
+        let frame:CGRect = node.frame
+        let leftEdge = CGRectGetMinX(frame)
+        let rightEdge = CGRectGetMaxX(frame)
+        let topEdge = CGRectGetMaxY(frame)
+        let bottomEdge = CGRectGetMinY(frame)
+        let xPos = character.position.x
+        let yPos = character.position.y
+        println("Left Edge: \(leftEdge)")
+        println("Right Edge:  \(rightEdge)")
+        println("Top Edge: \(topEdge)")
+        println("Bottom Edge: \(bottomEdge)")
+        if (xPos > rightEdge) {
+            character.position.x = leftEdge
+        }else if (yPos > topEdge) {
+            character.position.y = bottomEdge
+        }else if (xPos < leftEdge) {
+            character.position.x = rightEdge
+        }else if (yPos < bottomEdge) {
+            character.position.y = topEdge
+        }
+    }
+    
     /*
      
         Hey! I finished all that. What do I do now?
