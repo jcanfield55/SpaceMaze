@@ -20,7 +20,7 @@ class GameScene: SKScene {
     
     /* Properties */
     let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
-    var character:Character?
+    var mainCharacter:MainCharacter?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -37,19 +37,45 @@ class GameScene: SKScene {
         var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5, colorAlpha: 0.2)
         self.addChild(tunnel4.tunnelSpriteNode)
         
+        // Create dots to pick up in tunnels
+        for aTunnel in allTunnels {
+            for var i:Int = 0; i < aTunnel.length; i++ {
+                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                self.addChild(dotCharacter)
+            }
+        }
+        
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
-        self.character = newCharacter
+        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        newCharacter.rotateWithMovement = true
+        self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
+        
+        // Create opponents
+        let opponent1 = Character(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3)
+        self.addChild(opponent1)   // Make sprite visible
     }
     
+    // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
-        for touch in touches {
-            let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
-            self.character?.moveCharacter(command)
+        if let mainCharacter:MainCharacter = self.mainCharacter {
+            for touch in touches {
+                let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
+                mainCharacter.moveCharacter(command)
+                
+                // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
+                let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
+                for otherCharacter in samePositionCharacters {
+                    if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
+                        dotCharacter.hidden = true
+                        allCharacters.remove(dotCharacter)
+                        mainCharacter.treasureScore++
+                        println("Treasure score is " + String(mainCharacter.treasureScore))
+                    }
+                }
+            }
         }
     }
     
