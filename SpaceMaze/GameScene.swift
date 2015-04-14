@@ -21,11 +21,18 @@ class GameScene: SKScene {
     /* Properties */
     let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
     var mainCharacter:MainCharacter?
+    let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
+    var opponentTimer:NSTimer?
+    var opponents:[OpponentCharacter] = []
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         self.backgroundColor = color
         
+        // Set up timer that will call function moveOpponent every opponentMoveTiming
+        opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:Selector("moveOpponent:"), userInfo: nil, repeats: true)
+
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want
         var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
@@ -34,8 +41,6 @@ class GameScene: SKScene {
         self.addChild(tunnel2.tunnelSpriteNode)
         var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5, colorAlpha: 0.2)
-        self.addChild(tunnel4.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
@@ -53,8 +58,11 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        let opponent1 = Character(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3)
-        self.addChild(opponent1)   // Make sprite visible
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        
+        for anOpponent in opponents {
+            self.addChild(anOpponent)   // Make sprite visible
+        }
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
@@ -102,18 +110,18 @@ class GameScene: SKScene {
         }
         return TouchCommand.NO_COMMAND
     }
+    
+    // Function called whenever it is time for the opponent to move
+    @objc func moveOpponent(timer: NSTimer) {
+        for anOpponent in opponents {
+            if let c = self.mainCharacter {
+                anOpponent.chaseCharacter(c)
+            }
+        }
+    }
 
     /*
-     
-        Hey! I finished all that. What do I do now?
-
-        1. Change your spaceship to a PacMan or...
-        2. Change the color of your background.
-        3. Make your spaceship rotate when you move it. A hint:
-                self.character.zRotation = PI * 0.5
-        4. Make your game "wrap" -- when the spaceship goes off the right side of the screen,
-            have it reappear on the left. A hint:
-                location.x = location.x % width
-    
+     Improvements:
+      - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
     */
 }

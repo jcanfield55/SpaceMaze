@@ -27,7 +27,9 @@ class Character:SKSpriteNode {
         allCharacters.add(self)
     }
     
-    func moveCharacter(direction:TouchCommand) {
+    // Moves the character in the specified direction if possible
+    // Returns true if character is able to move, false if the character is not able to move
+    func moveCharacter(direction:TouchCommand) -> Bool {
         // Lesson 2a: Add the code here to check whether you can move in a certain direction in a tunnel before making the move
         // Hint: use Tunnel canMoveInDirection method
         
@@ -58,6 +60,8 @@ class Character:SKSpriteNode {
             let action:SKAction = SKAction.moveTo(self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition), duration:0.25)
             self.runAction(action)
             
+            return true   // we were able to move
         }
+        return false
     }
 }
