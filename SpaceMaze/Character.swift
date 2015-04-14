@@ -12,6 +12,7 @@ class Character:SKSpriteNode {
     var currentTunnel:Tunnel;
     var tunnelPosition:Int;
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -31,6 +32,7 @@ class Character:SKSpriteNode {
         
         let (canMove:Bool, newTunnel:Tunnel, newPosition:Int) = self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
         if (canMove) {
+runAction(SKAction.playSoundFileNamed("pac.wav", waitForCompletion: true))
             if newTunnel !== currentTunnel {
                 self.currentTunnel = newTunnel
             }

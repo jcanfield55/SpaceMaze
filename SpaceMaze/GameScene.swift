@@ -1,3 +1,27 @@
+import AVFoundation
+
+var backgroundMusicPlayer: AVAudioPlayer!
+
+func playBackgroundMusic(SmileZero: String) {
+    let url = NSBundle.mainBundle().URLForResource(
+        SmileZero, withExtension: nil)
+    if (url == nil) {
+        println("Could not find file: \(SmileZero)")
+        return
+    }
+    
+    var error: NSError? = nil
+    backgroundMusicPlayer =
+        AVAudioPlayer(contentsOfURL: url, error: &error)
+    if backgroundMusicPlayer == nil {
+        println("Could not create audio player: \(error!)")
+        return
+    }
+    
+    backgroundMusicPlayer.numberOfLoops = -1
+    backgroundMusicPlayer.prepareToPlay()
+    backgroundMusicPlayer.play()
+}
 //
 //  GameScene.swift
 //  SpaceMaze
@@ -5,7 +29,6 @@
 //  Created by Diana Smetters on 3/24/15.
 //  Copyright (c) 2015 Diana Smetters. All rights reserved.
 //
-
 import SpriteKit
 
 // Enumeration -- defines a variable class with five different values
@@ -17,9 +40,8 @@ enum TouchCommand {
     NO_COMMAND
 }
 class GameScene: SKScene {
-    
-    /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+        /* Properties */
+    let color = UIColor(red:0.0, green:0.0, blue:0.0, alpha:0.0)
     var character:Character?
     
     override func didMoveToView(view: SKView) {
@@ -30,16 +52,18 @@ class GameScene: SKScene {
         // Lesson 2b - create tunnels for the maze pattern you want
         var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 0.1)
         self.addChild(tunnel2.tunnelSpriteNode)
         var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5, colorAlpha: 0.2)
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel4.tunnelSpriteNode)
+        var tunnel21 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 0, gridY: 5, colorAlpha: 0.1)
+        self.addChild(tunnel21.tunnelSpriteNode)
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = Character(imageNamed:"PacMan", currentTunnel:tunnel1, tunnelPosition:3)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
     }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F4975651AD5866D00E93A0F /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4975641AD5866D00E93A0F /* Unknown.png */; };
+		3F4975671AD587B600E93A0F /* pac.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3F4975661AD587B600E93A0F /* pac.wav */; };
+		3F4975691AD592B200E93A0F /* SmileZero.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F4975681AD592B200E93A0F /* SmileZero.mp3 */; };
 		3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49A1AC75CD00035AB2C /* Tunnel.swift */; };
 		3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49C1AC886C60035AB2C /* Constants.swift */; };
 		3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49E1AC8CBFA0035AB2C /* Character.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F4975641AD5866D00E93A0F /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
+		3F4975661AD587B600E93A0F /* pac.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pac.wav; sourceTree = "<group>"; };
+		3F4975681AD592B200E93A0F /* SmileZero.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SmileZero.mp3; sourceTree = "<group>"; };
 		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -93,6 +99,9 @@
 		E7950A2C1AC2842D008328E7 /* SpaceMaze */ = {
 			isa = PBXGroup;
 			children = (
+				3F4975681AD592B200E93A0F /* SmileZero.mp3 */,
+				3F4975661AD587B600E93A0F /* pac.wav */,
+				3F4975641AD5866D00E93A0F /* Unknown.png */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
@@ -217,11 +226,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
+				3F4975691AD592B200E93A0F /* SmileZero.mp3 in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
+				3F4975671AD587B600E93A0F /* pac.wav in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
+				3F4975651AD5866D00E93A0F /* Unknown.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
