@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let color = UIColor(red:0.5, green:0, blue:0.5, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
@@ -81,15 +81,21 @@ class GameScene: SKScene {
         var tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 1, visibility:1)
         self.addChild(tunnel12.tunnelSpriteNode)
 
+        // Create dots to pick up in tunnels
+        for aTunnel in allTunnels {
+            for var i:Int = 0; i < aTunnel.length; i++ {
+                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                self.addChild(dotCharacter)
+            }
+        }
 
-
-
-        self.character = newCharacter
-        self.addChild(newCharacter)   // Make sprite visible
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
-        newCharacter.rotateWithMovement = true
+        let newCharacter = MainCharacter(imageNamed:"PacMan", currentTunnel:tunnel1, tunnelPosition:3)
         self.mainCharacter = newCharacter
-        
+        self.addChild(newCharacter)   // Make sprite visible
+        newCharacter.rotateWithMovement = true
+
+        // Create opponents
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel7, tunnelPosition: 3))
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }

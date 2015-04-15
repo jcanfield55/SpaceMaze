@@ -17,7 +17,7 @@ enum TunnelOrientation {
 var allTunnels:[Tunnel] = [Tunnel]()
 
 class Tunnel {
-
+    
     let orientation:TunnelOrientation = TunnelOrientation.horizontalTunnel;
     let length:Int = 0
     let tunnelCenter:CGPoint = CGPointMake(0.0,0.0)
@@ -26,8 +26,9 @@ class Tunnel {
     var connectingPositions:[Int?]
     var tunnelSpriteNode:SKSpriteNode
     /* Initializer method */
-    // Lesson 2c - add the ability to create "invisible" or mostly invisible tunnels.  
+    // Lesson 2c - add the ability to create "invisible" or mostly invisible tunnels.
     // Add some invisible (secret) tunnels to your maze
+    
     init(orientation:TunnelOrientation, length:Int, gridX:Int, gridY:Int, visibility:CGFloat) {
         self.orientation = orientation
         self.length = length
@@ -54,7 +55,7 @@ class Tunnel {
         connectingPositions = [Int?](count:length, repeatedValue:nil)
         
         // Create tunnelSpriteNode
-        let tunnelColor = UIColor(white: 1.0, alpha: colorAlpha)
+        let tunnelColor = UIColor(white: 1.0, alpha: visibility)
         
         // Hey everyone, Gus & Kevin found out how to put a tile background into their tunnel.
         // Uncomment the below to try it
@@ -81,6 +82,7 @@ class Tunnel {
                             otherTunnel.connectingPositions[otherPos] = selfPos
                         }
                     }
+                }
             }
         }
         allTunnels.append(self)  // Add this tunnel to allTunnel tracker
@@ -97,7 +99,7 @@ class Tunnel {
         }
         return point
     }
-
+    
     // Checks if a character in the specified position can move in the requested direction
     // If checkConnections == true, then checks not just self, but any tunnels connected to self
     // Returns the following three values:
@@ -133,5 +135,5 @@ class Tunnel {
         }
         return (false, self, position); // No connecting tunnels
     }
-
+    
 }
