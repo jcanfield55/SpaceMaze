@@ -29,32 +29,52 @@ class Character:SKSpriteNode {
         // Lesson 2a: Add the code here to check whether you can move in a certain direction in a tunnel before making the move
         // Hint: use Tunnel canMoveInDirection method
         
+        let (canMove:Bool, newTunnel:Tunnel, newPosition:Int) = self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
+        if (canMove) {
+            if newTunnel !== currentTunnel {
+                self.currentTunnel = newTunnel
+            }
+            self.tunnelPosition = newPosition
+            println("Current tunnel \(self.currentTunnel.tunnelCenter) position \(self.tunnelPosition)")
+
+            // Here is the code from Lesson 1 moved over from GameScene to the Character method
+            // to move in the x direction (left / right) or the y direction (up / down)
+            if (direction == TouchCommand.MOVE_UP) {
+                self.zRotation = PI * 0.5
+            }
+            if (direction == TouchCommand.MOVE_DOWN) {
+                self.zRotation = PI * 1.5
+            }
+            if (direction == TouchCommand.MOVE_LEFT) {
+                self.zRotation = PI * 1
+            }
+            if (direction == TouchCommand.MOVE_RIGHT) {
+                self.zRotation = 0
+            }
             
-        // Here is the code from Lesson 1 moved over from GameScene to the Character method
-        // to move in the x direction (left / right) or the y direction (up / down).  
-        // You'll need to modify this once you update use the Tunnel canMoveInDirection method
-        var newPosition = self.position
-        if (direction == TouchCommand.MOVE_UP) {
-            newPosition.y = newPosition.y + gridSize
-            self.zRotation = 0
-        }
-        if (direction == TouchCommand.MOVE_DOWN) {
-            newPosition.y = newPosition.y - gridSize
-            self.zRotation = PI
-        }
-        if (direction == TouchCommand.MOVE_LEFT) {
-            newPosition.x = newPosition.x - gridSize
-            self.zRotation = PI * 0.5
-        }
-        if (direction == TouchCommand.MOVE_RIGHT) {
-            newPosition.x = newPosition.x + gridSize
-            self.zRotation = PI * 1.5
-        }
-        
-        // Move to new position
-        if (newPosition != self.position) {
-            let action:SKAction = SKAction.moveTo(newPosition, duration:0.25)
+            // Move to new position
+            let action:SKAction = SKAction.moveTo(self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition), duration:0.25)
             self.runAction(action)
+            
+            // Check for wraparound -- will need more work to make compatible with tunnels
+            if let parent = self.parent {
+                let width = CGRectGetWidth(parent.frame)
+                let height = CGRectGetHeight(parent.frame)
+                var position:CGPoint = self.position
+                if (position.x >= width) {
+                    position.x = position.x - width
+                }
+                if position.x < 0 {
+                    position.x = width - position.x
+                }
+                if position.y >= height {
+                    position.y = position.y - height
+                }
+                if position.y < 0 {
+                    position.y = height - position.y
+                }
+                self.position = position
+            }
         }
     }
 }

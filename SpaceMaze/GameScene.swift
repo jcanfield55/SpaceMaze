@@ -20,7 +20,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.25, green:0.25, blue:0.50, alpha:1.0)
+    let color = UIColor(red:0.0, green:0.50, blue:0.50, alpha:1.0)
     var character:Character?
     
     override func didMoveToView(view: SKView) {
@@ -28,14 +28,14 @@ class GameScene: SKScene {
         self.backgroundColor = color
         
         // Create tunnels
-        // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
-        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5)
+        // Lesson 2b - create tunnels for the maze pattern you want
+        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 17, gridX: 2, gridY: 15, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 12, gridY: 15, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6)
+        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5)
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 1, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel4.tunnelSpriteNode)
         var tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 4, gridY: 4, colorAlpha: 1.0)
         self.addChild(tunnel5.tunnelSpriteNode)
@@ -103,7 +103,7 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"PacMan", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = Character(imageNamed:"cat", currentTunnel:tunnel1, tunnelPosition:3)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
     }
