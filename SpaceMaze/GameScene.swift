@@ -23,17 +23,10 @@ class GameScene: SKScene {
     let aTexture = SKTexture(imageNamed: "lava.png")
     var character:Character?
     
-    required init(coder aDecoder: NSCoder) {
-        fatalError("NSCoder not supported")
-    }
-    override init(size: CGSize)
-    super.init(size: size)
-    anchorPoint = CGPoint(x: 0,y: 1.0) )
-    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        self.imageNamed = aTexture
+        // self.imageNamed = aTexture
 
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
