@@ -20,8 +20,12 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.0, green:0.50, blue:0.50, alpha:1.0)
-    var character:Character?
+    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    var mainCharacter:MainCharacter?
+    let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
+    var opponentTimer:NSTimer?
+    var opponents:[OpponentCharacter] = []
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -104,13 +108,22 @@ class GameScene: SKScene {
         self.addChild(tunnel35.tunnelSpriteNode)
 
         
+        // Create dots to pick up in tunnels
+        for aTunnel in allTunnels {
+            for var i:Int = 0; i < aTunnel.length; i++ {
+                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                self.addChild(dotCharacter)
+            }
+        }
+        
         // Create character
         // Place the sprite in a tunnel
         let newCharacter = Character(imageNamed:"cat", currentTunnel:tunnel1, tunnelPosition:3)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
-        
-        // Create opponents
+        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        newCharacter.rotateWithMovement = true
+        self.mainCharacter = newCharacter
         opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
@@ -172,4 +185,8 @@ class GameScene: SKScene {
         }
     }
 
+    /*
+     Improvements:
+      - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
+    */
 }
