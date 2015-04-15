@@ -20,7 +20,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let color = UIColor(red:0.0, green:0.50, blue:0.50, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
@@ -118,12 +118,12 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"cat", currentTunnel:tunnel1, tunnelPosition:3)
-        self.character = newCharacter
-        self.addChild(newCharacter)   // Make sprite visible
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
-        newCharacter.rotateWithMovement = true
+        let newCharacter = MainCharacter(imageNamed:"cat", currentTunnel:tunnel1, tunnelPosition:3)
         self.mainCharacter = newCharacter
+        self.addChild(newCharacter)   // Make sprite visible
+        newCharacter.rotateWithMovement = true
+        
+        // Create opponents
         opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {

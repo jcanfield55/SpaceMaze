@@ -42,26 +42,25 @@ class Character:SKSpriteNode {
             
             if rotateWithMovement {    // only rotate those characters with the property set to true
                 if (direction == TouchCommand.MOVE_UP) {
-                    self.zRotation = 0
-                }
-                if (direction == TouchCommand.MOVE_DOWN) {
-                    self.zRotation = PI
-                }
-                if (direction == TouchCommand.MOVE_LEFT) {
                     self.zRotation = PI * 0.5
                 }
-                if (direction == TouchCommand.MOVE_RIGHT) {
+                if (direction == TouchCommand.MOVE_DOWN) {
                     self.zRotation = PI * 1.5
                 }
-                self.zRotation = PI * 0.5
+                if (direction == TouchCommand.MOVE_LEFT) {
+                    self.zRotation = PI * 1
+                }
+                if (direction == TouchCommand.MOVE_RIGHT) {
+                    self.zRotation = 0
+                }
             }
-            if (direction == TouchCommand.MOVE_DOWN) {
-                self.zRotation = PI * 1.5
-            }
-            if (direction == TouchCommand.MOVE_LEFT) {
-                self.zRotation = PI * 1
-            }
-            if (direction == TouchCommand.MOVE_RIGHT) {
-                self.zRotation = 0
-            }
+            
+            // Move to new position
+            let action:SKAction = SKAction.moveTo(self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition), duration:0.25)
+            self.runAction(action)
+            
+            return true   // we were able to move
+        }
+        return false
+    }
 }
