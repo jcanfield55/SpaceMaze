@@ -13,6 +13,12 @@
 		3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49A1AC75CD00035AB2C /* Tunnel.swift */; };
 		3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49C1AC886C60035AB2C /* Constants.swift */; };
 		3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49E1AC8CBFA0035AB2C /* Character.swift */; };
+		52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */; };
+		52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */; };
+		52524D541AD4FE660068A3F5 /* grayDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D531AD4FE660068A3F5 /* grayDot.png */; };
+		52524D561AD5036F0068A3F5 /* MainCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D551AD5036F0068A3F5 /* MainCharacter.swift */; };
+		52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */; };
+		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
@@ -43,6 +49,14 @@
 		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollection.swift; sourceTree = "<group>"; };
+		52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship1.png; sourceTree = "<group>"; };
+		52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Alien Spaceship icons.jpg"; sourceTree = "<group>"; };
+		52524D521AD4FBCE0068A3F5 /* grayDot.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = grayDot.psd; sourceTree = "<group>"; };
+		52524D531AD4FE660068A3F5 /* grayDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayDot.png; sourceTree = "<group>"; };
+		52524D551AD5036F0068A3F5 /* MainCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCharacter.swift; sourceTree = "<group>"; };
+		52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureCharacter.swift; sourceTree = "<group>"; };
+		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +118,8 @@
 				3F4975641AD5866D00E93A0F /* Unknown.png */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
+				52524D531AD4FE660068A3F5 /* grayDot.png */,
+				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
@@ -111,6 +127,10 @@
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
+				52524D551AD5036F0068A3F5 /* MainCharacter.swift */,
+				52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */,
+				52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */,
+				52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */,
 				3F54A49A1AC75CD00035AB2C /* Tunnel.swift */,
 				E7950A351AC2842D008328E7 /* GameViewController.swift */,
 				E7950A371AC2842D008328E7 /* Main.storyboard */,
@@ -225,6 +245,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
+				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				3F4975691AD592B200E93A0F /* SmileZero.mp3 in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
@@ -252,9 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52524D561AD5036F0068A3F5 /* MainCharacter.swift in Sources */,
+				52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */,
+				52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */,
 				3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */,
 				E7950A341AC2842D008328E7 /* GameScene.swift in Sources */,
 				3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */,
+				52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */,
 				3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */,
 				E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */,
 				E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */,
