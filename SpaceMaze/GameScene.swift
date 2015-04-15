@@ -48,6 +48,13 @@ class GameScene: SKScene {
         let newCharacter = Character(imageNamed:"ArrowGD.png", currentTunnel:tunnel1, tunnelPosition:3)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
+        
+        // Create opponents
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        
+        for anOpponent in opponents {
+            self.addChild(anOpponent)   // Make sprite visible
+        }
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -81,6 +88,15 @@ class GameScene: SKScene {
             return TouchCommand.MOVE_RIGHT
         }
         return TouchCommand.NO_COMMAND
+    }
+    
+    // Function called whenever it is time for the opponent to move
+    @objc func moveOpponent(timer: NSTimer) {
+        for anOpponent in opponents {
+            if let c = self.mainCharacter {
+                anOpponent.chaseCharacter(c)
+            }
+        }
     }
 
 }

@@ -11,6 +11,7 @@ import SpriteKit
 class Character:SKSpriteNode {
     var currentTunnel:Tunnel;
     var tunnelPosition:Int;
+    var rotateWithMovement:Bool = false;  // True if we should rotate based on the direction moved
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -23,9 +24,12 @@ class Character:SKSpriteNode {
         super.init(texture: texture, color:SKColor(white:1.0, alpha:1.0),
             size: CGSizeMake(gridSize-tunnelBoundaryDistance, gridSize - tunnelBoundaryDistance))
         self.position = currentTunnel.pointAtTunnelPosition(tunnelPosition)
+        allCharacters.add(self)
     }
     
-    func moveCharacter(direction:TouchCommand) {
+    // Moves the character in the specified direction if possible
+    // Returns true if character is able to move, false if the character is not able to move
+    func moveCharacter(direction:TouchCommand) -> Bool {
         // Lesson 2a: Add the code here to check whether you can move in a certain direction in a tunnel before making the move
         // Hint: use Tunnel canMoveInDirection method
         
@@ -61,5 +65,6 @@ class Character:SKSpriteNode {
                 self.runAction(action)
             }
         }
+        return false
     }
 }
