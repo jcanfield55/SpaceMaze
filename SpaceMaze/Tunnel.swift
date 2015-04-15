@@ -54,7 +54,16 @@ class Tunnel {
         connectingPositions = [Int?](count:length, repeatedValue:nil)
         
         // Create tunnelSpriteNode
-        let tunnelColor = UIColor(white: 1.0, alpha: visibility)
+        let tunnelColor = UIColor(white: 1.0, alpha: colorAlpha)
+        
+        // Hey everyone, Gus & Kevin found out how to put a tile background into their tunnel.
+        // Uncomment the below to try it
+        // let aTexture = SKTexture(imageNamed: "squirrel.png")
+        // tunnelSpriteNode = SKSpriteNode(texture: aTexture,
+        //     color:tunnelColor,
+        //     size: tunnelSize)
+        // (and comment out the tunnelSpriteNode assignment below
+        
         tunnelSpriteNode = SKSpriteNode(color: tunnelColor, size: tunnelSize)
         tunnelSpriteNode.position = self.tunnelCenter
         
@@ -68,12 +77,10 @@ class Tunnel {
                             println("Found Connecting Tunnel \(selfPos) \(otherPos)")
                             // The tunnels overlap, so set the connectingTunnels
                             self.connectingTunnels[selfPos] = otherTunnel
-                            self.connectingPositions[selfPos] = otherPos
                             otherTunnel.connectingTunnels[otherPos] = self;
                             otherTunnel.connectingPositions[otherPos] = selfPos
                         }
                     }
-                }
             }
         }
         allTunnels.append(self)  // Add this tunnel to allTunnel tracker

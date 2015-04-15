@@ -18,8 +18,13 @@ enum TouchCommand {
 }
 class GameScene: SKScene {
     
-    let color = UIColor(red:0.5, green:0, blue:0.5, alpha:1.0)
-    var character:Character?
+    /* Properties */
+    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    var mainCharacter:MainCharacter?
+    let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
+    var opponentTimer:NSTimer?
+    var opponents:[OpponentCharacter] = []
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -36,6 +41,10 @@ class GameScene: SKScene {
         self.addChild(tunnel2.tunnelSpriteNode)
         var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, visibility:1)
         self.addChild(tunnel3.tunnelSpriteNode)
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5, visibility:1)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        var tunnel5 = Tunnel(orientation: TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 3, visibility:1)
+        self.addChild(tunnel5.tunnelSpriteNode)
         var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5, visibility:1)
         self.addChild(tunnel4.tunnelSpriteNode)
         var tunnel5 = Tunnel(orientation: TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 3, visibility:1)
@@ -75,15 +84,11 @@ class GameScene: SKScene {
 
 
 
-        // Create character
-        // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"PacMan", currentTunnel:tunnel1, tunnelPosition:3)
-        newCharacter.setScale(0.55)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
-        
-        // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        newCharacter.rotateWithMovement = true
+        self.mainCharacter = newCharacter
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -145,4 +150,8 @@ class GameScene: SKScene {
         }
     }
 
+    /*
+     Improvements:
+      - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
+    */
 }

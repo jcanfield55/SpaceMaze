@@ -32,33 +32,35 @@ class Character:SKSpriteNode {
     func moveCharacter(direction:TouchCommand) -> Bool {
         // Lesson 2a: Add the code here to check whether you can move in a certain direction in a tunnel before making the move
         // Hint: use Tunnel canMoveInDirection method
-        let (canMove:Bool, newTunnel:Tunnel, newTunnelPosition:Int) =  self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
-        currentTunnel = newTunnel
-        tunnelPosition = newTunnelPosition
-        // Here is the code from Lesson 1 moved over from GameScene to the Character method
-        // to move in the x direction (left / right) or the y direction (up / down).
-        //You'll need to modify this once you update use the Tunnel canMoveInDirection method
-        var newPosition = self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition)
-        if (direction == TouchCommand.MOVE_UP) {
-            self.zRotation = 0
-        }
-        if (direction == TouchCommand.MOVE_DOWN) {
-            self.zRotation = PI
-        }
-        if (direction == TouchCommand.MOVE_LEFT) {
-            self.zRotation = PI * 0.5
-        }
-        if (direction == TouchCommand.MOVE_RIGHT) {
-            self.zRotation = PI * 1.5
-        }
-        if !canMove {
-            return
-        }
-        var duration = NSTimeInterval((1.5 - currentTunnel.visibility) * 0.25)
-        // Move to new position
-        if (newPosition != self.position) {
-            let action:SKAction = SKAction.moveTo(newPosition, duration:duration)
+        
+        let (canMove:Bool, newTunnel:Tunnel, newPosition:Int) = self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
+        if (canMove) {
+            if newTunnel !== currentTunnel {
+                self.currentTunnel = newTunnel
+            }
+            self.tunnelPosition = newPosition
+            
+            // Here is the code from Lesson 1 moved over from GameScene to the Character method
+            if rotateWithMovement {    // only rotate those characters with the property set to true
+                if (direction == TouchCommand.MOVE_UP) {
+                    self.zRotation = 0
+                }
+                if (direction == TouchCommand.MOVE_DOWN) {
+                    self.zRotation = PI
+                }
+                if (direction == TouchCommand.MOVE_LEFT) {
+                    self.zRotation = PI * 0.5
+                }
+                if (direction == TouchCommand.MOVE_RIGHT) {
+                    self.zRotation = PI * 1.5
+                }
+            }
+            
+            // Move to new position
+            let action:SKAction = SKAction.moveTo(self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition), duration:0.25)
             self.runAction(action)
+            
+            return true   // we were able to move
         }
         return false
     }
