@@ -25,6 +25,9 @@ class GameScene: SKScene {
         /* Setup your scene here */
         self.backgroundColor = color
         
+        // Set up timer that will call function moveOpponent every opponentMoveTiming
+        opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:Selector("moveOpponent:"), userInfo: nil, repeats: true)
+
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
         /*var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, visibility:1)
@@ -78,14 +81,34 @@ class GameScene: SKScene {
         newCharacter.setScale(0.55)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
+        
+        // Create opponents
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        
+        for anOpponent in opponents {
+            self.addChild(anOpponent)   // Make sprite visible
+        }
     }
     
+    // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
-        for touch in touches {
-            let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
-            self.character?.moveCharacter(command)
+        if let mainCharacter:MainCharacter = self.mainCharacter {
+            for touch in touches {
+                let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
+                mainCharacter.moveCharacter(command)
+                
+                // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
+                let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
+                for otherCharacter in samePositionCharacters {
+                    if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
+                        dotCharacter.hidden = true
+                        allCharacters.remove(dotCharacter)
+                        mainCharacter.treasureScore++
+                        println("Treasure score is " + String(mainCharacter.treasureScore))
+                    }
+                }
+            }
         }
     }
     
@@ -111,6 +134,15 @@ class GameScene: SKScene {
             return TouchCommand.MOVE_RIGHT
         }
         return TouchCommand.NO_COMMAND
+    }
+    
+    // Function called whenever it is time for the opponent to move
+    @objc func moveOpponent(timer: NSTimer) {
+        for anOpponent in opponents {
+            if let c = self.mainCharacter {
+                anOpponent.chaseCharacter(c)
+            }
+        }
     }
 
 }
