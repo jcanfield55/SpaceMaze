@@ -19,27 +19,40 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.0, green:1.0, blue:0.9, alpha:5.0)
+    let color = UIColor(white:0.0, alpha: 1.0)
+    let aTexture = SKTexture(imageNamed: "lava.png")
     var character:Character?
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("NSCoder not supported")
+    }
+    override init(size: CGSize)
+    super.init(size: size)
+    anchorPoint = CGPoint(x: 0,y: 1.0) )
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        self.backgroundColor = color
         
+        self.imageNamed = aTexture
+
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
         var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5)
         self.addChild(tunnel1.tunnelSpriteNode)
-        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2)
-        self.addChild(tunnel2.tunnelSpriteNode)
-        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6)
-        self.addChild(tunnel3.tunnelSpriteNode)
-        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5)
-        self.addChild(tunnel4.tunnelSpriteNode)
+        var tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        var tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 0, gridY: 0)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        var tunnel8 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 6, gridY: 0)
+        self.addChild(tunnel8.tunnelSpriteNode)
+        var tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 10)
+        self.addChild(tunnel9.tunnelSpriteNode)
+        var tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 3, gridY: 0)
+        self.addChild(tunnel10.tunnelSpriteNode)
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = Character(imageNamed:"ArrowGD.png", currentTunnel:tunnel1, tunnelPosition:3)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
     }

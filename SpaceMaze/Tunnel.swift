@@ -54,8 +54,11 @@ class Tunnel {
         connectingPositions = [Int?](count:length, repeatedValue:nil)
         
         // Create tunnelSpriteNode
-        let tunnelColor = UIColor(white: 1.0, alpha: 1.0)
-        tunnelSpriteNode = SKSpriteNode(color: tunnelColor, size: tunnelSize)
+        let tunnelColor = UIColor(white:0.0, alpha: 1.0)
+        let aTexture = SKTexture(imageNamed: "tile.jpeg")
+        tunnelSpriteNode = SKSpriteNode(texture: aTexture,
+            color:tunnelColor,
+            size: tunnelSize)
         tunnelSpriteNode.position = self.tunnelCenter
         
         // Search for connecting tunnels and update connectingTunnels array

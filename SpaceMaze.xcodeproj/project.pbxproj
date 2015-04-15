@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F322EBC1AD5857500362444 /* concrete.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F322EBB1AD5857500362444 /* concrete.jpg */; };
+		3F322EBE1AD5872C00362444 /* tile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3F322EBD1AD5872C00362444 /* tile.jpeg */; };
+		3F322EC01AD589B700362444 /* Arrow_vectorized.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F322EBF1AD589B700362444 /* Arrow_vectorized.png */; };
+		3F322EC21AD589BD00362444 /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F322EC11AD589BD00362444 /* images.png */; };
+		3F322ECA1AD58CDD00362444 /* ArrowGD.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F322EC91AD58CDD00362444 /* ArrowGD.png */; };
+		3F322ECC1AD5907800362444 /* lava.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F322ECB1AD5907800362444 /* lava.png */; };
+		3F322ECE1AD5921700362444 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F322ECD1AD5921700362444 /* Background.swift */; };
 		3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49A1AC75CD00035AB2C /* Tunnel.swift */; };
 		3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49C1AC886C60035AB2C /* Constants.swift */; };
 		3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49E1AC8CBFA0035AB2C /* Character.swift */; };
@@ -34,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F322EBB1AD5857500362444 /* concrete.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = concrete.jpg; path = ../../../Desktop/concrete.jpg; sourceTree = "<group>"; };
+		3F322EBD1AD5872C00362444 /* tile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tile.jpeg; path = ../../../Desktop/tile.jpeg; sourceTree = "<group>"; };
+		3F322EBF1AD589B700362444 /* Arrow_vectorized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_vectorized.png; path = ../../../Desktop/Arrow_vectorized.png; sourceTree = "<group>"; };
+		3F322EC11AD589BD00362444 /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../../../Desktop/images.png; sourceTree = "<group>"; };
+		3F322EC91AD58CDD00362444 /* ArrowGD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ArrowGD.png; path = ../../../Desktop/ArrowGD.png; sourceTree = "<group>"; };
+		3F322ECB1AD5907800362444 /* lava.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lava.png; path = ../../../Desktop/lava.png; sourceTree = "<group>"; };
+		3F322ECD1AD5921700362444 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -93,6 +107,12 @@
 		E7950A2C1AC2842D008328E7 /* SpaceMaze */ = {
 			isa = PBXGroup;
 			children = (
+				3F322ECB1AD5907800362444 /* lava.png */,
+				3F322EC91AD58CDD00362444 /* ArrowGD.png */,
+				3F322EC11AD589BD00362444 /* images.png */,
+				3F322EBF1AD589B700362444 /* Arrow_vectorized.png */,
+				3F322EBD1AD5872C00362444 /* tile.jpeg */,
+				3F322EBB1AD5857500362444 /* concrete.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
@@ -101,6 +121,7 @@
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
+				3F322ECD1AD5921700362444 /* Background.swift */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
 				3F54A49A1AC75CD00035AB2C /* Tunnel.swift */,
 				E7950A351AC2842D008328E7 /* GameViewController.swift */,
@@ -217,11 +238,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
+				3F322EBE1AD5872C00362444 /* tile.jpeg in Resources */,
+				3F322EBC1AD5857500362444 /* concrete.jpg in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
+				3F322EC21AD589BD00362444 /* images.png in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
+				3F322ECA1AD58CDD00362444 /* ArrowGD.png in Resources */,
+				3F322ECC1AD5907800362444 /* lava.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
+				3F322EC01AD589B700362444 /* Arrow_vectorized.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */,
+				3F322ECE1AD5921700362444 /* Background.swift in Sources */,
 				E7950A341AC2842D008328E7 /* GameScene.swift in Sources */,
 				3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */,
 				3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */,
