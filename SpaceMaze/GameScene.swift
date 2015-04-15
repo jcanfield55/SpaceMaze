@@ -27,18 +27,55 @@ class GameScene: SKScene {
         
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
-        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5)
+        /*var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, visibility:1)
         self.addChild(tunnel1.tunnelSpriteNode)
-        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, visibility:1)
         self.addChild(tunnel2.tunnelSpriteNode)
-        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6)
+        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, visibility:1)
         self.addChild(tunnel3.tunnelSpriteNode)
-        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5)
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5, visibility:1)
         self.addChild(tunnel4.tunnelSpriteNode)
-        
+        var tunnel5 = Tunnel(orientation: TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 3, visibility:1)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        var tunnel6 = Tunnel(orientation: TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 9, visibility: 0.1)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        var tunnel7 = Tunnel(orientation: TunnelOrientation.verticalTunnel, length: 5, gridX: 5, gridY: 5, visibility:1)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        var tunnel8 = Tunnel(orientation: TunnelOrientation.horizontalTunnel, length: 5, gridX: 1, gridY: 8, visibility: 0.2)
+        self.addChild(tunnel8.tunnelSpriteNode)
+    */
+        var tunnel1 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 1, gridY: 1, visibility:1)
+        self.addChild(tunnel1.tunnelSpriteNode)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 1, gridY: 12, visibility:1)
+        self.addChild(tunnel2.tunnelSpriteNode)
+        var tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 3, gridY: 4, visibility:1)
+        self.addChild(tunnel3.tunnelSpriteNode)
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 1, gridY: 4, visibility:1)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        var tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 5, gridY: 1, visibility:1)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        var tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 3, gridY: 1, visibility:1)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        var tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 5, gridY: 4, visibility:1)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        var tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 3, gridY: 10, visibility:1)
+        self.addChild(tunnel8.tunnelSpriteNode)
+        var tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 5, gridY: 8, visibility:1)
+        self.addChild(tunnel9.tunnelSpriteNode)
+        var tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 5, gridY: 12, visibility:1)
+        self.addChild(tunnel10.tunnelSpriteNode)
+        var tunnel11 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 8, gridY: 4, visibility:1)
+        self.addChild(tunnel11.tunnelSpriteNode)
+        var tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 1, visibility:1)
+        self.addChild(tunnel12.tunnelSpriteNode)
+
+
+
+
         // Create character
         // Place the sprite in a tunnel
         let newCharacter = Character(imageNamed:"PacMan", currentTunnel:tunnel1, tunnelPosition:3)
+        newCharacter.setScale(0.55)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
     }

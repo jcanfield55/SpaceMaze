@@ -28,32 +28,32 @@ class Character:SKSpriteNode {
     func moveCharacter(direction:TouchCommand) {
         // Lesson 2a: Add the code here to check whether you can move in a certain direction in a tunnel before making the move
         // Hint: use Tunnel canMoveInDirection method
-        
-            
+        let (canMove:Bool, newTunnel:Tunnel, newTunnelPosition:Int) =  self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
+        currentTunnel = newTunnel
+        tunnelPosition = newTunnelPosition
         // Here is the code from Lesson 1 moved over from GameScene to the Character method
-        // to move in the x direction (left / right) or the y direction (up / down).  
-        // You'll need to modify this once you update use the Tunnel canMoveInDirection method
-        var newPosition = self.position
+        // to move in the x direction (left / right) or the y direction (up / down).
+        //You'll need to modify this once you update use the Tunnel canMoveInDirection method
+        var newPosition = self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition)
         if (direction == TouchCommand.MOVE_UP) {
-            newPosition.y = newPosition.y + gridSize
             self.zRotation = 0
         }
         if (direction == TouchCommand.MOVE_DOWN) {
-            newPosition.y = newPosition.y - gridSize
             self.zRotation = PI
         }
         if (direction == TouchCommand.MOVE_LEFT) {
-            newPosition.x = newPosition.x - gridSize
             self.zRotation = PI * 0.5
         }
         if (direction == TouchCommand.MOVE_RIGHT) {
-            newPosition.x = newPosition.x + gridSize
             self.zRotation = PI * 1.5
         }
-        
+        if !canMove {
+            return
+        }
+        var duration = NSTimeInterval((1.5 - currentTunnel.visibility) * 0.25)
         // Move to new position
         if (newPosition != self.position) {
-            let action:SKAction = SKAction.moveTo(newPosition, duration:0.25)
+            let action:SKAction = SKAction.moveTo(newPosition, duration:duration)
             self.runAction(action)
         }
     }

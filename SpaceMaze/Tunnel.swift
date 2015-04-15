@@ -21,17 +21,17 @@ class Tunnel {
     let orientation:TunnelOrientation = TunnelOrientation.horizontalTunnel;
     let length:Int = 0
     let tunnelCenter:CGPoint = CGPointMake(0.0,0.0)
-    
+    var visibility:CGFloat
     var connectingTunnels:[Tunnel?]
     var connectingPositions:[Int?]
     var tunnelSpriteNode:SKSpriteNode
-    
     /* Initializer method */
     // Lesson 2c - add the ability to create "invisible" or mostly invisible tunnels.  
     // Add some invisible (secret) tunnels to your maze
-    init(orientation:TunnelOrientation, length:Int, gridX:Int, gridY:Int) {
+    init(orientation:TunnelOrientation, length:Int, gridX:Int, gridY:Int, visibility:CGFloat) {
         self.orientation = orientation
         self.length = length
+        self.visibility = visibility
         
         // Calculate the height and width
         var height:CGFloat = 0.0
@@ -54,16 +54,18 @@ class Tunnel {
         connectingPositions = [Int?](count:length, repeatedValue:nil)
         
         // Create tunnelSpriteNode
-        let tunnelColor = UIColor(white: 1.0, alpha: 1.0)
+        let tunnelColor = UIColor(white: 1.0, alpha: visibility)
         tunnelSpriteNode = SKSpriteNode(color: tunnelColor, size: tunnelSize)
         tunnelSpriteNode.position = self.tunnelCenter
         
         // Search for connecting tunnels and update connectingTunnels array
+        println("New Tunnel")
         for otherTunnel in allTunnels {
             if otherTunnel.orientation != self.orientation {   // Only connect tunnels of opposite orientation
                 for otherPos in 0...otherTunnel.length-1 {
                     for selfPos in 0...self.length-1 {
                         if self.pointAtTunnelPosition(selfPos) == otherTunnel.pointAtTunnelPosition(otherPos) {
+                            println("Found Connecting Tunnel \(selfPos) \(otherPos)")
                             // The tunnels overlap, so set the connectingTunnels
                             self.connectingTunnels[selfPos] = otherTunnel
                             self.connectingPositions[selfPos] = otherPos
