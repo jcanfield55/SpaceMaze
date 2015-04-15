@@ -21,13 +21,19 @@ class GameScene: SKScene {
     /* Properties */
     let color = UIColor(white:0.0, alpha: 1.0)
     let aTexture = SKTexture(imageNamed: "lava.png")
-    var character:Character?
+    var mainCharacter:MainCharacter?
+    let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
+    var opponentTimer:NSTimer?
+    var opponents:[OpponentCharacter] = []
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
         // self.imageNamed = aTexture
-
+        // Set up timer that will call function moveOpponent every opponentMoveTiming
+        opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:Selector("moveOpponent:"), userInfo: nil, repeats: true)
+        
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
         var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5)
@@ -43,26 +49,49 @@ class GameScene: SKScene {
         var tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 3, gridY: 0)
         self.addChild(tunnel10.tunnelSpriteNode)
         
+        // Create dots to pick up in tunnels
+        for aTunnel in allTunnels {
+            for var i:Int = 0; i < aTunnel.length; i++ {
+                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                self.addChild(dotCharacter)
+            }
+        }
+        
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"ArrowGD.png", currentTunnel:tunnel1, tunnelPosition:3)
-        self.character = newCharacter
+        let newCharacter = MainCharacter(imageNamed:"ArrowGD.png", currentTunnel:tunnel1, tunnelPosition:3)
+        self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
+        newCharacter.rotateWithMovement = true
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }
     }
     
+    // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
-        for touch in touches {
-            let command: TouchCommand = commandForTouch(touch as! UITouch, node:self)
-            self.character?.moveCharacter(command)
+        if let mainCharacter:MainCharacter = self.mainCharacter {
+            for touch in touches {
+                let command: TouchCommand = commandForTouch(touch as! UITouch, node:self)
+                mainCharacter.moveCharacter(command)
+                
+                // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
+                let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
+                for otherCharacter in samePositionCharacters {
+                    if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
+                        dotCharacter.hidden = true
+                        allCharacters.remove(dotCharacter)
+                        mainCharacter.treasureScore++
+                        println("Treasure score is " + String(mainCharacter.treasureScore))
+                    }
+                }
+            }
         }
     }
     
@@ -74,7 +103,7 @@ class GameScene: SKScene {
         let height = CGRectGetHeight(frame)
         let width = CGRectGetWidth(frame)
         println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
-       
+        
         if (location.y/height < 0.25) {
             return TouchCommand.MOVE_DOWN
         }
@@ -98,5 +127,10 @@ class GameScene: SKScene {
             }
         }
     }
-
+    
+    /*
+    Improvements:
+    - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
+    */
 }
+

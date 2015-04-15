@@ -127,6 +127,8 @@
 				3F322EBF1AD589B700362444 /* Arrow_vectorized.png */,
 				3F322EBD1AD5872C00362444 /* tile.jpeg */,
 				3F322EBB1AD5857500362444 /* concrete.jpg */,
+52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
+52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,

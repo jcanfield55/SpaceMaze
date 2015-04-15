@@ -43,19 +43,19 @@ class Character:SKSpriteNode {
             self.tunnelPosition = newTunnelPosition
             var newCoord = newTunnel.pointAtTunnelPosition(newTunnelPosition)
             // Here is the code from Lesson 1 moved over from GameScene to the Character method
-            // to move in the x direction (left / r(ight) or the y direction (up / down).
-            // You'll need to modify this once you update use the Tunnel canMoveInDirection method
-            if (direction == TouchCommand.MOVE_UP) {
-                self.zRotation = 0
-            }
-            if (direction == TouchCommand.MOVE_DOWN) {
-                self.zRotation = PI
-            }
-            if (direction == TouchCommand.MOVE_LEFT) {
-                self.zRotation = PI * 0.5
-            }
-            if (direction == TouchCommand.MOVE_RIGHT) {
-                self.zRotation = PI * 1.5
+            if rotateWithMovement {    // only rotate those characters with the property set to true
+                if (direction == TouchCommand.MOVE_UP) {
+                    self.zRotation = 0
+                }
+                if (direction == TouchCommand.MOVE_DOWN) {
+                    self.zRotation = PI
+                }
+                if (direction == TouchCommand.MOVE_LEFT) {
+                    self.zRotation = PI * 0.5
+                }
+                if (direction == TouchCommand.MOVE_RIGHT) {
+                    self.zRotation = PI * 1.5
+                }
             }
             
             // Move to new position
@@ -64,7 +64,9 @@ class Character:SKSpriteNode {
                 let action:SKAction = SKAction.moveTo(newCoord, duration:0.25)
                 self.runAction(action)
             }
+            return true   // we were able to move
         }
         return false
     }
+
 }
