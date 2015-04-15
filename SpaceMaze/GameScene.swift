@@ -2,11 +2,12 @@
 //  GameScene.swift
 //  SpaceMaze
 //
-//  Created by Diana Smetters on 3/24/15.
-//  Copyright (c) 2015 Diana Smetters. All rights reserved.
+//  Created by Joshua Bennett on 3/24/15.
+//  Copyright (c) 2015 Joshua Bennett. All rights reserved.
 //
 
 import SpriteKit
+import Foundation
 
 // Enumeration -- defines a variable class with five different values
 enum TouchCommand {
@@ -19,8 +20,10 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let color = UIColor(red:0.15, green:1.15, blue:1.3, alpha:1.1)
     var character:Character?
+    var enemies = [Enemy]()
+
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -33,20 +36,47 @@ class GameScene: SKScene {
         self.addChild(tunnel1.tunnelSpriteNode)
         var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2)
         self.addChild(tunnel2.tunnelSpriteNode)
-        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6)
+        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 6)
         self.addChild(tunnel3.tunnelSpriteNode)
-        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 5)
-
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 3, gridY: 5)
+        var tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 1, gridY: 7)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        var tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 7, gridX: 4, gridY: 0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        var tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 1, gridY: 2)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        for(var i = 0; i < 3; i += 1) {
+            enemies.append(Enemy(imageNamed:"dog", currentTunnel:tunnel5, tunnelPosition:i ))
+            self.addChild(enemies[i] as SKNode)
+        }
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = Character(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = Character(imageNamed:"squirrel", currentTunnel:tunnel1, tunnelPosition:3)
         self.character = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
     }
-    
+    //
+    //userInfo: nil
+    func moveEnemies() {
+        for key in enemies {
+                let ran = Float(rand())/Float(RAND_MAX)
+                //println(ran)
+                var dir:TouchCommand
+                if ran < 0.25 {
+                    dir = TouchCommand.MOVE_UP
+                }else if ran < 0.50 {
+                    dir = TouchCommand.MOVE_DOWN
+                }else if ran < 0.75 {
+                    dir = TouchCommand.MOVE_RIGHT
+                }else{
+                    dir = TouchCommand.MOVE_LEFT
+                }
+                key.moveEnemy(dir)
+        }
+    }
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        
+        moveEnemies()
         for touch in touches {
             let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
             
@@ -62,6 +92,7 @@ class GameScene: SKScene {
         let height = CGRectGetHeight(frame)
         let width = CGRectGetWidth(frame)
         // println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
+        //wrap(node)
         if (location.y/height < 0.25) {
             return TouchCommand.MOVE_DOWN
         }
@@ -84,10 +115,10 @@ class GameScene: SKScene {
         let bottomEdge = CGRectGetMinY(frame)
         let xPos = self.character?.position.x
         let yPos = self.character?.position.y
-        println("Left Edge: \(leftEdge)")
-        println("Right Edge:  \(rightEdge)")
-        println("Top Edge: \(topEdge)")
-        println("Bottom Edge: \(bottomEdge)")
+        //println("Left Edge: \(leftEdge)")
+        //println("Right Edge:  \(rightEdge)")
+        //println("Top Edge: \(topEdge)")
+        //println("Bottom Edge: \(bottomEdge)")
         if (xPos > rightEdge) {
             character?.position.x = leftEdge
         }else if (yPos > topEdge) {
