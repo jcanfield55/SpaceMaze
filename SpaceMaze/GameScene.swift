@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    var color = UIColor(red:1.5, green:0.15, blue:2.3, alpha:1.0)
     var character:Character?
     
     override func didMoveToView(view: SKView) {
