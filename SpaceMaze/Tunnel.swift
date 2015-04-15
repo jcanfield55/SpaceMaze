@@ -78,6 +78,7 @@ class Tunnel {
                             println("Found Connecting Tunnel \(selfPos) \(otherPos)")
                             // The tunnels overlap, so set the connectingTunnels
                             self.connectingTunnels[selfPos] = otherTunnel
+                            self.connectingPositions[selfPos] = otherPos
                             otherTunnel.connectingTunnels[otherPos] = self;
                             otherTunnel.connectingPositions[otherPos] = selfPos
                         }
