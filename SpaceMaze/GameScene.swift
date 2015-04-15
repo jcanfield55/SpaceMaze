@@ -54,7 +54,7 @@ class GameScene: SKScene {
         /* Called when a touch begins */
         
         for touch in touches {
-            let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
+            let command: TouchCommand = commandForTouch(touch as! UITouch, node:self)
             self.character?.moveCharacter(command)
         }
     }
