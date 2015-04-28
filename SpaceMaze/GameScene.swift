@@ -30,17 +30,17 @@ class GameScene: SKScene {
         // Lesson 2b - create tunnels for the maze pattern you want
         var tunnel1 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 14, gridX: 3, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode);
-        var tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 3, gridY: 22, colorAlpha: 0.5)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 3, gridY: 22, colorAlpha: 0.0)
         self.addChild(tunnel2.tunnelSpriteNode);
         var tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 3, gridY: 20, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode);
         var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 3, gridY: 1, colorAlpha: 5.9);
         self.addChild(tunnel4.tunnelSpriteNode);
-        var tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 9, gridY: 15, colorAlpha: 0.5)
+        var tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 9, gridY: 15, colorAlpha: 0.0)
         self.addChild(tunnel5.tunnelSpriteNode);
-        var tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 9, gridY: 15, colorAlpha: 0.5)
+        var tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 9, gridY: 15, colorAlpha: 0.0)
         self.addChild(tunnel6.tunnelSpriteNode);
-        var tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 13, gridY: 5, colorAlpha: 0.5)
+        var tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 13, gridY: 5, colorAlpha: 0.0)
         self.addChild(tunnel7.tunnelSpriteNode);
         var tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 16, colorAlpha: 5.9)
         self.addChild(tunnel8.tunnelSpriteNode);
@@ -48,25 +48,25 @@ class GameScene: SKScene {
         self.addChild(tunnel9.tunnelSpriteNode);
         var tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 8, gridY: 5, colorAlpha: 1.6)
         self.addChild(tunnel10.tunnelSpriteNode);
-        var tunnel11 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 8, gridY: 5, colorAlpha: 3.0)
-        self.addChild(tunnel11.tunnelSpriteNode)
-        var tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 0, gridY: 1, colorAlpha: 5.9)
-        self.addChild(tunnel12.tunnelSpriteNode)
-        var tunnel13 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
-        self.addChild(tunnel13.tunnelSpriteNode)
-        var tunnel14 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.6)
-        self.addChild(tunnel14.tunnelSpriteNode)
-        var tunnel15 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 3.0)
-        self.addChild(tunnel15.tunnelSpriteNode)
-        var tunnel16 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 0, gridY: 1, colorAlpha: 5.9)
-        self.addChild(tunnel16.tunnelSpriteNode)
+        var tunnel11 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 6, gridY: 9, colorAlpha: 3.0)
+        self.addChild(tunnel11.tunnelSpriteNode);
+        var tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 6, gridY: 9, colorAlpha: 5.9)
+        self.addChild(tunnel12.tunnelSpriteNode);
+        var tunnel13 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 6, gridY: 11, colorAlpha: 1.0)
+        self.addChild(tunnel13.tunnelSpriteNode);
+        var tunnel14 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 6, gridX: 8, gridY: 11, colorAlpha: 1.6)
+        self.addChild(tunnel14.tunnelSpriteNode);
+        var tunnel15 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 3, gridY: 15, colorAlpha: 3.0)
+        self.addChild(tunnel15.tunnelSpriteNode);
+        var tunnel16 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 3, gridY: 3, colorAlpha: 5.9)
+        self.addChild(tunnel16.tunnelSpriteNode);
         var tunnel17 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 7, gridY: 5, colorAlpha: 1.0)
-        self.addChild(tunnel17.tunnelSpriteNode)
-        var tunnel18 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.6)
-        self.addChild(tunnel18.tunnelSpriteNode)
-        var tunnel19 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 3.0)
-        self.addChild(tunnel19.tunnelSpriteNode)
-        var tunnel20 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 0, gridY: 1, colorAlpha: 5.9)
+        self.addChild(tunnel17.tunnelSpriteNode);
+        var tunnel18 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 7, gridY: 3, colorAlpha: 1.6)
+        self.addChild(tunnel18.tunnelSpriteNode);
+        var tunnel19 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 9, gridY: 3, colorAlpha: 3.0)
+        self.addChild(tunnel19.tunnelSpriteNode);
+        var tunnel20 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 2, gridY: 1, colorAlpha: 5.9)
         self.addChild(tunnel20.tunnelSpriteNode)
         var tunnel21 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel21.tunnelSpriteNode)
@@ -96,7 +96,7 @@ class GameScene: SKScene {
         self.addChild(tunnel33.tunnelSpriteNode)
         var tunnel34 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 0, gridY: 19, colorAlpha: 1.6)
         self.addChild(tunnel34.tunnelSpriteNode)
-        var tunnel35 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 0, gridY: 19, colorAlpha: 1.6)
+        var tunnel35 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 2, gridY: 3, colorAlpha: 1.6)
         self.addChild(tunnel35.tunnelSpriteNode)
         
         
