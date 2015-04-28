@@ -20,7 +20,11 @@ class GameScene: SKScene {
     
     /* Properties */
     var color = UIColor(red:1.5, green:0.15, blue:2.3, alpha:1.0)
-    var character:Character?
+    var mainCharacter:MainCharacter?
+    let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
+    var opponentTimer:NSTimer?
+    var opponents:[OpponentCharacter] = []
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -102,7 +106,13 @@ class GameScene: SKScene {
         var tunnel35 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 2, gridY: 3, colorAlpha: 1.6)
         self.addChild(tunnel35.tunnelSpriteNode)
         
-        
+        // Create dots to pick up in tunnels
+        for aTunnel in allTunnels {
+            for var i:Int = 0; i < aTunnel.length; i++ {
+                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                self.addChild(dotCharacter)
+            }
+        }
 
         
         // Create character
@@ -175,4 +185,8 @@ class GameScene: SKScene {
         }
     }
 
+    /*
+     Improvements:
+      - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
+    */
 }
