@@ -24,6 +24,9 @@ class GameScene: SKScene {
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
     var opponents:[OpponentCharacter] = []
+    var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
+    var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
+    var maxScore:Int = 0
     
     
     override func didMoveToView(view: SKView) {
@@ -47,6 +50,7 @@ class GameScene: SKScene {
             for var i:Int = 0; i < aTunnel.length; i++ {
                 let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
+                maxScore++   // Keep track of the total number of treasure dots
             }
         }
         
@@ -63,6 +67,20 @@ class GameScene: SKScene {
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }
+        
+        // Add score label
+        self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
+        self.scoreLabel.fontSize = 16
+        self.scoreLabel.fontName = "Helvetica-Bold"
+        self.addChild(self.scoreLabel)
+        
+        // Add gameResultLabel
+        self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.gameResultLabel.fontSize = 20
+        self.gameResultLabel.fontName = "Helvetica-BoldOblique"
+        self.gameResultLabel.fontColor = UIColor.redColor()
+        self.gameResultLabel.hidden = true
+        self.addChild(self.gameResultLabel)
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
@@ -81,6 +99,16 @@ class GameScene: SKScene {
                         allCharacters.remove(dotCharacter)
                         mainCharacter.treasureScore++
                         println("Treasure score is " + String(mainCharacter.treasureScore))
+                        self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
+                        if (mainCharacter.treasureScore >= maxScore) {
+                            gameResultLabel.text = "You Win!"
+                            gameResultLabel.hidden = false
+                        }
+                    }
+                    else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.hidden = false
+
                     }
                 }
             }
@@ -116,6 +144,13 @@ class GameScene: SKScene {
         for anOpponent in opponents {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
+                let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
+                for otherCharacter in samePositionCharacters {
+                    if let mainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.hidden = false
+                    }
+                }
             }
         }
     }

@@ -10,6 +10,8 @@
 		3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49A1AC75CD00035AB2C /* Tunnel.swift */; };
 		3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49C1AC886C60035AB2C /* Constants.swift */; };
 		3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49E1AC8CBFA0035AB2C /* Character.swift */; };
+		522A87C41AF09F060058F70B /* pac.wav in Resources */ = {isa = PBXBuildFile; fileRef = 522A87C31AF09F060058F70B /* pac.wav */; };
+		522A87C61AF09F7F0058F70B /* LessonSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */; };
 		52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */; };
 		52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */; };
 		52524D541AD4FE660068A3F5 /* grayDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D531AD4FE660068A3F5 /* grayDot.png */; };
@@ -43,6 +45,8 @@
 		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		522A87C31AF09F060058F70B /* pac.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pac.wav; sourceTree = "<group>"; };
+		522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonSuggestions.swift; sourceTree = "<group>"; };
 		52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollection.swift; sourceTree = "<group>"; };
 		52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship1.png; sourceTree = "<group>"; };
 		52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Alien Spaceship icons.jpg"; sourceTree = "<group>"; };
@@ -120,12 +124,14 @@
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
+				522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */,
 				52524D551AD5036F0068A3F5 /* MainCharacter.swift */,
 				52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */,
 				52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */,
 				52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */,
 				3F54A49A1AC75CD00035AB2C /* Tunnel.swift */,
 				E7950A351AC2842D008328E7 /* GameViewController.swift */,
+				522A87C31AF09F060058F70B /* pac.wav */,
 				E7950A371AC2842D008328E7 /* Main.storyboard */,
 				E7950A3A1AC2842D008328E7 /* Images.xcassets */,
 				E7950A2D1AC2842D008328E7 /* Supporting Files */,
@@ -241,6 +247,7 @@
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
+				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
@@ -273,6 +280,7 @@
 				52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */,
 				3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */,
 				E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */,
+				522A87C61AF09F7F0058F70B /* LessonSuggestions.swift in Sources */,
 				E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
