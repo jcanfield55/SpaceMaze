@@ -7,26 +7,27 @@
 //
 
 import UIKit
+
 import AVFoundation
-var SuperMario = AVAudioPlayer()
-func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer  {
-    //1
-    var path = NSBundle.mainBundle().pathForResource(file, ofType:type)
-    var url = NSURL.fileURLWithPath(path!)
-    
-    //2
-    var error: NSError?
-    
-    //3
-    var audioPlayer:AVAudioPlayer?
-    audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
-    
-    //4
-    return audioPlayer!
-}
 import SpriteKit
 
 class GameViewController: UIViewController {
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer  {
+        //1
+        var path = NSBundle.mainBundle().pathForResource(file, ofType:type)
+        var url = NSURL.fileURLWithPath(path!)
+        
+        //2
+        var error: NSError?
+        
+        //3
+        var audioPlayer:AVAudioPlayer?
+        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+        
+        //4
+        return audioPlayer!
+    }
+// if backgroundMusic = self.setupAudioPlayerWithFile("SuperMario", type:"mp3")
 
     override func viewDidLoad() {
         super.viewDidLoad()

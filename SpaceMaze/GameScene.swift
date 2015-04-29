@@ -17,6 +17,7 @@ enum TouchCommand {
     MOVE_RIGHT,
     NO_COMMAND
 }
+var TotalDots: Int = 0
 class GameScene: SKScene {
     
     /* Properties */
@@ -36,9 +37,9 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want
-        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 17, gridX: 2, gridY: 15, colorAlpha: 1.0)
+        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 17, gridX: 1, gridY: 12, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 12, gridY: 15, colorAlpha: 1.0)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 12, gridY: 12, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
         var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
@@ -53,7 +54,7 @@ class GameScene: SKScene {
         var tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel8.tunnelSpriteNode)
         var tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 1, gridY: 2, colorAlpha: 1.0)
-        self.addChild(tunnel9.tunnelSpriteNode)
+        /*self.addChild(tunnel9.tunnelSpriteNode)
         var tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 4, gridY: 4, colorAlpha: 1.0)
         self.addChild(tunnel10.tunnelSpriteNode)
         var tunnel11 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
@@ -106,13 +107,16 @@ class GameScene: SKScene {
         self.addChild(tunnel34.tunnelSpriteNode)
         var tunnel35 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 4, gridY: 4, colorAlpha: 1.0)
         self.addChild(tunnel35.tunnelSpriteNode)
+*/
 
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for var i:Int = 0; i < aTunnel.length; i++ {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                let dotCharacter = TreasureCharacter(imageNamed: "blueDot", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
+                TotalDots++
+                
             }
         }
         
@@ -146,7 +150,14 @@ class GameScene: SKScene {
                         dotCharacter.hidden = true
                         allCharacters.remove(dotCharacter)
                         mainCharacter.treasureScore++
-                        println("Treasure score is " + String(mainCharacter.treasureScore))
+                        if mainCharacter.treasureScore >= TotalDots {
+                            let youWinLabel:SKLabelNode = SKLabelNode(text:"You Win")
+                            youWinLabel.position = CGPointMake(200, 500)
+                            self.addChild(youWinLabel)
+                            println("You Win")
+                        } else {
+                            println("Treasure score is " + String(mainCharacter.treasureScore))
+                        }
                     }
                 }
             }
