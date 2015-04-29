@@ -16,14 +16,16 @@ enum TouchCommand {
     MOVE_RIGHT,
     NO_COMMAND
 }
+var treasureLabel:SKLabelNode?
+
 class GameScene: SKScene {
-    
     /* Properties */
     let color = UIColor(red:0.5, green:0, blue:0.5, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
     var opponents:[OpponentCharacter] = []
+    var treasureLabel:SKLabelNode?
     
     
     override func didMoveToView(view: SKView) {
@@ -80,6 +82,11 @@ class GameScene: SKScene {
         self.addChild(tunnel11.tunnelSpriteNode)
         var tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 3, gridY: 1, visibility:1)
         self.addChild(tunnel12.tunnelSpriteNode)
+        treasureLabel = SKLabelNode(fontNamed: "Arial")
+        treasureLabel!.text = "Drag this label"
+        treasureLabel!.fontSize = 20
+        treasureLabel!.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.addChild(treasureLabel!)
 
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
@@ -96,11 +103,11 @@ class GameScene: SKScene {
 
         // Create opponents
         opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel7, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel11, tunnelPosition: 5))
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }
     }
-    
     // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
@@ -115,8 +122,7 @@ class GameScene: SKScene {
                     if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                         dotCharacter.hidden = true
                         allCharacters.remove(dotCharacter)
-                        mainCharacter.treasureScore++
-                        println("Treasure score is " + String(mainCharacter.treasureScore))
+                        mainCharacter.addTreasure(1)
                     }
                 }
             }

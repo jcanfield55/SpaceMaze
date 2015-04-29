@@ -13,4 +13,9 @@ class MainCharacter:Character {
 
     var treasureScore:Int = 0
 
+    func addTreasure(amount:Int) {
+        treasureScore += amount
+        println("Treasure score is \(String(treasureScore))")
+    }
+
 }
