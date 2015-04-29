@@ -55,6 +55,15 @@ class Tunnel {
         
         // Create tunnelSpriteNode
         let tunnelColor = UIColor(white: 1.0, alpha: colorAlpha)
+        
+        // Hey everyone, Gus & Kevin found out how to put a tile background into their tunnel.
+        // Uncomment the below to try it
+        // let aTexture = SKTexture(imageNamed: "squirrel.png")
+        // tunnelSpriteNode = SKSpriteNode(texture: aTexture,
+        //     color:tunnelColor,
+        //     size: tunnelSize)
+        // (and comment out the tunnelSpriteNode assignment below
+        
         tunnelSpriteNode = SKSpriteNode(color: tunnelColor, size: tunnelSize)
         tunnelSpriteNode.position = self.tunnelCenter
         
