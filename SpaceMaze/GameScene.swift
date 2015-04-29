@@ -48,7 +48,8 @@ class GameScene: SKScene {
         self.addChild(tunnel9.tunnelSpriteNode)
         var tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 3, gridY: 0)
         self.addChild(tunnel10.tunnelSpriteNode)
-        
+        var tunnel11 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 3, gridY: 0)
+        self.addChild(tunnel11.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for var i:Int = 0; i < aTunnel.length; i++ {
