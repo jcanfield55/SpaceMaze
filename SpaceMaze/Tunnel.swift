@@ -32,6 +32,7 @@ class Tunnel {
     init(orientation:TunnelOrientation, length:Int, gridX:Int, gridY:Int) {
         self.orientation = orientation
         self.length = length
+
         
         // Calculate the height and width
         var height:CGFloat = 0.0

@@ -36,7 +36,9 @@ class CharacterCollection {
             }
         }
     }
-    
+    func removeAllCharacters() {
+        characters = []
+    }
     // Returns an array of all other characters that are in the same location as aCharacter
     // Will not return aCharacter in the return array
     // If no other characters are in the same position, returns an empty array
