@@ -8,7 +8,30 @@
 
 
 import SpriteKit
+import AVFoundation
 
+var backgroundMusicPlayer: AVAudioPlayer!
+
+func playBackgroundMusic(filename: String) {
+    let url = NSBundle.mainBundle().URLForResource(
+        filename, withExtension: nil)
+    if (url == nil) {
+        println("Could not find file: \(filename)")
+        return
+    }
+    
+    var error: NSError? = nil
+    backgroundMusicPlayer =
+        AVAudioPlayer(contentsOfURL: url, error: &error)
+    if backgroundMusicPlayer == nil {
+        println("Could not create audio player: \(error!)")
+        return
+    }
+    
+    backgroundMusicPlayer.numberOfLoops = -1
+    backgroundMusicPlayer.prepareToPlay()
+    backgroundMusicPlayer.play()
+}
 // Enumeration -- defines a variable class with five different values
 enum TouchCommand {
     case MOVE_UP,
@@ -19,18 +42,23 @@ enum TouchCommand {
 }
 var TotalDots: Int = 0
 class GameScene: SKScene {
-    
+     let YayLabel:SKLabelNode = SKLabelNode(text:"Nyan Cat Likes Money!!")
+        
     /* Properties */
     let color = UIColor(red:0.0, green:0.50, blue:0.50, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
     var opponents:[OpponentCharacter] = []
+    var timeLimit:Int = 0
     
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         self.backgroundColor = color
+        YayLabel.position = CGPointMake(200, 500)
+        self.addChild(YayLabel)
+        self.YayLabel.hidden = true
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:Selector("moveOpponent:"), userInfo: nil, repeats: true)
@@ -151,10 +179,10 @@ class GameScene: SKScene {
                         allCharacters.remove(dotCharacter)
                         mainCharacter.treasureScore++
                         if mainCharacter.treasureScore >= TotalDots {
-                            let youWinLabel:SKLabelNode = SKLabelNode(text:"You Win")
-                            youWinLabel.position = CGPointMake(200, 500)
-                            self.addChild(youWinLabel)
-                            println("You Win")
+                           YayLabel.text = "You Win Dumbass!"
+                            println("You Win Dumbass!")
+                            self.YayLabel.hidden = false
+                            resetGame()
                         } else {
                             println("Treasure score is " + String(mainCharacter.treasureScore))
                         }
@@ -162,6 +190,11 @@ class GameScene: SKScene {
                 }
             }
         }
+        playBackgroundMusic("SuperMario.mp3")
+    }
+    
+    func resetGame() {
+        println("Reset!")
     }
     
     // Figures out which way the user wants to move the character based on which
@@ -189,6 +222,11 @@ class GameScene: SKScene {
     
     // Function called whenever it is time for the opponent to move
     @objc func moveOpponent(timer: NSTimer) {
+        timeLimit++
+        if timeLimit > 80 {
+           YayLabel.text = "You Lose Sucker!"
+            YayLabel.hidden = false
+            println ("You Lose Sucker!")}
         for anOpponent in opponents {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
