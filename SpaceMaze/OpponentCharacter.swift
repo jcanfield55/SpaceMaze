@@ -40,5 +40,5 @@ class OpponentCharacter:Character {
         }
     }
     
-    // What if the opponent catches you?  What happens then??    
+    // What if the opponent catches you?  What happens then??
 }
