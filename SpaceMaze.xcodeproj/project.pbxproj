@@ -11,7 +11,6 @@
 		3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49C1AC886C60035AB2C /* Constants.swift */; };
 		3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49E1AC8CBFA0035AB2C /* Character.swift */; };
 		3F8003011ACC56DE0087E27F /* KITTY.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8003001ACC56DE0087E27F /* KITTY.png */; };
-		3F8003031ACC57C90087E27F /* Mario.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8003021ACC57C80087E27F /* Mario.png */; };
 		3F8003051AD582840087E27F /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F8003041AD582840087E27F /* cat.png */; };
 		3F8003071AD590C10087E27F /* SuperMario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F8003061AD590C10087E27F /* SuperMario.mp3 */; };
 		3FBFB1431AFA734800959C29 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFB1421AFA734800959C29 /* GameOverScene.swift */; };
@@ -54,7 +53,6 @@
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F8003001ACC56DE0087E27F /* KITTY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = KITTY.png; path = ../../../Desktop/KITTY.png; sourceTree = "<group>"; };
-		3F8003021ACC57C80087E27F /* Mario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mario.png; path = ../../../Downloads/Mario.png; sourceTree = "<group>"; };
 		3F8003041AD582840087E27F /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cat.png; path = ../../../Downloads/cat.png; sourceTree = "<group>"; };
 		3F8003061AD590C10087E27F /* SuperMario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = SuperMario.mp3; path = ../../../Downloads/SuperMario.mp3; sourceTree = "<group>"; };
 		3FBFB1421AFA734800959C29 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				3FBFB1461AFA77A700959C29 /* Tacnayn.gif */,
 				3FBFB1441AFA75D900959C29 /* TryAgainButton.png */,
 				3F8003061AD590C10087E27F /* SuperMario.mp3 */,
-				3F8003021ACC57C80087E27F /* Mario.png */,
 				3F8003001ACC56DE0087E27F /* KITTY.png */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
 				3F8003041AD582840087E27F /* cat.png */,
@@ -268,7 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F8003031ACC57C90087E27F /* Mario.png in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				3FBFB1491AFA78DA00959C29 /* Tac_nayn.png in Resources */,

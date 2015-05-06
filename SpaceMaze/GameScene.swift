@@ -164,11 +164,11 @@ class GameScene: SKScene {
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
-                let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
+                let command: TouchCommand = commandForTouch(touch as! UITouch, node:self)
                 mainCharacter.moveCharacter(command)
                 
                 // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
