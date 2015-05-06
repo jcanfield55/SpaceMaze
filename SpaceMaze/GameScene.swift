@@ -17,7 +17,7 @@ enum TouchCommand {
     NO_COMMAND
 }
 var treasureLabel:SKLabelNode?
-
+var gameResultLabel:SKLabelNode?
 class GameScene: SKScene {
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
@@ -27,7 +27,7 @@ class GameScene: SKScene {
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
     var opponents:[OpponentCharacter] = []
-    var treasureLabel:SKLabelNode?
+    var treasureLabel:SKLabelNode = SKLabelNode(text: "default")
     
     
     override func didMoveToView(view: SKView) {
@@ -81,10 +81,10 @@ class GameScene: SKScene {
         var tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 3, gridY: 1, visibility:1)
         self.addChild(tunnel12.tunnelSpriteNode)
         treasureLabel = SKLabelNode(fontNamed: "Arial")
-        treasureLabel!.text = "You WIN"
-        treasureLabel!.fontSize = 20
-        treasureLabel!.position = CGPointMake(self.frame.size.width * 4/5, self.frame.size.height * 11/12)
-        self.addChild(treasureLabel!)
+        treasureLabel.text = "You WIN"
+        treasureLabel.fontSize = 20
+        treasureLabel.position = CGPointMake(self.frame.size.width * 4/5, self.frame.size.height * 11/12)
+        self.addChild(treasureLabel)
 
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
@@ -135,7 +135,8 @@ class GameScene: SKScene {
                         mainCharacter.addTreasure(1)
                         self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                         if mainCharacter.treasureScore == treasureCount {
-                            treasureLabel?.text = "YOU WON!"
+                            treasureLabel.text = "YOU WON!"
+                            endTheGame()
                         }
                     }
                 }
@@ -175,6 +176,22 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    func endTheGame() {
+        let endTheGameTimer:NSTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:Selector("showPlayAgainScreen:"), userInfo: nil, repeats: false)
+    }
+    
+    @objc func showPlayAgainScreen(timer: NSTimer) {
+                // Show the GameOverScene
+                let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+                let scene:GameOverScene = GameOverScene(size:self.frame.size)
+                scene.treasureLabel.text = self.treasureLabel.text
+                scene.gameResultLabel.text = self.scoreLabel.text
+                scene.scaleMode = SKSceneScaleMode.AspectFill
+                if let theView:SKView = self.view {
+                    theView.presentScene(scene, transition:reveal)
+                }
+        }
 
     /*
      Improvements:
