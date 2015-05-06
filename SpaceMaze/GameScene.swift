@@ -28,8 +28,8 @@ class GameScene: SKScene {
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
     
-    
-    override func didMoveToView(view: SKView) {
+    override func didMoveToView(view: SKView) {        
+        
         /* Setup your scene here */
         self.backgroundColor = color
         
@@ -103,12 +103,13 @@ class GameScene: SKScene {
                         if (mainCharacter.treasureScore >= maxScore) {
                             gameResultLabel.text = "You Win!"
                             gameResultLabel.hidden = false
+                            self.endTheGame()
                         }
                     }
                     else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
                         gameResultLabel.text = "You Lose!"
                         gameResultLabel.hidden = false
-
+                        self.endTheGame()
                     }
                 }
             }
@@ -149,12 +150,30 @@ class GameScene: SKScene {
                     if let mainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
                         gameResultLabel.text = "You Lose!"
                         gameResultLabel.hidden = false
+                        self.endTheGame()
                     }
                 }
             }
         }
     }
+    
+    // Functions for ending the game and showing the try again screen
 
+    func endTheGame() {
+        let endTheGameTimer:NSTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:Selector("showPlayAgainScreen:"), userInfo: nil, repeats: false)
+    }
+    
+    @objc func showPlayAgainScreen(timer: NSTimer) {
+        // Show the GameOverScene
+        let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+        let scene:GameOverScene = GameOverScene(size:self.frame.size)
+        scene.scoreLabel.text = self.scoreLabel.text
+        scene.gameResultLabel.text = self.gameResultLabel.text
+        scene.scaleMode = SKSceneScaleMode.AspectFill
+        if let theView:SKView = self.view {
+            theView.presentScene(scene, transition:reveal)
+        }
+    }
     /*
      Improvements:
       - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation

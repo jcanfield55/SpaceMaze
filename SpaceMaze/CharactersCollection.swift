@@ -27,6 +27,10 @@ class CharacterCollection {
         self.characters.append(newCharacter)
     }
     
+    func removeAllCharacters() {
+        characters = []
+    }
+    
     func remove(aCharacter:Character) {
         for i in 0...characters.count {
             let oneCharacter:Character = characters[i]
