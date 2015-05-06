@@ -141,7 +141,7 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for var i:Int = 0; i < aTunnel.length; i++ {
-                let dotCharacter = TreasureCharacter(imageNamed: "blueDot", currentTunnel: aTunnel, tunnelPosition: i)
+                let dotCharacter = TreasureCharacter(imageNamed: "candy", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
                 TotalDots++
                 
@@ -156,7 +156,7 @@ class GameScene: SKScene {
         newCharacter.rotateWithMovement = true
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "Tac_nayn", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -223,17 +223,42 @@ class GameScene: SKScene {
     // Function called whenever it is time for the opponent to move
     @objc func moveOpponent(timer: NSTimer) {
         timeLimit++
-        if timeLimit > 80 {
+        if timeLimit > 120 {
            YayLabel.text = "You Lose Sucker!"
             YayLabel.hidden = false
             println ("You Lose Sucker!")}
         for anOpponent in opponents {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
+                let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
+                for otherCharacter in samePositionCharacters {
+                    if let mainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        YayLabel.text = "You Lose Sucker!"
+                        YayLabel.hidden = false
+                        self.endTheGame()
+                    }
+                }
+
             }
         }
     }
 
+        func endTheGame() {
+                let endTheGameTimer:NSTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:Selector("showPlayAgainScreen:"), userInfo: nil, repeats: false)
+            }
+    
+        @objc func showPlayAgainScreen(timer: NSTimer) {
+                // Show the GameOverScene
+                let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+                let scene:GameOverScene = GameOverScene(size:self.frame.size)
+                scene.gameResultLabel.text = self.YayLabel.text
+                scene.scaleMode = SKSceneScaleMode.AspectFill
+                if let theView:SKView = self.view {
+                        theView.presentScene(scene, transition:reveal)
+                    }
+            }
+    
+    
     /*
      Improvements:
       - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
