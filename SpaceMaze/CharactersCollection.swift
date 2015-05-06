@@ -28,7 +28,7 @@ class CharacterCollection {
     }
     
     func remove(aCharacter:Character) {
-        for i in 0...characters.count {
+        for i in 0...characters.count-1 {
             let oneCharacter:Character = characters[i]
             if oneCharacter === aCharacter {
                 characters.removeAtIndex(i)

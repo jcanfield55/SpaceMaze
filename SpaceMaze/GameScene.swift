@@ -24,7 +24,9 @@ class GameScene: SKScene {
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
     var opponents:[OpponentCharacter] = []
-    
+    var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
+    var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
+    var openXKCD:String = "Not yet"
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -35,13 +37,28 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want
-        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
         var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 10, gridX: 1, gridY: 9, colorAlpha: 1.0)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        var tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 7, gridY: 5, colorAlpha: 1.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        var tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 4, gridY: 6, colorAlpha: 1.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
+        self.scoreLabel.fontSize = 16
+        self.scoreLabel.fontName = "Helvetica-Bold"
+        self.addChild(self.scoreLabel)
+        self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.gameResultLabel.fontSize = 20
+        self.gameResultLabel.fontName = "Helvetica-BoldOblique"
+        self.gameResultLabel.fontColor = UIColor.redColor()
+        self.gameResultLabel.hidden = true
+        self.addChild(self.gameResultLabel)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for var i:Int = 0; i < aTunnel.length; i++ {
@@ -52,7 +69,7 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        var newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
@@ -64,7 +81,41 @@ class GameScene: SKScene {
             self.addChild(anOpponent)   // Make sprite visible
         }
     }
-    
+    func reset() {
+        for aTunnel in allTunnels {
+            for var i:Int = 0; i < aTunnel.length; i++ {
+                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                self.addChild(dotCharacter)
+            }
+        }
+        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        self.addChild(tunnel1.tunnelSpriteNode)
+        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        self.addChild(tunnel2.tunnelSpriteNode)
+        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        self.addChild(tunnel3.tunnelSpriteNode)
+        var tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 10, gridX: 1, gridY: 9, colorAlpha: 1.0)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        var tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 7, gridY: 5, colorAlpha: 1.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        var tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 4, gridY: 6, colorAlpha: 1.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        gameResultLabel = SKLabelNode(text:"Outcome")
+        scoreLabel = SKLabelNode(text: "Score: 0")
+        var newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        newCharacter.rotateWithMovement = true
+        self.mainCharacter = newCharacter
+        self.addChild(newCharacter)   // Make sprite visible
+        
+        // Create opponents
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        
+        for anOpponent in opponents {
+            self.addChild(anOpponent)   // Make sprite visible
+        }
+
+        
+    }
     // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
@@ -82,10 +133,27 @@ class GameScene: SKScene {
                         mainCharacter.treasureScore++
                         println("Treasure score is " + String(mainCharacter.treasureScore))
                     }
+                    if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
+                        dotCharacter.hidden = true
+                        allCharacters.remove(dotCharacter)
+                        mainCharacter.treasureScore++
+                        println("Treasure score is " + String(mainCharacter.treasureScore))
+                        self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
+                        if (mainCharacter.treasureScore >= 76) {
+                            gameResultLabel.text = "You Win!"
+                            gameResultLabel.hidden = false
+                        }
+                    }
+                    else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.hidden = false
+                        
+                    }
+
                 }
             }
         }
-    }
+}
     
     // Figures out which way the user wants to move the character based on which
     // edge of the screen the user touched.
@@ -117,7 +185,26 @@ class GameScene: SKScene {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
             }
+            if let c = self.mainCharacter {
+                anOpponent.chaseCharacter(c)
+                let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
+                for otherCharacter in samePositionCharacters {
+                    if let mainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.hidden = false
+                        if openXKCD != "Already" {
+                            openXKCD = "Now"
+                        }
+                        reset()
+                    }
+                    if openXKCD == "Now" {
+                        UIApplication.sharedApplication().openURL(NSURL(string: "https://c.xkcd.com/random/comic")!)
+                        openXKCD = "Already"
+                    }
+                }
+            }
         }
+        
     }
 
     /*
