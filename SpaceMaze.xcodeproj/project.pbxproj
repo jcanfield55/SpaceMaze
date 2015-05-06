@@ -17,6 +17,7 @@
 		3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49A1AC75CD00035AB2C /* Tunnel.swift */; };
 		3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49C1AC886C60035AB2C /* Constants.swift */; };
 		3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49E1AC8CBFA0035AB2C /* Character.swift */; };
+		3FC96DB51AF13A580041F78A /* grayDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC96DB41AF13A580041F78A /* grayDot.png */; };
 		52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */; };
 		52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */; };
 		52524D541AD4FE660068A3F5 /* grayDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D531AD4FE660068A3F5 /* grayDot.png */; };
@@ -57,6 +58,7 @@
 		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3FC96DB41AF13A580041F78A /* grayDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grayDot.png; path = ../../../Desktop/grayDot.png; sourceTree = "<group>"; };
 		52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollection.swift; sourceTree = "<group>"; };
 		52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship1.png; sourceTree = "<group>"; };
 		52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Alien Spaceship icons.jpg"; sourceTree = "<group>"; };
@@ -121,14 +123,15 @@
 		E7950A2C1AC2842D008328E7 /* SpaceMaze */ = {
 			isa = PBXGroup;
 			children = (
+				3FC96DB41AF13A580041F78A /* grayDot.png */,
 				3F322ECB1AD5907800362444 /* lava.png */,
 				3F322EC91AD58CDD00362444 /* ArrowGD.png */,
 				3F322EC11AD589BD00362444 /* images.png */,
 				3F322EBF1AD589B700362444 /* Arrow_vectorized.png */,
 				3F322EBD1AD5872C00362444 /* tile.jpeg */,
 				3F322EBB1AD5857500362444 /* concrete.jpg */,
-52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
-52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
+				52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
+				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
@@ -267,6 +270,7 @@
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				3F322EC21AD589BD00362444 /* images.png in Resources */,
+				3FC96DB51AF13A580041F78A /* grayDot.png in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				3F322ECA1AD58CDD00362444 /* ArrowGD.png in Resources */,

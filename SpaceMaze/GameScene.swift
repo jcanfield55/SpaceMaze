@@ -17,7 +17,8 @@ enum TouchCommand {
     NO_COMMAND
 }
 class GameScene: SKScene {
-    
+    var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
+    var scoreLabel:SKLabelNode = SKLabelNode(text: "Coins: 0")
     /* Properties */
     let color = UIColor(white:0.0, alpha: 1.0)
     let aTexture = SKTexture(imageNamed: "lava.png")
@@ -25,7 +26,7 @@ class GameScene: SKScene {
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
     var opponents:[OpponentCharacter] = []
-    
+    var maxScore:Int = 0
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -33,7 +34,16 @@ class GameScene: SKScene {
         // self.imageNamed = aTexture
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:Selector("moveOpponent:"), userInfo: nil, repeats: true)
-        
+        self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
+        self.scoreLabel.fontSize = 16
+        self.scoreLabel.fontName = "Helvetica-Bold"
+        self.addChild(self.scoreLabel)
+        self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.gameResultLabel.fontSize = 20
+        self.gameResultLabel.fontName = "Helvetica-BoldOblique"
+        self.gameResultLabel.fontColor = UIColor.redColor()
+        self.gameResultLabel.hidden = true
+        self.addChild(self.gameResultLabel)
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want.  Feel free to delete or modify these example tunnels
         var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5)
@@ -68,6 +78,13 @@ class GameScene: SKScene {
         // Create opponents
         opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 3))
         
+        // Create opponents
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+
+        // Create opponents
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 6))
+
+        
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }
@@ -76,6 +93,7 @@ class GameScene: SKScene {
     // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
+        
         
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
@@ -90,7 +108,15 @@ class GameScene: SKScene {
                         allCharacters.remove(dotCharacter)
                         mainCharacter.treasureScore++
                         println("Treasure score is " + String(mainCharacter.treasureScore))
+                        self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
+                        if (mainCharacter.treasureScore >= maxScore) {
+                            gameResultLabel.text = "You Win!"
+                            gameResultLabel.hidden = false
+                        }
                     }
+                    else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.hidden = false                    }
                 }
             }
         }
@@ -134,4 +160,6 @@ class GameScene: SKScene {
     - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
     */
 }
+
+
 
