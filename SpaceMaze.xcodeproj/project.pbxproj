@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2A00C11AFA77E8001992C6 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A00C01AFA77E8001992C6 /* GameOverScene.swift */; };
+		3F2A00C31AFA7D31001992C6 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2A00C21AFA7D31001992C6 /* TryAgainButton.png */; };
 		3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49A1AC75CD00035AB2C /* Tunnel.swift */; };
 		3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49C1AC886C60035AB2C /* Constants.swift */; };
 		3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49E1AC8CBFA0035AB2C /* Character.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F2A00C01AFA77E8001992C6 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		3F2A00C21AFA7D31001992C6 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -107,6 +111,7 @@
 		E7950A2C1AC2842D008328E7 /* SpaceMaze */ = {
 			isa = PBXGroup;
 			children = (
+				3F2A00C21AFA7D31001992C6 /* TryAgainButton.png */,
 				52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
@@ -119,6 +124,7 @@
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
+				3F2A00C01AFA77E8001992C6 /* GameOverScene.swift */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
 				52524D551AD5036F0068A3F5 /* MainCharacter.swift */,
 				52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */,
@@ -239,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2A00C31AFA7D31001992C6 /* TryAgainButton.png in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
@@ -267,6 +274,7 @@
 			files = (
 				52524D561AD5036F0068A3F5 /* MainCharacter.swift in Sources */,
 				52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */,
+				3F2A00C11AFA77E8001992C6 /* GameOverScene.swift in Sources */,
 				52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */,
 				3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */,
 				E7950A341AC2842D008328E7 /* GameScene.swift in Sources */,

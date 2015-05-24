@@ -38,12 +38,12 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want
-        var tunnel1 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 14, gridX: 3, gridY: 6, colorAlpha: 1.0)
+        var tunnel1 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 24, gridX: 3, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode);
         var tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 3, gridY: 22, colorAlpha: 0.0)
         self.addChild(tunnel2.tunnelSpriteNode);
-        var tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 3, gridY: 20, colorAlpha: 1.0)
-        self.addChild(tunnel3.tunnelSpriteNode);
+        // var tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 20, gridX: 3, gridY: 10, colorAlpha: 1.0)
+        // self.addChild(tunnel3.tunnelSpriteNode);
         var tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 3, gridY: 1, colorAlpha: 5.9);
         self.addChild(tunnel4.tunnelSpriteNode);
         var tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 9, gridY: 15, colorAlpha: 0.0)
@@ -108,7 +108,7 @@ class GameScene: SKScene {
         self.addChild(tunnel34.tunnelSpriteNode)
         var tunnel35 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 2, gridY: 3, colorAlpha: 1.6)
         self.addChild(tunnel35.tunnelSpriteNode)
-        var tunnel36 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 2, gridX: 0, gridY: 3, colorAlpha: 1.6)
+        var tunnel36 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 11, gridX: 0, gridY: 3, colorAlpha: 1.6)
         self.addChild(tunnel36.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
@@ -129,7 +129,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel1, tunnelPosition: 15))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -169,11 +169,13 @@ class GameScene: SKScene {
                         if (mainCharacter.treasureScore >= maxScore) {
                             gameResultLabel.text = "You Win!"
                             gameResultLabel.hidden = false
+                            self.endTheGame()
                         }
                     }
                     else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
                         gameResultLabel.text = "You Lose!"
                         gameResultLabel.hidden = false
+                        self.endTheGame()
                         
                     }
                 }
@@ -215,9 +217,26 @@ class GameScene: SKScene {
                     if let mainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
                         gameResultLabel.text = "You Lose!"
                         gameResultLabel.hidden = false
+                        self.endTheGame()
                     }
                 }
             }
+        }
+    }
+    
+    func endTheGame() {
+        let endTheGameTimer:NSTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:Selector("showPlayAgainScreen:"), userInfo: nil, repeats: false)
+    }
+    
+    @objc func showPlayAgainScreen(timer: NSTimer) {
+        // Show the GameOverScene
+        let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+        let scene:GameOverScene = GameOverScene(size:self.frame.size)
+        scene.scoreLabel.text = self.scoreLabel.text
+        scene.gameResultLabel.text = self.gameResultLabel.text
+        scene.scaleMode = SKSceneScaleMode.AspectFill
+        if let theView:SKView = self.view {
+            theView.presentScene(scene, transition:reveal)
         }
     }
 
