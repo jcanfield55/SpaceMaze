@@ -83,6 +83,7 @@ class GameScene: SKScene {
         treasureLabel = SKLabelNode(fontNamed: "Arial")
         treasureLabel.text = "You WIN"
         treasureLabel.fontSize = 20
+        treasureLabel.hidden = true
         treasureLabel.position = CGPointMake(self.frame.size.width * 4/5, self.frame.size.height * 11/12)
         self.addChild(treasureLabel)
 
@@ -139,6 +140,11 @@ class GameScene: SKScene {
                             endTheGame()
                         }
                     }
+                    else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                        treasureLabel.text = "You Lose!"
+                        treasureLabel.hidden = false
+                        self.endTheGame()
+                    }
                 }
             }
         }
@@ -173,6 +179,14 @@ class GameScene: SKScene {
         for anOpponent in opponents {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
+                let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
+                for otherCharacter in samePositionCharacters {
+                    if let mainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.hidden = false
+                        self.endTheGame()
+                    }
+                }
             }
         }
     }

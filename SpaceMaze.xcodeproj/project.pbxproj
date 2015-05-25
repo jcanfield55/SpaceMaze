@@ -213,6 +213,7 @@
 				TargetAttributes = {
 					E7950A291AC2842D008328E7 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 452SUSN2GU;
 					};
 					E7950A421AC2842D008328E7 = {
 						CreatedOnToolsVersion = 6.2;
