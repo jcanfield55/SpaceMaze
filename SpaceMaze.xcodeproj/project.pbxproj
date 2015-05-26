@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F05FE371AFA73A300902389 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F05FE361AFA73A300902389 /* TryAgainButton.png */; };
 		3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49A1AC75CD00035AB2C /* Tunnel.swift */; };
 		3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49C1AC886C60035AB2C /* Constants.swift */; };
 		3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54A49E1AC8CBFA0035AB2C /* Character.swift */; };
+		3F71F4BB1B13FAE800C7B41A /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F71F4BA1B13FAE800C7B41A /* TryAgainButton.png */; };
 		3FB9D6141AFA71D2000D9124 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB9D6131AFA71D2000D9124 /* GameOverScene.swift */; };
 		52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */; };
 		52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */; };
@@ -42,10 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F05FE361AFA73A300902389 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TryAgainButton.png; path = ../../../Downloads/TryAgainButton.png; sourceTree = "<group>"; };
 		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3F71F4BA1B13FAE800C7B41A /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		3FB9D6131AFA71D2000D9124 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollection.swift; sourceTree = "<group>"; };
 		52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship1.png; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
-				3F05FE361AFA73A300902389 /* TryAgainButton.png */,
+				3F71F4BA1B13FAE800C7B41A /* TryAgainButton.png */,
 				3FB9D6131AFA71D2000D9124 /* GameOverScene.swift */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
@@ -245,7 +245,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F05FE371AFA73A300902389 /* TryAgainButton.png in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
@@ -253,6 +252,7 @@
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
+				3F71F4BB1B13FAE800C7B41A /* TryAgainButton.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 			);
