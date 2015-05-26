@@ -120,30 +120,32 @@ class GameScene: SKScene {
         self.addChild(self.gameResultLabel)
     }
     // Responds to touches by the user on the screen & moves mainCharacter as needed
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches:Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         if let mainCharacter:MainCharacter = self.mainCharacter {
-            for touch in touches {
-                let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
-                mainCharacter.moveCharacter(command)
-                
-                // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
-                let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
-                for otherCharacter in samePositionCharacters {
-                    if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
-                        dotCharacter.hidden = true
-                        allCharacters.remove(dotCharacter)
-                        mainCharacter.addTreasure(1)
-                        self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
-                        if mainCharacter.treasureScore == treasureCount {
-                            treasureLabel.text = "YOU WON!"
-                            endTheGame()
+            for touchObject in touches {
+                if let touch = touchObject as? UITouch {
+                    let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
+                    mainCharacter.moveCharacter(command)
+                    
+                    // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
+                    let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
+                    for otherCharacter in samePositionCharacters {
+                        if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
+                            dotCharacter.hidden = true
+                            allCharacters.remove(dotCharacter)
+                            mainCharacter.addTreasure(1)
+                            self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
+                            if mainCharacter.treasureScore == treasureCount {
+                                treasureLabel.text = "YOU WON!"
+                                endTheGame()
+                            }
                         }
-                    }
-                    else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                        treasureLabel.text = "You Lose!"
-                        treasureLabel.hidden = false
-                        self.endTheGame()
+                        else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                            treasureLabel.text = "You Lose!"
+                            treasureLabel.hidden = false
+                            self.endTheGame()
+                        }
                     }
                 }
             }
