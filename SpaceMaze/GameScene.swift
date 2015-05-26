@@ -190,7 +190,6 @@ class GameScene: SKScene {
                 }
             }
         }
-        playBackgroundMusic("SuperMario.mp3")
     }
     
     func resetGame() {
