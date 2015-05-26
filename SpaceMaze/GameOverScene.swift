@@ -39,21 +39,23 @@ class GameOverScene: SKScene {
         
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches:Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        for touch in touches {
-            let touchLocation:CGPoint = touch.locationInNode(self)
-            let node:SKNode = self.nodeAtPoint(touchLocation)
-            if node.name == "tryAgainButton" {
-                allCharacters.removeAllCharacters()
-                // User pressed the tryAgainButton
-                
-                // Show a fresh GameScene
-                let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
-                let scene:GameScene = GameScene(size:self.frame.size)
-                scene.scaleMode = SKSceneScaleMode.AspectFill
-                if let theView:SKView = self.view {
-                    theView.presentScene(scene, transition:reveal)
+        for touchObject in touches {
+            if let touch = touchObject as? UITouch {
+                let touchLocation:CGPoint = touch.locationInNode(self)
+                let node:SKNode = self.nodeAtPoint(touchLocation)
+                if node.name == "tryAgainButton" {
+                    allCharacters.removeAllCharacters()
+                    // User pressed the tryAgainButton
+                    
+                    // Show a fresh GameScene
+                    let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+                    let scene:GameScene = GameScene(size:self.frame.size)
+                    scene.scaleMode = SKSceneScaleMode.AspectFill
+                    if let theView:SKView = self.view {
+                        theView.presentScene(scene, transition:reveal)
+                    }
                 }
             }
         }

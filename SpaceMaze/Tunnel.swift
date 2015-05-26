@@ -18,9 +18,9 @@ var allTunnels:[Tunnel] = [Tunnel]()
 
 class Tunnel {
 
-    let orientation:TunnelOrientation = TunnelOrientation.horizontalTunnel;
-    let length:Int = 0
-    let tunnelCenter:CGPoint = CGPointMake(0.0,0.0)
+    let orientation:TunnelOrientation
+    let length:Int
+    let tunnelCenter:CGPoint
     
     var connectingTunnels:[Tunnel?]
     var connectingPositions:[Int?]
@@ -46,8 +46,7 @@ class Tunnel {
         let tunnelSize:CGSize = CGSizeMake(width - (tunnelBoundaryDistance * 2), height - (tunnelBoundaryDistance * 2));
         
         // Set position
-        tunnelCenter.x = CGFloat(gridX) * gridSize + (width/2) + xPadding
-        tunnelCenter.y = CGFloat(gridY) * gridSize + (height/2) + yPadding
+        tunnelCenter = CGPointMake(CGFloat(gridX) * gridSize + (width/2) + xPadding, CGFloat(gridY) * gridSize + (height/2) + yPadding)
         
         // Initializing connecting tunnel arrays
         connectingTunnels = [Tunnel?](count:length, repeatedValue:nil)
