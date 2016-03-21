@@ -38,11 +38,11 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 2b - create tunnels for the maze pattern you want
-        var tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        var tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        var tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
@@ -84,11 +84,10 @@ class GameScene: SKScene {
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
-    override func touchesBegan(touches:Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches:Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         if let mainCharacter:MainCharacter = self.mainCharacter {
-            for touchObject in touches {
-                if let touch = touchObject as? UITouch {
+            for touch in touches {
                     let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
                     mainCharacter.moveCharacter(command)
                     
@@ -99,7 +98,7 @@ class GameScene: SKScene {
                             dotCharacter.hidden = true
                             allCharacters.remove(dotCharacter)
                             mainCharacter.treasureScore++
-                            println("Treasure score is " + String(mainCharacter.treasureScore))
+                            print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
                                 gameResultLabel.text = "You Win!"
@@ -107,13 +106,12 @@ class GameScene: SKScene {
                                 self.endTheGame()
                             }
                         }
-                        else if let opponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                        else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
                             gameResultLabel.text = "You Lose!"
                             gameResultLabel.hidden = false
                             self.endTheGame()
                         }
                     }
-                }
             }
         }
     }
@@ -125,7 +123,7 @@ class GameScene: SKScene {
         let frame:CGRect = node.frame
         let height = CGRectGetHeight(frame)
         let width = CGRectGetWidth(frame)
-        println("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
+        print("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
        
         if (location.y/height < 0.25) {
             return TouchCommand.MOVE_DOWN
@@ -149,7 +147,7 @@ class GameScene: SKScene {
                 anOpponent.chaseCharacter(c)
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
-                    if let mainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                    if let _ = otherCharacter as? MainCharacter { // If it is the main Character
                         gameResultLabel.text = "You Lose!"
                         gameResultLabel.hidden = false
                         self.endTheGame()
@@ -162,7 +160,7 @@ class GameScene: SKScene {
     // Functions for ending the game and showing the try again screen
 
     func endTheGame() {
-        let endTheGameTimer:NSTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:Selector("showPlayAgainScreen:"), userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:Selector("showPlayAgainScreen:"), userInfo: nil, repeats: false)
     }
     
     @objc func showPlayAgainScreen(timer: NSTimer) {

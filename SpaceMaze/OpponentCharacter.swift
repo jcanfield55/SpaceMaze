@@ -38,7 +38,7 @@ class OpponentCharacter:Character {
                 }
                 if !success {
                     blockedMoveRandomly = true  // Cannot move either direction, so we are blocked
-                    println("blockedMoveRandomly = true")
+                    print("blockedMoveRandomly = true")
                 }
             }
             else {
@@ -49,13 +49,13 @@ class OpponentCharacter:Character {
                 }
                 if !success {
                     blockedMoveRandomly = true  // Cannot move either direction, so we are blocked
-                    println("blockedMoveRandomly = true")
+                    print("blockedMoveRandomly = true")
                 }
             }
         }
         else {  // blockedMoveRandomly = true, do a random movement until into another tunnel
             let myTunnel:Tunnel = self.currentTunnel
-            var r:UInt32 = arc4random_uniform(4)
+            let r:UInt32 = arc4random_uniform(4)
             var direction:TouchCommand = TouchCommand.NO_COMMAND
             if r == 0 {
                 direction = TouchCommand.MOVE_DOWN
@@ -66,15 +66,15 @@ class OpponentCharacter:Character {
             } else if r == 3 {
                 direction = TouchCommand.MOVE_UP
             }
-            var success:Bool = self.moveCharacter(direction)
-            println("Move \(r)")
+            let success:Bool = self.moveCharacter(direction)
+            print("Move \(r)")
             if (!success) {
                 self.chaseCharacter(targetCharacter)  // if not successful, recursively try again to get another random direction that allows movement
                 return
             }
             if (myTunnel !== self.currentTunnel) {
                 blockedMoveRandomly = false  // We are now unblocked because we have moved into a new tunnel
-                println("blockedMoveRandomly = false")
+                print("blockedMoveRandomly = false")
             }
         }
     }

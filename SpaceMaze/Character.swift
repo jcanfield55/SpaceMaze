@@ -33,7 +33,7 @@ class Character:SKSpriteNode {
         // Lesson 2a: Add the code here to check whether you can move in a certain direction in a tunnel before making the move
         // Hint: use Tunnel canMoveInDirection method
         
-        let (canMove:Bool, newTunnel:Tunnel, newPosition:Int) = self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
+        let (canMove, newTunnel, newPosition): (Bool, Tunnel, Int) = self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
         if (canMove) {
             // Uncomment the line below if you want sound along with every movement of a character
             // runAction(SKAction.playSoundFileNamed("pac.wav", waitForCompletion: true))
