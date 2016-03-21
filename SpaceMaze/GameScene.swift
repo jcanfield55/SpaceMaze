@@ -37,7 +37,7 @@ class GameScene: SKScene {
         opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:Selector("moveOpponent:"), userInfo: nil, repeats: true)
 
         // Create tunnels
-        // Lesson 2b - create tunnels for the maze pattern you want
+        // Lesson 1 - create tunnels for the maze pattern you want
         let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
         let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)

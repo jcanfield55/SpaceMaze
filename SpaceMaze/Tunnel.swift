@@ -27,8 +27,6 @@ class Tunnel {
     var tunnelSpriteNode:SKSpriteNode
     
     /* Initializer method */
-    // Lesson 2c - add the ability to create "invisible" or mostly invisible tunnels.  
-    // Add some invisible (secret) tunnels to your maze
     init(orientation:TunnelOrientation, length:Int, gridX:Int, gridY:Int, colorAlpha:CGFloat) {
         self.orientation = orientation
         self.length = length
