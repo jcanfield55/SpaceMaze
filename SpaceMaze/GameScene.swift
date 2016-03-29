@@ -62,11 +62,11 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        /* opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
-        }
+        } */
         
         // Add score label
         self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
@@ -95,16 +95,17 @@ class GameScene: SKScene {
                     let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
                     for otherCharacter in samePositionCharacters {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
-                            dotCharacter.hidden = true
-                            allCharacters.remove(dotCharacter)
+                            // dotCharacter.hidden = true
+                            // allCharacters.remove(dotCharacter)
                             mainCharacter.treasureScore++
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
-                            if (mainCharacter.treasureScore >= maxScore) {
+                            /* if (mainCharacter.treasureScore >= maxScore) {
                                 gameResultLabel.text = "You Win!"
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
+ */
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
                             gameResultLabel.text = "You Lose!"
