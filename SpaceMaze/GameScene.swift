@@ -47,10 +47,10 @@ class GameScene: SKScene {
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
-            for var i:Int = 0; i < aTunnel.length; i++ {
+            for i in 0 ... aTunnel.length {
                 let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
-                maxScore++   // Keep track of the total number of treasure dots
+                maxScore += 1  // Keep track of the total number of treasure dots
             }
         }
         
@@ -97,7 +97,7 @@ class GameScene: SKScene {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                             // dotCharacter.hidden = true
                             // allCharacters.remove(dotCharacter)
-                            mainCharacter.treasureScore++
+                            mainCharacter.treasureScore += 1
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             /* if (mainCharacter.treasureScore >= maxScore) {
