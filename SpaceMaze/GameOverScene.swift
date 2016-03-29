@@ -13,7 +13,7 @@ class GameOverScene: SKScene {
     
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
-    var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "TryAgainButton")
+    var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "tryAgainButton")
 
     override func didMoveToView(view: SKView) {
         self.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
@@ -44,7 +44,7 @@ class GameOverScene: SKScene {
             let touchLocation:CGPoint = touch.locationInNode(self)
             let node:SKNode = self.nodeAtPoint(touchLocation)
             if node.name == "tryAgainButton" {
-                // User pressed the tryAgainButton
+                // User pressed the TryAgainButton
                 
                 // Remove all the previous characters
                 allCharacters.removeAllCharacters()
