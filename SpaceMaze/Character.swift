@@ -34,6 +34,7 @@ class Character:SKSpriteNode {
         // Hint: use Tunnel canMoveInDirection method
         
         let (canMove, newTunnel, newPosition): (Bool, Tunnel, Int) = self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
+        print("Command:\(canMove)")
         if (canMove) {
             // Uncomment the line below if you want sound along with every movement of a character
             // runAction(SKAction.playSoundFileNamed("pac.wav", waitForCompletion: true))

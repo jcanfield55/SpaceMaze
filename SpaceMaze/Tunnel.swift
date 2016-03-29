@@ -103,6 +103,7 @@ class Tunnel {
     //    3) The position in the specified the tunnel the character is now in
     //
     func canMoveInDirection(direction:TouchCommand, position:Int, checkConnections:Bool) -> (Bool, Tunnel, Int) {
+        print("canMove: length \(self.length) position \(position)")
         if (self.orientation == TunnelOrientation.verticalTunnel) {
             if (direction == TouchCommand.MOVE_UP && position < self.length - 1) {
                 return (true, self, position+1); // Can move up except at top of tunnel

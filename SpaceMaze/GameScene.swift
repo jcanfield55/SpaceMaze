@@ -44,7 +44,12 @@ class GameScene: SKScene {
         self.addChild(tunnel2.tunnelSpriteNode)
         let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 1, gridY: 9, colorAlpha: 1.0)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 5, gridY: 2, colorAlpha: 1.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for var i:Int = 0; i < aTunnel.length; i++ {
@@ -89,6 +94,7 @@ class GameScene: SKScene {
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
                     let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
+                    print("Command: \(command)")
                     mainCharacter.moveCharacter(command)
                     
                     // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
