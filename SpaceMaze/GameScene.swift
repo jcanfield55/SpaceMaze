@@ -26,6 +26,7 @@ class GameScene: SKScene {
     var opponents:[OpponentCharacter] = []
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
+    var scoreLabel2:SKLabelNode = SKLabelNode(text: "HighScore: 0")
     var maxScore:Int = 0
     
     override func didMoveToView(view: SKView) {        
@@ -44,6 +45,15 @@ class GameScene: SKScene {
         self.addChild(tunnel2.tunnelSpriteNode)
         let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 8, colorAlpha: 1.0)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 1, gridY: 2, colorAlpha: 0.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 5, gridY: 2, colorAlpha: 0.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 5, gridY: 5, colorAlpha: 1.0)
+        self.addChild(tunnel7.tunnelSpriteNode)
+
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
@@ -73,6 +83,12 @@ class GameScene: SKScene {
         self.scoreLabel.fontSize = 16
         self.scoreLabel.fontName = "Helvetica-Bold"
         self.addChild(self.scoreLabel)
+        //Add 2nd score label
+        self.scoreLabel2.position = CGPointMake(100.0,499.0)
+        self.scoreLabel2.fontSize = 16
+        self.scoreLabel2.fontName = "Helvetica-Bold"
+        self.addChild(self.scoreLabel2)
+
         
         // Add gameResultLabel
         self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
@@ -161,6 +177,8 @@ class GameScene: SKScene {
 
     func endTheGame() {
         NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:Selector("showPlayAgainScreen:"), userInfo: nil, repeats: false)
+        if scoreLabel > scoreLabel2 {
+            }
     }
     
     @objc func showPlayAgainScreen(timer: NSTimer) {
