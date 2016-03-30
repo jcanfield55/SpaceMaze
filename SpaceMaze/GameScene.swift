@@ -29,7 +29,7 @@ class GameScene: SKScene {
     var maxScore:Int = 0
     
     override func didMoveToView(view: SKView) {        
-        
+
         /* Setup your scene here */
         self.backgroundColor = color
         
@@ -48,9 +48,17 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for var i:Int = 0; i < aTunnel.length; i++ {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
-                maxScore++   // Keep track of the total number of treasure dots
+                if (aTunnel === tunnel1 && i == 2) {
+                    let specialTreasure = TreasureCharacter(imageNamed: "goldfish.png", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(specialTreasure)
+                    specialTreasure.treasureValue = 3
+                    maxScore += specialTreasure.treasureValue
+                }
+                else {
+                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
             }
         }
         
@@ -97,7 +105,7 @@ class GameScene: SKScene {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                             dotCharacter.hidden = true
                             allCharacters.remove(dotCharacter)
-                            mainCharacter.treasureScore++
+                            mainCharacter.treasureScore += dotCharacter.treasureValue
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
