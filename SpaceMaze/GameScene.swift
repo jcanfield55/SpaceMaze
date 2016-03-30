@@ -38,12 +38,24 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 0.4)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 1, gridY: 2, colorAlpha: 0.1)
         self.addChild(tunnel2.tunnelSpriteNode)
         let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
+        
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 4, colorAlpha: 0.7)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 9, colorAlpha: 0.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 4, gridY: 5, colorAlpha: 0.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 2, gridX: 2, gridY: 9, colorAlpha: 0.0)
+        self.addChild(tunnel7.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
