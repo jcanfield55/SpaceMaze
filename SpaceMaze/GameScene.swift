@@ -35,7 +35,7 @@ class GameScene: SKScene {
         self.backgroundColor = color
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
-        opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:Selector("moveOpponent:"), userInfo: nil, repeats: true)
+        opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
@@ -57,10 +57,10 @@ class GameScene: SKScene {
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
-            for var i:Int = 0; i < aTunnel.length; i++ {
+            for i:Int in 0 ..< aTunnel.length {
                 let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
-                maxScore++   // Keep track of the total number of treasure dots
+                maxScore += 1   // Keep track of the total number of treasure dots
             }
         }
         
@@ -113,7 +113,7 @@ class GameScene: SKScene {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                             dotCharacter.hidden = true
                             allCharacters.remove(dotCharacter)
-                            mainCharacter.treasureScore++
+                            mainCharacter.treasureScore += 1
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
@@ -176,7 +176,7 @@ class GameScene: SKScene {
     // Functions for ending the game and showing the try again screen
 
     func endTheGame() {
-        NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:Selector("showPlayAgainScreen:"), userInfo: nil, repeats: false)
+        NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
         if scoreLabel > scoreLabel2 {
             }
     }
