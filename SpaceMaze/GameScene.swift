@@ -50,6 +50,14 @@ class GameScene: SKScene {
         self.addChild(tunnel5.tunnelSpriteNode)
         let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 0, gridY: 4, colorAlpha: 2.6)
         self.addChild(tunnel6.tunnelSpriteNode)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 4, gridY: 1, colorAlpha: 2.6)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 9, gridX: 0, gridY: 4, colorAlpha: 2.6)
+        self.addChild(tunnel8.tunnelSpriteNode)
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 12, gridY: 12, colorAlpha: 2.6)
+        self.addChild(tunnel9.tunnelSpriteNode)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 9, gridY: 9, colorAlpha: 0.2)
+        self.addChild(tunnel10.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
@@ -69,6 +77,7 @@ class GameScene: SKScene {
         
         // Create opponents
         opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship2", currentTunnel: tunnel6, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible

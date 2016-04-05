@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 
 class GameOverScene: SKScene {
@@ -14,9 +15,15 @@ class GameOverScene: SKScene {
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "tryAgainButton")
-
+  //  var coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("coin", ofType: "wav")!)
+    var audioPlayer:AVAudioPlayer!
+    
+    
     override func didMoveToView(view: SKView) {
-        self.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+        /* if let audioPlayer = AVAudioPlayer(contentsOfURL: coinSound, fileTypeHint: nil) {
+            audioPlayer.prepareToPlay()
+            self.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+        } */
         
         // Add score label
         self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
@@ -35,7 +42,7 @@ class GameOverScene: SKScene {
         self.tryAgainButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) * 0.25)
         self.tryAgainButton.name = "tryAgainButton"
         self.addChild(self.tryAgainButton)
-
+ 
     }
     
     override func touchesBegan(touches:Set<UITouch>, withEvent event: UIEvent?) {
@@ -48,6 +55,7 @@ class GameOverScene: SKScene {
                 
                 // Remove all the previous characters
                 allCharacters.removeAllCharacters()
+                allTunnels.removeAll()
                 
                 // Show a fresh GameScene
                 let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
