@@ -78,6 +78,9 @@ class Tunnel {
                         }
                     }
                 }
+           // } else {
+           //     if self.orientation == TunnelOrientation.horizontalTunnel {
+                    
             }
         }
         allTunnels.append(self)  // Add this tunnel to allTunnel tracker

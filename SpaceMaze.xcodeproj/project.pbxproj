@@ -20,6 +20,9 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		CE4E33BC1CAC351F0094E207 /* Slime Blob Main.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4E33BB1CAC351F0094E207 /* Slime Blob Main.png */; };
+		CE4E33BE1CAC35DB0094E207 /* Slime Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4E33BD1CAC35DB0094E207 /* Slime Ball.png */; };
+		CE4E33C01CAC39300094E207 /* Slime Ball 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4E33BF1CAC39300094E207 /* Slime Ball 2.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
@@ -59,6 +62,9 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		CE4E33BB1CAC351F0094E207 /* Slime Blob Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slime Blob Main.png"; path = "../../../Slime Blob Main.png"; sourceTree = "<group>"; };
+		CE4E33BD1CAC35DB0094E207 /* Slime Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slime Ball.png"; path = "../../../Slime Ball.png"; sourceTree = "<group>"; };
+		CE4E33BF1CAC39300094E207 /* Slime Ball 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slime Ball 2.png"; path = "../../../Slime Ball 2.png"; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +126,9 @@
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
+				CE4E33BF1CAC39300094E207 /* Slime Ball 2.png */,
+				CE4E33BB1CAC351F0094E207 /* Slime Blob Main.png */,
+				CE4E33BD1CAC35DB0094E207 /* Slime Ball.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
@@ -255,12 +264,15 @@
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
+				CE4E33BE1CAC35DB0094E207 /* Slime Ball.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
+				CE4E33BC1CAC351F0094E207 /* Slime Blob Main.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
+				CE4E33C01CAC39300094E207 /* Slime Ball 2.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 			);
