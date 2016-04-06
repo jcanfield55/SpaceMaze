@@ -51,7 +51,7 @@ class GameScene: SKScene {
         let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 9, colorAlpha: 0.0)
         self.addChild(tunnel5.tunnelSpriteNode)
         
-        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 100000000000000000, gridX: 4, gridY: 5, colorAlpha: 0.0)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 4, gridY: 5, colorAlpha: 0.0)
         self.addChild(tunnel6.tunnelSpriteNode)
         
         let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 2, gridX: 2, gridY: 9, colorAlpha: 0.0)
@@ -62,7 +62,8 @@ class GameScene: SKScene {
             for i:Int in 0 ..< aTunnel.length {
                 
                 if (aTunnel===tunnel1){
-                    let dotCharacter = TreasureCharacter(imageNamed: "Alien Spaceship 2", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter = TreasureCharacter(
+            imageNamed: "Alien Spaceship 2", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     dotCharacter.tresherValue=3
                     maxScore+=1   // Keep track of the total number of treasure dots
@@ -77,13 +78,13 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"pacMan", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"montela", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "dog", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "JohnCena", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
