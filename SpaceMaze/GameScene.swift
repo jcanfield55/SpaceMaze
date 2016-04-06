@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let color = UIColor(red:1.5, green:0.4, blue:0.3, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
@@ -58,7 +58,18 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                let div3_remainder:Double = remainder(Double(i),3.0)
+                var imageString:String = ""
+                if (div3_remainder == 0) {
+                    imageString = "John Kasik"
+                }
+                // Put in a  else if (...) {  } clause to put in another picture in the other third of the cases 
+                
+                else {
+                    imageString = "ted-cruz"
+                }
+            
+                let dotCharacter = TreasureCharacter(imageNamed: imageString, currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
                 maxScore += 1   // Keep track of the total number of treasure dots
             }
@@ -66,13 +77,13 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"Hillary Clinton", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "Donald Drumpf", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -177,8 +188,6 @@ class GameScene: SKScene {
 
     func endTheGame() {
         NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
-        if scoreLabel > scoreLabel2 {
-            }
     }
     
     @objc func showPlayAgainScreen(timer: NSTimer) {
@@ -192,8 +201,4 @@ class GameScene: SKScene {
             theView.presentScene(scene, transition:reveal)
         }
     }
-    /*
-     Improvements:
-      - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
-    */
 }
