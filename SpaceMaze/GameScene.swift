@@ -51,7 +51,7 @@ class GameScene: SKScene {
         let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 9, colorAlpha: 0.0)
         self.addChild(tunnel5.tunnelSpriteNode)
         
-        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 4, gridY: 5, colorAlpha: 0.0)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 100000000000000000, gridX: 4, gridY: 5, colorAlpha: 0.0)
         self.addChild(tunnel6.tunnelSpriteNode)
         
         let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 2, gridX: 2, gridY: 9, colorAlpha: 0.0)
@@ -60,21 +60,30 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
-                maxScore += 1   // Keep track of the total number of treasure dots
+                
+                if (aTunnel===tunnel1){
+                    let dotCharacter = TreasureCharacter(imageNamed: "Alien Spaceship 2", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    dotCharacter.tresherValue=3
+                    maxScore+=1   // Keep track of the total number of treasure dots
+                } else {
+                    let dotCharacter2 = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter2)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+
+                }
             }
         }
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"pacMan", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "dog", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -109,7 +118,7 @@ class GameScene: SKScene {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                             dotCharacter.hidden = true
                             allCharacters.remove(dotCharacter)
-                            mainCharacter.treasureScore += 1
+                            mainCharacter.treasureScore += dotCharacter.tresherValue
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {

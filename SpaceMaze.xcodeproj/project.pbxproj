@@ -13,13 +13,13 @@
 		522A87C41AF09F060058F70B /* pac.wav in Resources */ = {isa = PBXBuildFile; fileRef = 522A87C31AF09F060058F70B /* pac.wav */; };
 		522A87C61AF09F7F0058F70B /* LessonSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */; };
 		52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */; };
-		52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */; };
 		52524D541AD4FE660068A3F5 /* grayDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D531AD4FE660068A3F5 /* grayDot.png */; };
 		52524D561AD5036F0068A3F5 /* MainCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D551AD5036F0068A3F5 /* MainCharacter.swift */; };
 		52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */; };
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		CE6063DE1CAC2F9200E4487F /* Alien Spaceship 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
@@ -50,7 +50,6 @@
 		522A87C31AF09F060058F70B /* pac.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pac.wav; sourceTree = "<group>"; };
 		522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonSuggestions.swift; sourceTree = "<group>"; };
 		52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollection.swift; sourceTree = "<group>"; };
-		52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship1.png; sourceTree = "<group>"; };
 		52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Alien Spaceship icons.jpg"; sourceTree = "<group>"; };
 		52524D521AD4FBCE0068A3F5 /* grayDot.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = grayDot.psd; sourceTree = "<group>"; };
 		52524D531AD4FE660068A3F5 /* grayDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayDot.png; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alien Spaceship 2.png"; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,10 +115,10 @@
 		E7950A2C1AC2842D008328E7 /* SpaceMaze */ = {
 			isa = PBXGroup;
 			children = (
-				52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
+				CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
@@ -254,7 +254,6 @@
 			files = (
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
-				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
@@ -263,6 +262,7 @@
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
+				CE6063DE1CAC2F9200E4487F /* Alien Spaceship 2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

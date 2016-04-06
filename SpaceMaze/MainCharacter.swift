@@ -11,6 +11,6 @@ import SpriteKit
 
 class MainCharacter:Character {
 
-    var treasureScore:Int = 0
+    var treasureScore:Int = 6
 
 }
