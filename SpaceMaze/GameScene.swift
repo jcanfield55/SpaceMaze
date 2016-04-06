@@ -46,26 +46,15 @@ class GameScene: SKScene {
         self.addChild(tunnel3.tunnelSpriteNode)
         let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 3, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel4.tunnelSpriteNode)
-        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel5.tunnelSpriteNode)
-        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 3, gridY: 5, colorAlpha: 1.0)
-        self.addChild(tunnel6.tunnelSpriteNode)
-        let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 9, colorAlpha: 1.0)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 9, colorAlpha: 1.0)
         let tunnel8 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 0, gridY: 9, colorAlpha: 1.0)
-        let tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 12, colorAlpha: 1.0)
-        let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 3, gridY: 9, colorAlpha: 1.0)
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 12, colorAlpha: 1.0)
         let tunnel11 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 6, gridY: 9, colorAlpha: 1.0)
-        let tunnel12 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 3, gridY: 12, colorAlpha: 1.0)
-        self.addChild(tunnel12.tunnelSpriteNode)
-
         self.addChild(tunnel11.tunnelSpriteNode)
-
-        self.addChild(tunnel10.tunnelSpriteNode)
-
         self.addChild(tunnel9.tunnelSpriteNode)
-
         self.addChild(tunnel8.tunnelSpriteNode)
-
         self.addChild(tunnel7.tunnelSpriteNode)
 
         // Create dots to pick up in tunnels
@@ -85,7 +74,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "Boom_Slime_SP", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible

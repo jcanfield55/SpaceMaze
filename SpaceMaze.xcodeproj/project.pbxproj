@@ -20,6 +20,7 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		CE2499731CB57004002DA2FF /* Boom_Slime_SP.png in Resources */ = {isa = PBXBuildFile; fileRef = CE2499721CB57004002DA2FF /* Boom_Slime_SP.png */; };
 		CE4E33BC1CAC351F0094E207 /* Slime Blob Main.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4E33BB1CAC351F0094E207 /* Slime Blob Main.png */; };
 		CE4E33BE1CAC35DB0094E207 /* Slime Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4E33BD1CAC35DB0094E207 /* Slime Ball.png */; };
 		CE4E33C01CAC39300094E207 /* Slime Ball 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE4E33BF1CAC39300094E207 /* Slime Ball 2.png */; };
@@ -62,6 +63,7 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		CE2499721CB57004002DA2FF /* Boom_Slime_SP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Boom_Slime_SP.png; path = ../../../Boom_Slime_SP.png; sourceTree = "<group>"; };
 		CE4E33BB1CAC351F0094E207 /* Slime Blob Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slime Blob Main.png"; path = "../../../Slime Blob Main.png"; sourceTree = "<group>"; };
 		CE4E33BD1CAC35DB0094E207 /* Slime Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slime Ball.png"; path = "../../../Slime Ball.png"; sourceTree = "<group>"; };
 		CE4E33BF1CAC39300094E207 /* Slime Ball 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Slime Ball 2.png"; path = "../../../Slime Ball 2.png"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
+				CE2499721CB57004002DA2FF /* Boom_Slime_SP.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				CE4E33BF1CAC39300094E207 /* Slime Ball 2.png */,
 				CE4E33BB1CAC351F0094E207 /* Slime Blob Main.png */,
@@ -267,6 +270,7 @@
 				CE4E33BE1CAC35DB0094E207 /* Slime Ball.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
+				CE2499731CB57004002DA2FF /* Boom_Slime_SP.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				CE4E33BC1CAC351F0094E207 /* Slime Blob Main.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,

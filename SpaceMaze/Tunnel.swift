@@ -66,8 +66,7 @@ class Tunnel {
         
         // Search for connecting tunnels and update connectingTunnels array
         for otherTunnel in allTunnels {
-            if otherTunnel.orientation != self.orientation {   // Only connect tunnels of opposite orientation
-                for otherPos in 0...otherTunnel.length-1 {
+                            for otherPos in 0...otherTunnel.length-1 {
                     for selfPos in 0...self.length-1 {
                         if self.pointAtTunnelPosition(selfPos) == otherTunnel.pointAtTunnelPosition(otherPos) {
                             // The tunnels overlap, so set the connectingTunnels
@@ -78,10 +77,7 @@ class Tunnel {
                         }
                     }
                 }
-           // } else {
-           //     if self.orientation == TunnelOrientation.horizontalTunnel {
-                    
-            }
+            
         }
         allTunnels.append(self)  // Add this tunnel to allTunnel tracker
     }

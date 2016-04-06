@@ -16,7 +16,26 @@ class GameOverScene: SKScene {
     var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "TryAgainButton")
 
     override func didMoveToView(view: SKView) {
-        self.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+        if self.gameResultLabel.text == "You Win!" {
+            self.backgroundColor = UIColor(red:0, green:0, blue:0.7, alpha:1.0)
+            // Add gameResultLabel
+            self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+            self.gameResultLabel.fontSize = 25
+            self.gameResultLabel.fontName = "Helvetica-BoldOblique"
+            self.gameResultLabel.fontColor = UIColor.greenColor()
+            self.addChild(self.gameResultLabel)
+
+        }
+        else {
+            self.backgroundColor = UIColor(red:0.7, green:0, blue:0, alpha:1.0)
+            // Add gameResultLabel
+            self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+            self.gameResultLabel.fontSize = 25
+            self.gameResultLabel.fontName = "Helvetica-BoldOblique"
+            self.gameResultLabel.fontColor = UIColor.blackColor()
+            self.addChild(self.gameResultLabel)
+
+        }
         
         // Add score label
         self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
@@ -24,12 +43,6 @@ class GameOverScene: SKScene {
         self.scoreLabel.fontName = "Helvetica-Bold"
         self.addChild(self.scoreLabel)
         
-        // Add gameResultLabel
-        self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        self.gameResultLabel.fontSize = 20
-        self.gameResultLabel.fontName = "Helvetica-BoldOblique"
-        self.gameResultLabel.fontColor = UIColor.redColor()
-        self.addChild(self.gameResultLabel)
         
         // Add tryAgainButton
         self.tryAgainButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) * 0.25)
@@ -48,6 +61,7 @@ class GameOverScene: SKScene {
                 
                 // Remove all the previous characters
                 allCharacters.removeAllCharacters()
+                allTunnels.removeAll()
                 
                 // Show a fresh GameScene
                 let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
