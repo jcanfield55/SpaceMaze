@@ -59,16 +59,19 @@ class GameScene: SKScene {
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
                 let div3_remainder:Double = remainder(Double(i),3.0)
+                print("remainder = " + String(div3_remainder))
                 var imageString:String = ""
-                if (div3_remainder == 0) {
+                if (div3_remainder < 0.0) {
                     imageString = "John Kasik"
                 }
                 // Put in a  else if (...) {  } clause to put in another picture in the other third of the cases 
-                
+                else if (div3_remainder == 0.0){
+                    imageString = "Bernie Sanders"
+                }
+
                 else {
                     imageString = "ted-cruz"
                 }
-            
                 let dotCharacter = TreasureCharacter(imageNamed: imageString, currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
                 maxScore += 1   // Keep track of the total number of treasure dots
@@ -108,6 +111,8 @@ class GameScene: SKScene {
         self.gameResultLabel.fontColor = UIColor.redColor()
         self.gameResultLabel.hidden = true
         self.addChild(self.gameResultLabel)
+        
+        // runAction(SKAction.playSoundFileNamed("CNN 2.m4a", waitForCompletion: true))
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed

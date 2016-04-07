@@ -16,8 +16,7 @@ class GameOverScene: SKScene {
     var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "TryAgainButton")
 
     override func didMoveToView(view: SKView) {
-        self.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
-        
+        // self.background = SKSpriteNode(imageNamed: "Donald.png")
         // Add score label
         self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
         self.scoreLabel.fontSize = 16

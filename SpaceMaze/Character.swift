@@ -30,13 +30,13 @@ class Character:SKSpriteNode {
     // Moves the character in the specified direction if possible
     // Returns true if character is able to move, false if the character is not able to move
     func moveCharacter(direction:TouchCommand) -> Bool {
-        // Lesson 2a: Add the code here to check whether you can move in a certain direction in a tunnel before making the move
+        // Lesson 2a: Add th/Users/fablearner/Desktop/nbc-fires-donald-trump-after-he-calls-mexicans-rapists-and-drug-runners.jpge code here to check whether you can move in a certain direction in a tunnel before making the move
         // Hint: use Tunnel canMoveInDirection method
         
         let (canMove, newTunnel, newPosition): (Bool, Tunnel, Int) = self.currentTunnel.canMoveInDirection(direction, position: tunnelPosition, checkConnections: true)
         if (canMove) {
             // Uncomment the line below if you want sound along with every movement of a character
-            // runAction(SKAction.playSoundFileNamed("pac.wav", waitForCompletion: true))
+            runAction(SKAction.playSoundFileNamed("CNN 2.m4a", waitForCompletion: true))
             
             if newTunnel !== currentTunnel {
                 self.currentTunnel = newTunnel
