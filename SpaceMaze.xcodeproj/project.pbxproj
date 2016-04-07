@@ -20,6 +20,7 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		CE47197F1CB56DB50005A4FB /* EdibleOpponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47197E1CB56DB50005A4FB /* EdibleOpponent.swift */; };
 		CE56E8F31CAC31DF007C84E1 /* AlienSpaceship2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE56E8F21CAC31DF007C84E1 /* AlienSpaceship2.png */; };
 		CE56E8F51CAC382F007C84E1 /* DORA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE56E8F41CAC382F007C84E1 /* DORA.mp3 */; };
 		CE56E8F71CB376DB007C84E1 /* AlienSpaceship3.png in Resources */ = {isa = PBXBuildFile; fileRef = CE56E8F61CB376DB007C84E1 /* AlienSpaceship3.png */; };
@@ -63,6 +64,7 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		CE47197E1CB56DB50005A4FB /* EdibleOpponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdibleOpponent.swift; sourceTree = "<group>"; };
 		CE56E8F21CAC31DF007C84E1 /* AlienSpaceship2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship2.png; sourceTree = "<group>"; };
 		CE56E8F41CAC382F007C84E1 /* DORA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DORA.mp3; sourceTree = "<group>"; };
 		CE56E8F61CB376DB007C84E1 /* AlienSpaceship3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship3.png; sourceTree = "<group>"; };
@@ -135,17 +137,18 @@
 				CE56E8F41CAC382F007C84E1 /* DORA.mp3 */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
+				CE56E8F21CAC31DF007C84E1 /* AlienSpaceship2.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
 				526C47451AF9E152002CA512 /* GameOverScene.swift */,
-				CE56E8F21CAC31DF007C84E1 /* AlienSpaceship2.png */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
 				522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */,
 				52524D551AD5036F0068A3F5 /* MainCharacter.swift */,
 				52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */,
 				52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */,
+				CE47197E1CB56DB50005A4FB /* EdibleOpponent.swift */,
 				52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */,
 				3F54A49A1AC75CD00035AB2C /* Tunnel.swift */,
 				E7950A351AC2842D008328E7 /* GameViewController.swift */,
@@ -227,7 +230,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Diana Smetters";
 				TargetAttributes = {
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52524D561AD5036F0068A3F5 /* MainCharacter.swift in Sources */,
+				CE47197F1CB56DB50005A4FB /* EdibleOpponent.swift in Sources */,
 				52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */,
 				52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */,
 				3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */,
@@ -426,11 +430,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpaceMaze/SpaceMaze-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -439,11 +446,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SpaceMaze/SpaceMaze-Bridging-Header.h";
 			};
 			name = Release;
 		};

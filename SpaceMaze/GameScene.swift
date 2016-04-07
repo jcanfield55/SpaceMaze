@@ -38,25 +38,25 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 1, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
         let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 1, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 2, gridY: 6, colorAlpha: 1.0)
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 4, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel4.tunnelSpriteNode)
-        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 4, gridY: 6, colorAlpha: 2.6)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 6, colorAlpha: 2.6)
         self.addChild(tunnel5.tunnelSpriteNode)
-        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 0, gridY: 4, colorAlpha: 2.6)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 0, gridY: 4, colorAlpha: 2.6)
         self.addChild(tunnel6.tunnelSpriteNode)
-        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 4, gridY: 1, colorAlpha: 2.6)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 4, gridY: 3, colorAlpha: 2.6)
         self.addChild(tunnel7.tunnelSpriteNode)
-        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 9, gridX: 0, gridY: 4, colorAlpha: 2.6)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 4, colorAlpha: 2.6)
         self.addChild(tunnel8.tunnelSpriteNode)
-        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 12, gridY: 12, colorAlpha: 2.6)
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 0, gridY: 2, colorAlpha: 2.6)
         self.addChild(tunnel9.tunnelSpriteNode)
-        let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 9, gridY: 9, colorAlpha: 0.2)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 2, colorAlpha: 0.2)
         self.addChild(tunnel10.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
@@ -76,8 +76,8 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship2", currentTunnel: tunnel6, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -121,6 +121,9 @@ class GameScene: SKScene {
                                 self.endTheGame()
                             }
                         }
+                        else if let _ = otherCharacter as? EdibleOpponent {
+                            print("Edible Character")
+                        }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
                             gameResultLabel.text = "You Lose!"
                             gameResultLabel.hidden = false
@@ -162,7 +165,9 @@ class GameScene: SKScene {
                 anOpponent.chaseCharacter(c)
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
-                    if let _ = otherCharacter as? MainCharacter { // If it is the main Character
+                    if let _ = anOpponent as? EdibleOpponent {
+                    }
+                    else if let _ = otherCharacter as? MainCharacter { // If it is the main Character
                         gameResultLabel.text = "You Lose!"
                         gameResultLabel.hidden = false
                         self.endTheGame()
