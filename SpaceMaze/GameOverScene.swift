@@ -42,6 +42,9 @@ class GameOverScene: SKScene {
         self.tryAgainButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) * 0.25)
         self.tryAgainButton.name = "tryAgainButton"
         self.addChild(self.tryAgainButton)
+        
+        // Sound
+         runAction(SKAction.playSoundFileNamed("Chica Jump Scare.mp3", waitForCompletion: false))
  
     }
     

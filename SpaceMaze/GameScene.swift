@@ -58,6 +58,18 @@ class GameScene: SKScene {
         self.addChild(tunnel9.tunnelSpriteNode)
         let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 2, colorAlpha: 0.2)
         self.addChild(tunnel10.tunnelSpriteNode)
+        let tunnel11 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 7, colorAlpha: 0.2)
+        self.addChild(tunnel11.tunnelSpriteNode)
+        let tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 0, gridY: 2, colorAlpha: 0.2)
+        self.addChild(tunnel12.tunnelSpriteNode)
+        let tunnel13 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        self.addChild(tunnel13.tunnelSpriteNode)
+        let tunnel14 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 2, gridY: 4, colorAlpha: 10.2)
+        self.addChild(tunnel14.tunnelSpriteNode)
+        
+        //Sound
+        runAction(SKAction.playSoundFileNamed("UNDERTALE OST - Metal Crusher (Mettaton's Battle Theme) EXTENDED.mp3", waitForCompletion: false))
+        
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
@@ -77,6 +89,26 @@ class GameScene: SKScene {
         
         // Create opponents
         opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
         opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
         
         for anOpponent in opponents {
@@ -125,7 +157,7 @@ class GameScene: SKScene {
                             print("Edible Character")
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "You Win!"
                             gameResultLabel.hidden = false
                             self.endTheGame()
                         }
