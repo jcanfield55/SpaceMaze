@@ -10,7 +10,8 @@ import Foundation
 import SpriteKit
 
 class TreasureCharacter:Character {
-    var tresherValue:Int=1
+    var tresherValue:Int=0
+    
 
     
 }

@@ -54,9 +54,14 @@ class GameScene: SKScene {
         let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 4, gridY: 5, colorAlpha: 0.0)
         self.addChild(tunnel6.tunnelSpriteNode)
         
-        let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 2, gridX: 2, gridY: 9, colorAlpha: 0.0)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 2, gridX: 2, gridY: 9, colorAlpha: 0.0001)
         self.addChild(tunnel7.tunnelSpriteNode)
+         //Uncomment the line below if you want sound along with every movement of a character
+         runAction(SKAction.playSoundFileNamed("Europe - The Final Countdown.mp3", waitForCompletion: true))
         
+
+        
+
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
@@ -170,7 +175,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.text = "You win!"
                         gameResultLabel.hidden = false
                         self.endTheGame()
                     }

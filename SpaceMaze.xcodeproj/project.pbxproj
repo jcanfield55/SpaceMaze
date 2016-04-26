@@ -19,6 +19,7 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		CE5471761CBEA4F900E3576B /* Europe - The Final Countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE5471751CBEA4F900E3576B /* Europe - The Final Countdown.mp3 */; };
 		CE6063DE1CAC2F9200E4487F /* Alien Spaceship 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */; };
 		CE610AE31CB56C72008AEABD /* Cena.png in Resources */ = {isa = PBXBuildFile; fileRef = CE610AE21CB56C72008AEABD /* Cena.png */; };
 		CE610AE51CB56EAF008AEABD /* montela.png in Resources */ = {isa = PBXBuildFile; fileRef = CE610AE41CB56EAF008AEABD /* montela.png */; };
@@ -61,6 +62,7 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		CE5471751CBEA4F900E3576B /* Europe - The Final Countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Europe - The Final Countdown.mp3"; sourceTree = "<group>"; };
 		CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alien Spaceship 2.png"; sourceTree = "<group>"; };
 		CE610AE21CB56C72008AEABD /* Cena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cena.png; sourceTree = "<group>"; };
 		CE610AE41CB56EAF008AEABD /* montela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = montela.png; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */,
+				CE5471751CBEA4F900E3576B /* Europe - The Final Countdown.mp3 */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
@@ -264,6 +267,7 @@
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				CE610AE31CB56C72008AEABD /* Cena.png in Resources */,
+				CE5471761CBEA4F900E3576B /* Europe - The Final Countdown.mp3 in Resources */,
 				CE610AE51CB56EAF008AEABD /* montela.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
