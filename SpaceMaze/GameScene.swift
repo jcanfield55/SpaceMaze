@@ -32,7 +32,7 @@ class GameScene: SKScene {
         
         /* Setup your scene here */
         self.backgroundColor = color
-        
+      
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
 
@@ -78,7 +78,7 @@ class GameScene: SKScene {
         self.addChild(tunnel19.tunnelSpriteNode)
         let tunnel20 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 12, colorAlpha: 1.0)
         self.addChild(tunnel20.tunnelSpriteNode)
-        runAction(SKAction.playSoundFileNamed("Shake.mp3", waitForCompletion: false))
+        runAction(SKAction.playSoundFileNamed("StarsWars.mp3", waitForCompletion: false))
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
@@ -96,7 +96,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "malcom", currentTunnel: tunnel1, tunnelPosition: 5))
+        opponents.append(OpponentCharacter(imageNamed: "Mark", currentTunnel: tunnel1, tunnelPosition: 5))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible

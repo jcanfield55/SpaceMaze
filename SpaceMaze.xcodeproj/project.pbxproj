@@ -20,13 +20,17 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		CE44B2311CBEA59600CBB6E0 /* StarsWars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE44B2301CBEA59600CBB6E0 /* StarsWars.mp3 */; };
+		CE44B2331CBEA7DA00CBB6E0 /* SnoopDog.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE44B2321CBEA7DA00CBB6E0 /* SnoopDog.gif */; };
+		CE44B2351CBEAD0800CBB6E0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44B2341CBEAD0800CBB6E0 /* GameScene.swift */; };
+		CE44B2371CBEAF1E00CBB6E0 /* CRACK.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE44B2361CBEAF1E00CBB6E0 /* CRACK.mp3 */; };
+		CE44B2391CBEB09700CBB6E0 /* Mark.png in Resources */ = {isa = PBXBuildFile; fileRef = CE44B2381CBEB09700CBB6E0 /* Mark.png */; };
 		CE641CB91CAC2FCC00AA8F53 /* pewdiepie.png in Resources */ = {isa = PBXBuildFile; fileRef = CE641CB81CAC2FCC00AA8F53 /* pewdiepie.png */; };
 		CE641CBB1CAC30F700AA8F53 /* malcom.png in Resources */ = {isa = PBXBuildFile; fileRef = CE641CBA1CAC30F700AA8F53 /* malcom.png */; };
 		CE74F0901CB56A9F00A55E67 /* JSE.png in Resources */ = {isa = PBXBuildFile; fileRef = CE74F08F1CB56A9F00A55E67 /* JSE.png */; };
 		CE74F0921CB5702900A55E67 /* KID.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE74F0911CB5702900A55E67 /* KID.mp3 */; };
 		CE74F0941CB574C300A55E67 /* Shake.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE74F0931CB574C300A55E67 /* Shake.mp3 */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
-		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
 		E7950A391AC2842D008328E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7950A371AC2842D008328E7 /* Main.storyboard */; };
 		E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7950A3A1AC2842D008328E7 /* Images.xcassets */; };
@@ -64,6 +68,11 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		CE44B2301CBEA59600CBB6E0 /* StarsWars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StarsWars.mp3; sourceTree = "<group>"; };
+		CE44B2321CBEA7DA00CBB6E0 /* SnoopDog.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SnoopDog.gif; sourceTree = "<group>"; };
+		CE44B2341CBEAD0800CBB6E0 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		CE44B2361CBEAF1E00CBB6E0 /* CRACK.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CRACK.mp3; sourceTree = "<group>"; };
+		CE44B2381CBEB09700CBB6E0 /* Mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mark.png; sourceTree = "<group>"; };
 		CE641CB81CAC2FCC00AA8F53 /* pewdiepie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pewdiepie.png; sourceTree = "<group>"; };
 		CE641CBA1CAC30F700AA8F53 /* malcom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malcom.png; sourceTree = "<group>"; };
 		CE74F08F1CB56A9F00A55E67 /* JSE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JSE.png; sourceTree = "<group>"; };
@@ -72,7 +81,6 @@
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7950A331AC2842D008328E7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E7950A351AC2842D008328E7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E7950A381AC2842D008328E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7950A3A1AC2842D008328E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -130,11 +138,15 @@
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				CE641CB81CAC2FCC00AA8F53 /* pewdiepie.png */,
+				CE44B2361CBEAF1E00CBB6E0 /* CRACK.mp3 */,
+				CE44B2381CBEB09700CBB6E0 /* Mark.png */,
 				CE641CBA1CAC30F700AA8F53 /* malcom.png */,
 				CE74F08F1CB56A9F00A55E67 /* JSE.png */,
+				CE44B2321CBEA7DA00CBB6E0 /* SnoopDog.gif */,
 				CE74F0911CB5702900A55E67 /* KID.mp3 */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
+				CE44B2301CBEA59600CBB6E0 /* StarsWars.mp3 */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				CE74F0931CB574C300A55E67 /* Shake.mp3 */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
@@ -142,7 +154,7 @@
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
-				E7950A331AC2842D008328E7 /* GameScene.swift */,
+				CE44B2341CBEAD0800CBB6E0 /* GameScene.swift */,
 				526C47451AF9E152002CA512 /* GameOverScene.swift */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
 				522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */,
@@ -267,7 +279,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE44B2311CBEA59600CBB6E0 /* StarsWars.mp3 in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
+				CE44B2391CBEB09700CBB6E0 /* Mark.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				CE74F0941CB574C300A55E67 /* Shake.mp3 in Resources */,
@@ -275,12 +289,14 @@
 				CE641CB91CAC2FCC00AA8F53 /* pewdiepie.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				CE641CBB1CAC30F700AA8F53 /* malcom.png in Resources */,
+				CE44B2331CBEA7DA00CBB6E0 /* SnoopDog.gif in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				CE74F0921CB5702900A55E67 /* KID.mp3 in Resources */,
+				CE44B2371CBEAF1E00CBB6E0 /* CRACK.mp3 in Resources */,
 				CE74F0901CB56A9F00A55E67 /* JSE.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 			);
@@ -304,9 +320,9 @@
 				52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */,
 				52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */,
 				3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */,
-				E7950A341AC2842D008328E7 /* GameScene.swift in Sources */,
 				3F54A49B1AC75CD00035AB2C /* Tunnel.swift in Sources */,
 				52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */,
+				CE44B2351CBEAD0800CBB6E0 /* GameScene.swift in Sources */,
 				3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */,
 				E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */,
 				522A87C61AF09F7F0058F70B /* LessonSuggestions.swift in Sources */,
