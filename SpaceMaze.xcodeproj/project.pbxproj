@@ -25,6 +25,7 @@
 		CE3BE5A11CB4D38F009156FB /* Hillary Clinton.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE59D1CB4D38F009156FB /* Hillary Clinton.png */; };
 		CE3BE5A21CB4D38F009156FB /* John Kasik.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE59E1CB4D38F009156FB /* John Kasik.png */; };
 		CE3BE5A41CB4D38F009156FB /* ted-cruz.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE5A01CB4D38F009156FB /* ted-cruz.png */; };
+		CE67E3A51CBEA4CD0073EF4E /* CNN.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */; };
 		CE6FA0501CB574FB008657E4 /* Donald.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6FA04F1CB574FB008657E4 /* Donald.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
@@ -70,6 +71,7 @@
 		CE3BE59D1CB4D38F009156FB /* Hillary Clinton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hillary Clinton.png"; sourceTree = "<group>"; };
 		CE3BE59E1CB4D38F009156FB /* John Kasik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "John Kasik.png"; sourceTree = "<group>"; };
 		CE3BE5A01CB4D38F009156FB /* ted-cruz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ted-cruz.png"; sourceTree = "<group>"; };
+		CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CNN.mp3; sourceTree = "<group>"; };
 		CE6FA04E1CB5724C008657E4 /* CNN 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CNN 2.m4a"; sourceTree = "<group>"; };
 		CE6FA04F1CB574FB008657E4 /* Donald.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Donald.png; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
+				CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */,
 				CE6FA04F1CB574FB008657E4 /* Donald.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
@@ -272,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE67E3A51CBEA4CD0073EF4E /* CNN.mp3 in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				CE6FA0501CB574FB008657E4 /* Donald.png in Resources */,

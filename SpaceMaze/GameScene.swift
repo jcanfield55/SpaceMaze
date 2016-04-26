@@ -16,6 +16,9 @@ enum TouchCommand {
     MOVE_RIGHT,
     NO_COMMAND
 }
+
+var highScore:Int = 0
+
 class GameScene: SKScene {
     
     /* Properties */
@@ -61,20 +64,28 @@ class GameScene: SKScene {
                 let div3_remainder:Double = remainder(Double(i),3.0)
                 print("remainder = " + String(div3_remainder))
                 var imageString:String = ""
+                var treasure:TreasureCharacter
                 if (div3_remainder < 0.0) {
                     imageString = "John Kasik"
+                    treasure = TreasureCharacter(imageNamed: "John Kasik", currentTunnel: aTunnel, tunnelPosition: i)
+                    treasure.treasureValue = 143
                 }
                 // Put in a  else if (...) {  } clause to put in another picture in the other third of the cases 
                 else if (div3_remainder == 0.0){
                     imageString = "Bernie Sanders"
+                    treasure = TreasureCharacter(imageNamed: "Bernie Sanders", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(treasure)
+                    treasure.treasureValue = 1069
                 }
 
                 else {
                     imageString = "ted-cruz"
+                    treasure = TreasureCharacter(imageNamed: "ted-cruz", currentTunnel: aTunnel, tunnelPosition: i)
+                    treasure.treasureValue = 545
                 }
                 let dotCharacter = TreasureCharacter(imageNamed: imageString, currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
-                maxScore += 1   // Keep track of the total number of treasure dots
+                maxScore += treasure.treasureValue   // Keep track of the total number of treasure dots
             }
         }
         
@@ -112,7 +123,7 @@ class GameScene: SKScene {
         self.gameResultLabel.hidden = true
         self.addChild(self.gameResultLabel)
         
-        // runAction(SKAction.playSoundFileNamed("CNN 2.m4a", waitForCompletion: true))
+        runAction(SKAction.playSoundFileNamed("CNN.mp3", waitForCompletion: false))
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
@@ -129,9 +140,10 @@ class GameScene: SKScene {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                             dotCharacter.hidden = true
                             allCharacters.remove(dotCharacter)
-                            mainCharacter.treasureScore += 1
+                            mainCharacter.treasureScore += dotCharacter.treasureValue
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
+                            self.scoreLabel2.text = "Highscore: (highScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
                                 gameResultLabel.text = "You Win!"
                                 gameResultLabel.hidden = false
@@ -192,6 +204,11 @@ class GameScene: SKScene {
     // Functions for ending the game and showing the try again screen
 
     func endTheGame() {
+        if let mc:MainCharacter = mainCharacter {
+            if (mc.treasureScore > highScore){
+                highScore = mc.treasureScore
+            }
+        }
         NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
     }
     
