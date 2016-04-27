@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
@@ -29,9 +29,12 @@ class GameScene: SKScene {
     var maxScore:Int = 0
     
     override func didMoveToView(view: SKView) {        
-        
+        let background = SKSpriteNode(imageNamed: "Main Background.png")
+        background.position = CGPointMake(self.size.width/2, self.size.height/2)
+        background.size = CGSize(width: self.size.width, height: self.size.height)
+        background.zPosition = 0
+        self.addChild(background)
         /* Setup your scene here */
-        self.backgroundColor = color
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:Selector("moveOpponent:"), userInfo: nil, repeats: true)
@@ -40,6 +43,7 @@ class GameScene: SKScene {
         // Lesson 1 - create tunnels for the maze pattern you want
         let tunnel1 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 0, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
+        tunnel1.tunnelSpriteNode.zPosition = 1
         let tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
         let tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 6, gridY: 2, colorAlpha: 1.0)
