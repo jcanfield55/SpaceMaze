@@ -32,7 +32,7 @@ class GameScene: SKScene {
         let background = SKSpriteNode(imageNamed: "Main Background.png")
         background.position = CGPointMake(self.size.width/2, self.size.height/2)
         background.size = CGSize(width: self.size.width, height: self.size.height)
-        background.zPosition = 0
+        // background.zPosition = 0
         self.addChild(background)
         /* Setup your scene here */
         
@@ -43,7 +43,7 @@ class GameScene: SKScene {
         // Lesson 1 - create tunnels for the maze pattern you want
         let tunnel1 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 0, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        tunnel1.tunnelSpriteNode.zPosition = 1
+        // tunnel1.tunnelSpriteNode.zPosition = 1
         let tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
         let tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 6, gridY: 2, colorAlpha: 1.0)
