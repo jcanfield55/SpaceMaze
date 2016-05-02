@@ -20,6 +20,11 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		CE17CD0B1CD118C1002C6554 /* AnotherOpponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE17CD0A1CD118C1002C6554 /* AnotherOpponent.swift */; };
+		CE17CD0D1CD11EE4002C6554 /* UpArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17CD0C1CD11EE4002C6554 /* UpArrow.png */; };
+		CE17CD0F1CD11EEE002C6554 /* DownArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17CD0E1CD11EEE002C6554 /* DownArrow.png */; };
+		CE17CD111CD11F28002C6554 /* RIghtArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17CD101CD11F28002C6554 /* RIghtArrow.png */; };
+		CE17CD131CD11F54002C6554 /* LeftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17CD121CD11F54002C6554 /* LeftArrow.png */; };
 		CE48BCD61CBEA667009FEA1A /* Boom_Slime_SP.png in Resources */ = {isa = PBXBuildFile; fileRef = CE48BCD51CBEA667009FEA1A /* Boom_Slime_SP.png */; };
 		CE48BCDA1CBEA684009FEA1A /* Slime Blob Main.png in Resources */ = {isa = PBXBuildFile; fileRef = CE48BCD91CBEA684009FEA1A /* Slime Blob Main.png */; };
 		CE48BCDC1CBEA68C009FEA1A /* Slime Ball.png in Resources */ = {isa = PBXBuildFile; fileRef = CE48BCDB1CBEA68C009FEA1A /* Slime Ball.png */; };
@@ -65,6 +70,11 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		CE17CD0A1CD118C1002C6554 /* AnotherOpponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherOpponent.swift; sourceTree = "<group>"; };
+		CE17CD0C1CD11EE4002C6554 /* UpArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpArrow.png; sourceTree = "<group>"; };
+		CE17CD0E1CD11EEE002C6554 /* DownArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownArrow.png; sourceTree = "<group>"; };
+		CE17CD101CD11F28002C6554 /* RIghtArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RIghtArrow.png; sourceTree = "<group>"; };
+		CE17CD121CD11F54002C6554 /* LeftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftArrow.png; sourceTree = "<group>"; };
 		CE48BCD51CBEA667009FEA1A /* Boom_Slime_SP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Boom_Slime_SP.png; sourceTree = "<group>"; };
 		CE48BCD91CBEA684009FEA1A /* Slime Blob Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slime Blob Main.png"; sourceTree = "<group>"; };
 		CE48BCDB1CBEA68C009FEA1A /* Slime Ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slime Ball.png"; sourceTree = "<group>"; };
@@ -140,6 +150,10 @@
 				CE48BCE51CD08F59009FEA1A /* Slime Ball 2.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
+				CE17CD0C1CD11EE4002C6554 /* UpArrow.png */,
+				CE17CD0E1CD11EEE002C6554 /* DownArrow.png */,
+				CE17CD101CD11F28002C6554 /* RIghtArrow.png */,
+				CE17CD121CD11F54002C6554 /* LeftArrow.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
@@ -151,6 +165,7 @@
 				522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */,
 				52524D551AD5036F0068A3F5 /* MainCharacter.swift */,
 				52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */,
+				CE17CD0A1CD118C1002C6554 /* AnotherOpponent.swift */,
 				52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */,
 				52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */,
 				3F54A49A1AC75CD00035AB2C /* Tunnel.swift */,
@@ -272,11 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
+				CE17CD0D1CD11EE4002C6554 /* UpArrow.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				CE48BCDA1CBEA684009FEA1A /* Slime Blob Main.png in Resources */,
 				CE48BCE21CD08EC0009FEA1A /* Main Background.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				CE48BCDC1CBEA68C009FEA1A /* Slime Ball.png in Resources */,
+				CE17CD111CD11F28002C6554 /* RIghtArrow.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
@@ -285,7 +302,9 @@
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
+				CE17CD0F1CD11EEE002C6554 /* DownArrow.png in Resources */,
 				CE48BCE61CD08F59009FEA1A /* Slime Ball 2.png in Resources */,
+				CE17CD131CD11F54002C6554 /* LeftArrow.png in Resources */,
 				CE48BCE41CD08F00009FEA1A /* Slime Family.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 			);
@@ -315,6 +334,7 @@
 				3F54A49F1AC8CBFA0035AB2C /* Character.swift in Sources */,
 				E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */,
 				522A87C61AF09F7F0058F70B /* LessonSuggestions.swift in Sources */,
+				CE17CD0B1CD118C1002C6554 /* AnotherOpponent.swift in Sources */,
 				526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */,
 				E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */,
 			);

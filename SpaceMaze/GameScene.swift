@@ -79,7 +79,7 @@ class GameScene: SKScene {
         
         // Create opponents
         opponents.append(OpponentCharacter(imageNamed: "Boom_Slime_SP", currentTunnel: tunnel3, tunnelPosition: 3))
-        
+        opponents.append(AnotherOpponent(imageNamed: "Boom_Slime_SP", currentTunnel: tunnel7, tunnelPosition: 3))
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }
@@ -97,6 +97,22 @@ class GameScene: SKScene {
         self.gameResultLabel.fontColor = UIColor.redColor()
         self.gameResultLabel.hidden = true
         self.addChild(self.gameResultLabel)
+        
+        let RightArrow:SKSpriteNode = SKSpriteNode(imageNamed: "RightArrow")
+        RightArrow.size = CGSizeMake(40, 40)
+        RightArrow.position = CGPointMake(CGRectGetMaxX(self.frame) * 0.9, CGRectGetMaxY(self.frame) * 0.03)
+        self.addChild(RightArrow)
+        
+        let DownArrow:SKSpriteNode = SKSpriteNode(imageNamed: "DownArrow")
+        DownArrow.size = CGSizeMake(40, 40)
+        DownArrow.position = CGPointMake(CGRectGetMaxX(self.frame) * 0.9, CGRectGetMaxY(self.frame) * 0.11)
+        self.addChild(DownArrow)
+        
+        let UpArrow:SKSpriteNode = SKSpriteNode(imageNamed: "UpArrow")
+        UpArrow.size = CGSizeMake(40, 40)
+        UpArrow.position = CGPointMake(CGRectGetMaxX(self.frame) * 0.1, CGRectGetMaxY(self.frame) * 0.11)
+        self.addChild(UpArrow)
+
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
@@ -142,19 +158,24 @@ class GameScene: SKScene {
         let width = CGRectGetWidth(frame)
         print("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
        
-        if (location.y/height < 0.25) {
-            return TouchCommand.MOVE_DOWN
+        if (location.y/height > 0.2) {
+            return TouchCommand.NO_COMMAND
         }
-        if (location.y/height > 0.75) {
-            return TouchCommand.MOVE_UP
+        if (location.y/height > 0.1) {
+            if (location.x/width < 0.5) {
+                return TouchCommand.MOVE_UP
+            }
+            else {
+                return TouchCommand.MOVE_DOWN
+            }
         }
-        if (location.x/width < 0.25) {
+        
+        if (location.x/width < 0.5) {
             return TouchCommand.MOVE_LEFT
         }
-        if (location.x/width > 0.75) {
-            return TouchCommand.MOVE_RIGHT
-        }
-        return TouchCommand.NO_COMMAND
+            
+        return TouchCommand.MOVE_RIGHT
+        
     }
     
     // Function called whenever it is time for the opponent to move
