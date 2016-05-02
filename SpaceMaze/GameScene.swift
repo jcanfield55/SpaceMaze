@@ -78,11 +78,13 @@ class GameScene: SKScene {
         self.addChild(tunnel19.tunnelSpriteNode)
         let tunnel20 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 12, colorAlpha: 1.0)
         self.addChild(tunnel20.tunnelSpriteNode)
-        runAction(SKAction.playSoundFileNamed("StarsWars.mp3", waitForCompletion: false))
+   
+        
+        
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "JSE", currentTunnel: aTunnel, tunnelPosition: i)
+                let dotCharacter = TreasureCharacter(imageNamed: "pewdiepie", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
                 maxScore += 1   // Keep track of the total number of treasure dots
             }
@@ -96,7 +98,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "Mark", currentTunnel: tunnel1, tunnelPosition: 5))
+        opponents.append(OpponentCharacter(imageNamed: "pewdiepie", currentTunnel: tunnel1, tunnelPosition: 5))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -115,6 +117,8 @@ class GameScene: SKScene {
         self.gameResultLabel.fontColor = UIColor.redColor()
         self.gameResultLabel.hidden = true
         self.addChild(self.gameResultLabel)
+        runAction(SKAction.playSoundFileNamed("CRACK.mp3", waitForCompletion: false))
+        
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
