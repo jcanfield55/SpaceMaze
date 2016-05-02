@@ -31,7 +31,11 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {        
         
         /* Setup your scene here */
-        self.backgroundColor = color
+        let background = SKSpriteNode(imageNamed: "Back.png")
+        background.position = CGPointMake(self.size.width/2, self.size.height/2)
+        background.size = CGSize(width: self.size.width, height: self.size.height)
+        // background.zPosition = 0
+        self.addChild(background)
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
@@ -40,32 +44,22 @@ class GameScene: SKScene {
         // Lesson 1 - create tunnels for the maze pattern you want
         let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 1, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
-        self.addChild(tunnel2.tunnelSpriteNode)
         let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 1, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 4, gridY: 6, colorAlpha: 1.0)
-        self.addChild(tunnel4.tunnelSpriteNode)
-        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 6, colorAlpha: 2.6)
-        self.addChild(tunnel5.tunnelSpriteNode)
-        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 0, gridY: 4, colorAlpha: 2.6)
-        self.addChild(tunnel6.tunnelSpriteNode)
-        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 4, gridY: 3, colorAlpha: 2.6)
-        self.addChild(tunnel7.tunnelSpriteNode)
         let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 4, colorAlpha: 2.6)
         self.addChild(tunnel8.tunnelSpriteNode)
-        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 0, gridY: 2, colorAlpha: 2.6)
-        self.addChild(tunnel9.tunnelSpriteNode)
         let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 2, colorAlpha: 0.2)
         self.addChild(tunnel10.tunnelSpriteNode)
         let tunnel11 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 7, colorAlpha: 0.2)
         self.addChild(tunnel11.tunnelSpriteNode)
-        let tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 0, gridY: 2, colorAlpha: 0.2)
-        self.addChild(tunnel12.tunnelSpriteNode)
-        let tunnel13 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 2, gridX: 0, gridY: 6, colorAlpha: 1.0)
-        self.addChild(tunnel13.tunnelSpriteNode)
         let tunnel14 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 2, gridY: 4, colorAlpha: 10.2)
         self.addChild(tunnel14.tunnelSpriteNode)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        self.addChild(tunnel2.tunnelSpriteNode)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 4, gridY: 3, colorAlpha: 2.6)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 0, gridY: 2, colorAlpha: 0.2)
+        self.addChild(tunnel12.tunnelSpriteNode)
         
         //Sound
         runAction(SKAction.playSoundFileNamed("UNDERTALE OST - Metal Crusher (Mettaton's Battle Theme) EXTENDED.mp3", waitForCompletion: false))
@@ -88,28 +82,34 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
-        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel6, tunnelPosition: 1))
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
+        opponents.append(EdibleOpponent(imageNamed: "AlienSpaceship1", currentTunnel: tunnel12, tunnelPosition: 1))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -148,7 +148,7 @@ class GameScene: SKScene {
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "You Win!"
+                                gameResultLabel.text = "You Win! You killed Dora!"
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
@@ -157,7 +157,7 @@ class GameScene: SKScene {
                             print("Edible Character")
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Win!"
+                            gameResultLabel.text = "You Lose Loser!"
                             gameResultLabel.hidden = false
                             self.endTheGame()
                         }

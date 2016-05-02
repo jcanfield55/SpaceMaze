@@ -20,6 +20,7 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		CE3FE63E1CD1253400B7DAE6 /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3FE63D1CD1253400B7DAE6 /* Back.png */; };
 		CE47197F1CB56DB50005A4FB /* EdibleOpponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47197E1CB56DB50005A4FB /* EdibleOpponent.swift */; };
 		CE53EB011CBEA2F000DB7064 /* Undertale Megalovania - MLG Airhorn Remix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE53EB001CBEA2F000DB7064 /* Undertale Megalovania - MLG Airhorn Remix.mp3 */; };
 		CE53EB031CBEA5EC00DB7064 /* Chica Jump Scare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE53EB021CBEA5EC00DB7064 /* Chica Jump Scare.mp3 */; };
@@ -68,6 +69,7 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		CE3FE63D1CD1253400B7DAE6 /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Back.png; sourceTree = "<group>"; };
 		CE47197E1CB56DB50005A4FB /* EdibleOpponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdibleOpponent.swift; sourceTree = "<group>"; };
 		CE53EB001CBEA2F000DB7064 /* Undertale Megalovania - MLG Airhorn Remix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Undertale Megalovania - MLG Airhorn Remix.mp3"; sourceTree = "<group>"; };
 		CE53EB021CBEA5EC00DB7064 /* Chica Jump Scare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Chica Jump Scare.mp3"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				CEE05FA71CB5FD5900F9A1A1 /* search.png */,
+				CE3FE63D1CD1253400B7DAE6 /* Back.png */,
 				CE56E8F21CAC31DF007C84E1 /* AlienSpaceship2.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
@@ -291,6 +294,7 @@
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
+				CE3FE63E1CD1253400B7DAE6 /* Back.png in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				CE53EB051CBEAB5A00DB7064 /* UNDERTALE OST - Metal Crusher (Mettaton's Battle Theme) EXTENDED.mp3 in Resources */,
