@@ -12,7 +12,7 @@ import SpriteKit
 class OpponentCharacter:Character {
     
     var blockedMoveRandomly:Bool = false
-    
+    var enemyName:String = ""
     // Function for opponents to chase you
     // Now has two modes: moves toward you in one mode
     // If that mode gets blocked, then goes into random movement mode until it enters a new tunnel

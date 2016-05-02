@@ -66,22 +66,22 @@ class GameScene: SKScene {
                 var imageString:String = ""
                 var treasure:TreasureCharacter
                 if (div3_remainder < 0.0) {
-                    imageString = "John Kasik"
-                    treasure = TreasureCharacter(imageNamed: "John Kasik", currentTunnel: aTunnel, tunnelPosition: i)
-                    treasure.treasureValue = 143
+                    imageString = "The_White_House"
+                    treasure = TreasureCharacter(imageNamed: "The_White_House", currentTunnel: aTunnel, tunnelPosition: i)
+                    treasure.treasureValue = 153
                 }
                 // Put in a  else if (...) {  } clause to put in another picture in the other third of the cases 
                 else if (div3_remainder == 0.0){
-                    imageString = "Bernie Sanders"
-                    treasure = TreasureCharacter(imageNamed: "Bernie Sanders", currentTunnel: aTunnel, tunnelPosition: i)
+                    imageString = "California"
+                    treasure = TreasureCharacter(imageNamed: "California", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(treasure)
-                    treasure.treasureValue = 1069
+                    treasure.treasureValue = 1338
                 }
 
                 else {
-                    imageString = "ted-cruz"
-                    treasure = TreasureCharacter(imageNamed: "ted-cruz", currentTunnel: aTunnel, tunnelPosition: i)
-                    treasure.treasureValue = 545
+                    imageString = "Cnn"
+                    treasure = TreasureCharacter(imageNamed: "Cnn", currentTunnel: aTunnel, tunnelPosition: i)
+                    treasure.treasureValue = 562
                 }
                 let dotCharacter = TreasureCharacter(imageNamed: imageString, currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
@@ -98,7 +98,15 @@ class GameScene: SKScene {
         
         // Create opponents
         opponents.append(OpponentCharacter(imageNamed: "Donald Drumpf", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents[0].enemyName = "Donald"
+        opponents.append(OpponentCharacter(imageNamed: "John Kasik", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents[1].enemyName = "John"
+        opponents.append(OpponentCharacter(imageNamed: "ted-cruz", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents[2].enemyName = "Ted"
+        opponents.append(OpponentCharacter(imageNamed: "Bernie Sanders", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents[3].enemyName = "Bernie"
         
+    
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }
