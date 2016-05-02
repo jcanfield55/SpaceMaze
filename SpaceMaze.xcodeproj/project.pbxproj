@@ -20,6 +20,8 @@
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
 		CE5471761CBEA4F900E3576B /* Europe - The Final Countdown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE5471751CBEA4F900E3576B /* Europe - The Final Countdown.mp3 */; };
+		CE57D3931CD1207900E1B1E7 /* practical-fencing-raper-swords.png in Resources */ = {isa = PBXBuildFile; fileRef = CE57D3921CD1207900E1B1E7 /* practical-fencing-raper-swords.png */; };
+		CE57D3951CD1238A00E1B1E7 /* CapShield05.png in Resources */ = {isa = PBXBuildFile; fileRef = CE57D3941CD1238A00E1B1E7 /* CapShield05.png */; };
 		CE6063DE1CAC2F9200E4487F /* Alien Spaceship 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */; };
 		CE610AE31CB56C72008AEABD /* Cena.png in Resources */ = {isa = PBXBuildFile; fileRef = CE610AE21CB56C72008AEABD /* Cena.png */; };
 		CE610AE51CB56EAF008AEABD /* montela.png in Resources */ = {isa = PBXBuildFile; fileRef = CE610AE41CB56EAF008AEABD /* montela.png */; };
@@ -48,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3F54A49A1AC75CD00035AB2C /* Tunnel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Tunnel.swift; sourceTree = "<group>"; };
 		3F54A49C1AC886C60035AB2C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F54A49E1AC8CBFA0035AB2C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Character.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		522A87C31AF09F060058F70B /* pac.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pac.wav; sourceTree = "<group>"; };
@@ -63,6 +65,8 @@
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		CE5471751CBEA4F900E3576B /* Europe - The Final Countdown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Europe - The Final Countdown.mp3"; sourceTree = "<group>"; };
+		CE57D3921CD1207900E1B1E7 /* practical-fencing-raper-swords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "practical-fencing-raper-swords.png"; path = "../practical-fencing-raper-swords.png"; sourceTree = "<group>"; };
+		CE57D3941CD1238A00E1B1E7 /* CapShield05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CapShield05.png; sourceTree = "<group>"; };
 		CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Alien Spaceship 2.png"; sourceTree = "<group>"; };
 		CE610AE21CB56C72008AEABD /* Cena.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cena.png; sourceTree = "<group>"; };
 		CE610AE41CB56EAF008AEABD /* montela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = montela.png; sourceTree = "<group>"; };
@@ -123,36 +127,38 @@
 		E7950A2C1AC2842D008328E7 /* SpaceMaze */ = {
 			isa = PBXGroup;
 			children = (
-				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
-				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
-				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				CE6063DD1CAC2F9200E4487F /* Alien Spaceship 2.png */,
+				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
+				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
+				CE57D3921CD1207900E1B1E7 /* practical-fencing-raper-swords.png */,
+				CE610AE21CB56C72008AEABD /* Cena.png */,
+				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
+				52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */,
+				3F54A49C1AC886C60035AB2C /* Constants.swift */,
+				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
+				CE57D3941CD1238A00E1B1E7 /* CapShield05.png */,
 				CE5471751CBEA4F900E3576B /* Europe - The Final Countdown.mp3 */,
+				526C47451AF9E152002CA512 /* GameOverScene.swift */,
+				E7950A331AC2842D008328E7 /* GameScene.swift */,
+				E7950A351AC2842D008328E7 /* GameViewController.swift */,
+				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
+				E7950A3A1AC2842D008328E7 /* Images.xcassets */,
+				CE610AE61CB57105008AEABD /* JohnCena.png */,
+				522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */,
+				E7950A371AC2842D008328E7 /* Main.storyboard */,
+				52524D551AD5036F0068A3F5 /* MainCharacter.swift */,
+				CE610AE41CB56EAF008AEABD /* montela.png */,
+				52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */,
+				522A87C31AF09F060058F70B /* pac.wav */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
-				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
-				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
-				3F54A49C1AC886C60035AB2C /* Constants.swift */,
-				E7950A331AC2842D008328E7 /* GameScene.swift */,
-				526C47451AF9E152002CA512 /* GameOverScene.swift */,
-				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
-				522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */,
-				CE610AE21CB56C72008AEABD /* Cena.png */,
-				CE610AE61CB57105008AEABD /* JohnCena.png */,
-				CE610AE41CB56EAF008AEABD /* montela.png */,
-				52524D551AD5036F0068A3F5 /* MainCharacter.swift */,
-				52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */,
-				52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */,
-				52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */,
-				3F54A49A1AC75CD00035AB2C /* Tunnel.swift */,
-				E7950A351AC2842D008328E7 /* GameViewController.swift */,
-				522A87C31AF09F060058F70B /* pac.wav */,
-				E7950A371AC2842D008328E7 /* Main.storyboard */,
-				E7950A3A1AC2842D008328E7 /* Images.xcassets */,
 				E7950A2D1AC2842D008328E7 /* Supporting Files */,
+				52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */,
+				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
+				3F54A49A1AC75CD00035AB2C /* Tunnel.swift */,
 			);
 			path = SpaceMaze;
 			sourceTree = "<group>";
@@ -273,11 +279,13 @@
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
+				CE57D3931CD1207900E1B1E7 /* practical-fencing-raper-swords.png in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				CE610AE71CB57105008AEABD /* JohnCena.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
+				CE57D3951CD1238A00E1B1E7 /* CapShield05.png in Resources */,
 				CE6063DE1CAC2F9200E4487F /* Alien Spaceship 2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

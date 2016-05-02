@@ -68,12 +68,12 @@ class GameScene: SKScene {
                 
                 if (aTunnel===tunnel1){
                     let dotCharacter = TreasureCharacter(
-            imageNamed: "Alien Spaceship 2", currentTunnel: aTunnel, tunnelPosition: i)
+            imageNamed: "practical-fencing-raper-swords.png", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     dotCharacter.tresherValue=3
                     maxScore+=1   // Keep track of the total number of treasure dots
                 } else {
-                    let dotCharacter2 = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter2 = TreasureCharacter(imageNamed: "CapShield05.png", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter2)
                     maxScore += 1   // Keep track of the total number of treasure dots
 
@@ -134,7 +134,7 @@ class GameScene: SKScene {
                             }
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "You got creamed!"
                             gameResultLabel.hidden = false
                             self.endTheGame()
                         }
