@@ -112,6 +112,11 @@ class GameScene: SKScene {
         UpArrow.size = CGSizeMake(40, 40)
         UpArrow.position = CGPointMake(CGRectGetMaxX(self.frame) * 0.1, CGRectGetMaxY(self.frame) * 0.11)
         self.addChild(UpArrow)
+        
+        let LeftArrow:SKSpriteNode = SKSpriteNode(imageNamed: "LeftArrow")
+        LeftArrow.size = CGSizeMake(40, 40)
+        LeftArrow.position = CGPointMake(CGRectGetMaxX(self.frame) * 0.1, CGRectGetMaxY(self.frame) * 0.03)
+        self.addChild(LeftArrow)
 
     }
     
