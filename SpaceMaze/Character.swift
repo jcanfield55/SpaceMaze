@@ -38,7 +38,7 @@ class Character:SKSpriteNode {
             // Uncomment the line below if you want sound along with every movement of a character
 
 
-
+runAction(SKAction.playSoundFileNamed("CRACK.mp3", waitForCompletion: true))
 
 
             
