@@ -48,6 +48,7 @@ class GameOverScene: SKScene {
                 
                 // Remove all the previous characters
                 allCharacters.removeAllCharacters()
+                allTunnels.removeAll()
                 
                 // Show a fresh GameScene
                 let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)

@@ -73,7 +73,7 @@ class GameScene: SKScene {
                     dotCharacter.tresherValue=3
                     maxScore+=1   // Keep track of the total number of treasure dots
                 } else {
-                    let dotCharacter2 = TreasureCharacter(imageNamed: "CapShield05.png", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter2 = TreasureCharacter(imageNamed: "archery-target-v2.png", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter2)
                     maxScore += 1   // Keep track of the total number of treasure dots
 
@@ -83,13 +83,13 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"montela", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"montela2", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "JohnCena", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "Cena.jpg", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -175,7 +175,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "You win!"
+                        gameResultLabel.text = "You couldn't see him!"
                         gameResultLabel.hidden = false
                         self.endTheGame()
                     }
