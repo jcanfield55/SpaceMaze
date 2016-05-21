@@ -21,7 +21,7 @@
 //
 // At the end of the didMoveToView method:
 /*
-self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
+self.scoreLab/Users/fablearner/Desktop/FAB Swift Programming/SpaceMaze/SpaceMaze/squirrel.pngel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
 self.scoreLabel.fontSize = 16
 self.scoreLabel.fontName = "Helvetica-Bold"
 self.addChild(self.scoreLabel)

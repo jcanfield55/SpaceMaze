@@ -66,7 +66,7 @@ class GameScene: SKScene {
                 var imageString:String = ""
                 var treasure:TreasureCharacter
                 if (div3_remainder < 0.0) {
-                    imageString = "The_White_House"
+                    imageString = "The_White_House.jpg"
                     treasure = TreasureCharacter(imageNamed: "The_White_House", currentTunnel: aTunnel, tunnelPosition: i)
                     treasure.treasureValue = 153
                 }
