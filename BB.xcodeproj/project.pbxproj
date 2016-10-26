@@ -59,14 +59,14 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
-		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7950A2A1AC2842D008328E7 /* BB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7950A331AC2842D008328E7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E7950A351AC2842D008328E7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E7950A381AC2842D008328E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7950A3A1AC2842D008328E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E7950A431AC2842D008328E7 /* SpaceMazeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceMazeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7950A431AC2842D008328E7 /* BB.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BB.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A481AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A491AC2842D008328E7 /* SpaceMazeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceMazeTests.swift; sourceTree = "<group>"; };
 		E7950A531AC2866C008328E7 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 		E7950A2B1AC2842D008328E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7950A2A1AC2842D008328E7 /* SpaceMaze.app */,
-				E7950A431AC2842D008328E7 /* SpaceMazeTests.xctest */,
+				E7950A2A1AC2842D008328E7 /* BB.app */,
+				E7950A431AC2842D008328E7 /* BB.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E7950A291AC2842D008328E7 /* SpaceMaze */ = {
+		E7950A291AC2842D008328E7 /* BB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E7950A4D1AC2842D008328E7 /* Build configuration list for PBXNativeTarget "SpaceMaze" */;
+			buildConfigurationList = E7950A4D1AC2842D008328E7 /* Build configuration list for PBXNativeTarget "BB" */;
 			buildPhases = (
 				E7950A261AC2842D008328E7 /* Sources */,
 				E7950A271AC2842D008328E7 /* Frameworks */,
@@ -185,14 +185,14 @@
 			);
 			dependencies = (
 			);
-			name = SpaceMaze;
+			name = BB;
 			productName = SpaceMaze;
-			productReference = E7950A2A1AC2842D008328E7 /* SpaceMaze.app */;
+			productReference = E7950A2A1AC2842D008328E7 /* BB.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E7950A421AC2842D008328E7 /* SpaceMazeTests */ = {
+		E7950A421AC2842D008328E7 /* BBTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E7950A501AC2842D008328E7 /* Build configuration list for PBXNativeTarget "SpaceMazeTests" */;
+			buildConfigurationList = E7950A501AC2842D008328E7 /* Build configuration list for PBXNativeTarget "BBTests" */;
 			buildPhases = (
 				E7950A3F1AC2842D008328E7 /* Sources */,
 				E7950A401AC2842D008328E7 /* Frameworks */,
@@ -203,9 +203,9 @@
 			dependencies = (
 				E7950A451AC2842D008328E7 /* PBXTargetDependency */,
 			);
-			name = SpaceMazeTests;
+			name = BBTests;
 			productName = SpaceMazeTests;
-			productReference = E7950A431AC2842D008328E7 /* SpaceMazeTests.xctest */;
+			productReference = E7950A431AC2842D008328E7 /* BB.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E7950A251AC2842D008328E7 /* Build configuration list for PBXProject "SpaceMaze" */;
+			buildConfigurationList = E7950A251AC2842D008328E7 /* Build configuration list for PBXProject "BB" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -241,8 +241,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E7950A291AC2842D008328E7 /* SpaceMaze */,
-				E7950A421AC2842D008328E7 /* SpaceMazeTests */,
+				E7950A291AC2842D008328E7 /* BB */,
+				E7950A421AC2842D008328E7 /* BBTests */,
 			);
 		};
 /* End PBXProject section */
@@ -308,7 +308,7 @@
 /* Begin PBXTargetDependency section */
 		E7950A451AC2842D008328E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E7950A291AC2842D008328E7 /* SpaceMaze */;
+			target = E7950A291AC2842D008328E7 /* BB */;
 			targetProxy = E7950A441AC2842D008328E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -414,7 +414,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BB;
 			};
 			name = Debug;
 		};
@@ -427,7 +427,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = BB;
 			};
 			name = Release;
 		};
@@ -446,8 +446,8 @@
 				INFOPLIST_FILE = SpaceMazeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceMaze.app/SpaceMaze";
+				PRODUCT_NAME = BB;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BB.app/BB";
 			};
 			name = Debug;
 		};
@@ -462,15 +462,15 @@
 				INFOPLIST_FILE = SpaceMazeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceMaze.app/SpaceMaze";
+				PRODUCT_NAME = BB;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BB.app/BB";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E7950A251AC2842D008328E7 /* Build configuration list for PBXProject "SpaceMaze" */ = {
+		E7950A251AC2842D008328E7 /* Build configuration list for PBXProject "BB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7950A4B1AC2842D008328E7 /* Debug */,
@@ -479,7 +479,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E7950A4D1AC2842D008328E7 /* Build configuration list for PBXNativeTarget "SpaceMaze" */ = {
+		E7950A4D1AC2842D008328E7 /* Build configuration list for PBXNativeTarget "BB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7950A4E1AC2842D008328E7 /* Debug */,
@@ -488,7 +488,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E7950A501AC2842D008328E7 /* Build configuration list for PBXNativeTarget "SpaceMazeTests" */ = {
+		E7950A501AC2842D008328E7 /* Build configuration list for PBXNativeTarget "BBTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E7950A511AC2842D008328E7 /* Debug */,

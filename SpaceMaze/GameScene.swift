@@ -3,9 +3,9 @@
 //  SpaceMaze
 //
 //  Created by Diana Smetters on 3/24/15.
-//  Copyright (c) 2015 Diana Smetters. All rights reserved.
+//  Copyright (c) 2015 Diana Smetters. All rights reserved. test
 //
-
+//
 import SpriteKit
 
 // Enumeration -- defines a variable class with five different values
