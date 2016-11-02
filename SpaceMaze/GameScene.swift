@@ -108,7 +108,7 @@ class GameScene: SKScene {
                     runAction(SKAction.playSoundFileNamed("Music.mp3", waitForCompletion: false))
                     // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
                     let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
-                    for otherCharacter in samePositionCharacters {
+                    for otherCharacter in samePositionCharacers {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                             dotCharacter.hidden = true
                             allCharacters.remove(dotCharacter)
