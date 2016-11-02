@@ -28,7 +28,7 @@ class GameOverScene: SKScene {
         self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         self.gameResultLabel.fontSize = 20
         self.gameResultLabel.fontName = "Helvetica-BoldOblique"
-        self.gameResultLabel.fontColor = UIColor.redColor()
+        self.gameResultLabel.fontColor = UIColor.blueColor()
         self.addChild(self.gameResultLabel)
         
         // Add tryAgainButton
