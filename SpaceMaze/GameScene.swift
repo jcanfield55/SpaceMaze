@@ -19,9 +19,9 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let color = UIColor(red:0.1, green:0.15, blue:0.3, alpha:1.0)
     var mainCharacter:MainCharacter?
-    let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
+    let opponentMoveTiming:NSTimeInterval = 0.19999  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
     var opponents:[OpponentCharacter] = []
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
@@ -38,12 +38,15 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 0, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 12, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 13, gridX: 0, gridY: 0, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 13, gridX: 6, gridY: 0,
+            colorAlpha: 1.0)
+        self.addChild(tunnel4.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
