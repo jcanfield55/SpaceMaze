@@ -19,9 +19,10 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
+    var OpSpeed:NSTimeInterval = 2.5
     let color = UIColor(red:0.1, green:0.15, blue:0.3, alpha:1.0)
     var mainCharacter:MainCharacter?
-    let opponentMoveTiming:NSTimeInterval = 0.19999  // number of seconds between opponent movement
+    var opponentMoveTiming:NSTimeInterval = 3  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
     var opponents:[OpponentCharacter] = []
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
@@ -49,17 +50,28 @@ class GameScene: SKScene {
         self.addChild(tunnel4.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
+        var bowl:Bool = true
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
+                if (bowl == true) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    bowl = false
+                }
+                else {
+                    let dotCharacter = TreasureCharacter(imageNamed: "Sweatshirt", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    bowl = true
+                }
+
+                
                 maxScore += 1   // Keep track of the total number of treasure dots
             }
         }
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"Jacob", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
@@ -93,7 +105,7 @@ class GameScene: SKScene {
             for touch in touches {
                     let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
                     mainCharacter.moveCharacter(command)
-                    
+                    runAction(SKAction.playSoundFileNamed("Music.mp3", waitForCompletion: false))
                     // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
                     let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
                     for otherCharacter in samePositionCharacters {
