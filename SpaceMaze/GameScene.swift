@@ -42,28 +42,41 @@ class GameScene: SKScene {
         self.addChild(tunnel1.tunnelSpriteNode)
         let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
-        self.addChild(tunnel3.tunnelSpriteNode)
-        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 2, gridY: 5, colorAlpha: 1.0)
-        self.addChild(tunnel4.tunnelSpriteNode)
+        //let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        //self.addChild(tunnel3.tunnelSpriteNode)
+        //let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 2, gridY: 5, colorAlpha: 1.0)
+        //self.addChild(tunnel4.tunnelSpriteNode)
+        // let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 2, gridY: 5, colorAlpha: 1.0)
+        // self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 2, gridY: 5, colorAlpha: 1.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+
+
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
-            for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
+            for i:Int in 0 ..< aTunnel.length{
+                if i % 2==0 {
+                    let dotCharacter = TreasureCharacter(imageNamed: "dog", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }else{
+                    let dotCharacter = TreasureCharacter(imageNamed: "graydot",
+                                                         currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    
+                }
                 maxScore += 1   // Keep track of the total number of treasure dots
             }
         }
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"Pacman", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.append(OpponentCharacter(imageNamed: "graydot", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -108,7 +121,7 @@ class GameScene: SKScene {
                             }
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "You scrued up!"
                             gameResultLabel.hidden = false
                             self.endTheGame()
                         }
