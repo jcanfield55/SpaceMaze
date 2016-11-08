@@ -48,7 +48,11 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                if i%2 == 0 {
+                if (aTunnel === tunnel2) && (i == 0) {
+                    let dotCharacter = PowerTreasure(imageNamed: "squirrel", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }
+                else if i%2 == 0 {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                 }
@@ -110,6 +114,9 @@ class GameScene: SKScene {
                                 gameResultLabel.text = "You Win!"
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
+                            }
+                            if otherCharacter is PowerTreasure { // If we hit a PowerTreasure, turn mainCharacter green
+                                mainCharacter.texture = SKTexture(imageNamed:"PacMan")
                             }
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
