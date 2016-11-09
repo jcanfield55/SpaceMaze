@@ -38,13 +38,13 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 7, gridY: 6, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 7, gridY: 13, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 2, gridY: 6, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 2, gridY: 3, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 6, gridY: 7, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 13, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 1, gridX: 3, gridY: 5, colorAlpha: 1.0)
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 1, gridY: 3, colorAlpha: 1.0)
         self.addChild(tunnel4.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
@@ -55,7 +55,7 @@ class GameScene: SKScene {
                     self.addChild(dotCharacter)
                 }
                 else {
-                    let dotCharacter = TreasureCharacter(imageNamed: "pacman", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter = TreasureCharacter(imageNamed: "squirrel", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                 }
                 maxScore += 1   // Keep track of the total number of treasure dots
