@@ -39,15 +39,18 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 0, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 34, gridX: 0, gridY: 0, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 12, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 34, gridX: 0, gridY: 46, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 13, gridX: 0, gridY: 0, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 47, gridX: 0, gridY: 0, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 13, gridX: 6, gridY: 0,
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 47, gridX: 33, gridY: 0,
             colorAlpha: 1.0)
         self.addChild(tunnel4.tunnelSpriteNode)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 34, gridX: 0, gridY: 24,
+            colorAlpha: 1.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
         var bowl:Bool = true
@@ -85,15 +88,17 @@ class GameScene: SKScene {
         
         // Add score label
         self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
-        self.scoreLabel.fontSize = 16
+        self.scoreLabel.fontSize = 34
         self.scoreLabel.fontName = "Helvetica-Bold"
+        self.scoreLabel.fontColor = UIColor.greenColor()
         self.addChild(self.scoreLabel)
+        
         
         // Add gameResultLabel
         self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         self.gameResultLabel.fontSize = 20
         self.gameResultLabel.fontName = "Helvetica-BoldOblique"
-        self.gameResultLabel.fontColor = UIColor.redColor()
+        self.gameResultLabel.fontColor = UIColor.purpleColor()
         self.gameResultLabel.hidden = true
         self.addChild(self.gameResultLabel)
     }
@@ -108,7 +113,7 @@ class GameScene: SKScene {
                     runAction(SKAction.playSoundFileNamed("Music.mp3", waitForCompletion: false))
                     // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
                     let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
-                    for otherCharacter in samePositionCharacers {
+                    for otherCharacter in samePositionCharacters {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                             dotCharacter.hidden = true
                             allCharacters.remove(dotCharacter)
@@ -116,13 +121,13 @@ class GameScene: SKScene {
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "You Win!"
+                                gameResultLabel.text = "You Still Lose!"
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "WOOFLESS!"
                             gameResultLabel.hidden = false
                             self.endTheGame()
                         }
@@ -163,7 +168,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.text = "You Still Lose!"
                         gameResultLabel.hidden = false
                         self.endTheGame()
                     }
