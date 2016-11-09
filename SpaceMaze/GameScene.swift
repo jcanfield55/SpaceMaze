@@ -38,17 +38,21 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 7, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 5, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 4, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                if (i % 2 == 1) {
+                if (aTunnel === tunnel2) && (i==4 ) {
+                    let dotCharacter = PowerTreasure (imageNamed: "squirrel", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+            }
+                else if (i % 2 == 1) {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                 }
@@ -184,4 +188,3 @@ class GameScene: SKScene {
      Improvements:
       - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
     */
-}
