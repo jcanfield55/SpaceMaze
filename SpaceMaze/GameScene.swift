@@ -59,7 +59,11 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                if (i % 2==0) {
+                if (aTunnel === tunnel19) && (i==8) {
+                    let dotCharacter = PowerTreasure(imageNamed: "PacMan", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }
+                else if (i % 2==0) {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                 } else {
@@ -117,13 +121,13 @@ class GameScene: SKScene {
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "You Win!"
+                                gameResultLabel.text = "You gobbled up all the little squirlles!"
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "The evil Goldfish gobbled you up!"
                             gameResultLabel.hidden = false
                             self.endTheGame()
                         }
@@ -164,7 +168,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.text = "The evil goldfish gobbled you up!"
                         gameResultLabel.hidden = false
                         self.endTheGame()
                     }
