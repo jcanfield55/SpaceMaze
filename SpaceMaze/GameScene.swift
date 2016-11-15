@@ -171,7 +171,7 @@ class GameScene: SKScene {
                         if (theMainCharacter.poweredUp) {
                             // anOpponent.hidden = true
                             opponents.remove(anOpponent)
-                            allCharacters.remove(anOpponent)
+                            allCharacters.remove(anOpponent) 
                             return
                         }
                         else {
