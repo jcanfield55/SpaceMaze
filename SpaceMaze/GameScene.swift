@@ -27,6 +27,7 @@ class GameScene: SKScene {
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
+    var gameOver:Bool = false
     
     override func didMoveToView(view: SKView) {        
         
@@ -95,6 +96,9 @@ class GameScene: SKScene {
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(touches:Set<UITouch>, withEvent event: UIEvent?) {
+        if gameOver {
+            return
+        }
         /* Called when a touch begins */
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
@@ -121,7 +125,7 @@ class GameScene: SKScene {
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
                             if (mainCharacter.poweredUp) {
-                                // anOpponent.hidden = true
+                                anOpponent.hidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
                             }
@@ -162,6 +166,9 @@ class GameScene: SKScene {
     
     // Function called whenever it is time for the opponent to move
     @objc func moveOpponent(timer: NSTimer) {
+        if gameOver {
+            return
+        }
         for anOpponent in opponents {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
@@ -169,7 +176,7 @@ class GameScene: SKScene {
                 for otherCharacter in samePositionCharacters {
                     if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
                         if (theMainCharacter.poweredUp) {
-                            // anOpponent.hidden = true
+                            anOpponent.hidden = true
                             opponents.remove(anOpponent)
                             allCharacters.remove(anOpponent) 
                             return
@@ -188,6 +195,8 @@ class GameScene: SKScene {
     // Functions for ending the game and showing the try again screen
 
     func endTheGame() {
+        gameOver = true
+        opponentTimer?.invalidate()
         NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
     }
     
