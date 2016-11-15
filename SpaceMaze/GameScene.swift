@@ -23,7 +23,7 @@ class GameScene: SKScene {
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
-    var opponents:[OpponentCharacter] = []
+    var opponents = Set<OpponentCharacter>()
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
@@ -72,7 +72,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -115,14 +115,21 @@ class GameScene: SKScene {
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
-                            if otherCharacter is PowerTreasure { // If we hit a PowerTreasure, turn mainCharacter green
-                                mainCharacter.texture = SKTexture(imageNamed:"PacMan")
+                            if otherCharacter is PowerTreasure { // If we hit a PowerTreasure, power me up
+                                mainCharacter.powerMeUp()
                             }
                         }
-                        else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
-                            gameResultLabel.hidden = false
-                            self.endTheGame()
+                        else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                            if (mainCharacter.poweredUp) {
+                                // anOpponent.hidden = true
+                                opponents.remove(anOpponent)
+                                allCharacters.remove(anOpponent)
+                            }
+                            else {
+                                gameResultLabel.text = "You Lose!"
+                                gameResultLabel.hidden = false
+                                self.endTheGame()
+                            }
                         }
                     }
             }
@@ -160,10 +167,18 @@ class GameScene: SKScene {
                 anOpponent.chaseCharacter(c)
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
-                    if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "You Lose!"
-                        gameResultLabel.hidden = false
-                        self.endTheGame()
+                    if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        if (theMainCharacter.poweredUp) {
+                            // anOpponent.hidden = true
+                            opponents.remove(anOpponent)
+                            allCharacters.remove(anOpponent)
+                            return
+                        }
+                        else {
+                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.hidden = false
+                            self.endTheGame()
+                        }
                     }
                 }
             }
