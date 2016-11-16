@@ -23,10 +23,11 @@ class GameScene: SKScene {
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
-    var opponents:[OpponentCharacter] = []
+    var opponents = Set<OpponentCharacter>()
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
+    var gameOver:Bool = false
     
     override func didMoveToView(view: SKView) {        
         
@@ -81,7 +82,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "graydot", currentTunnel: tunnel6, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "graydot", currentTunnel: tunnel6, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -104,6 +105,9 @@ class GameScene: SKScene {
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(touches:Set<UITouch>, withEvent event: UIEvent?) {
+        if gameOver {
+            return
+        }
         /* Called when a touch begins */
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
@@ -161,6 +165,9 @@ class GameScene: SKScene {
     
     // Function called whenever it is time for the opponent to move
     @objc func moveOpponent(timer: NSTimer) {
+        if gameOver {
+            return
+        }
         for anOpponent in opponents {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
@@ -179,6 +186,8 @@ class GameScene: SKScene {
     // Functions for ending the game and showing the try again screen
 
     func endTheGame() {
+        gameOver = true
+        opponentTimer?.invalidate()
         NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
     }
     
