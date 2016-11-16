@@ -20,6 +20,10 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		91D1F8AC1DDCC93400451E1D /* pepe.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F8AB1DDCC93400451E1D /* pepe.png */; };
+		91D1F8AE1DDCCA2100451E1D /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F8AD1DDCCA2100451E1D /* 2.png */; };
+		91D1F8B01DDCCAC100451E1D /* Hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F8AF1DDCCAC100451E1D /* Hit.mp3 */; };
+		91D1F8B21DDCCC7C00451E1D /* PowerTreasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D1F8B11DDCCC7C00451E1D /* PowerTreasure.swift */; };
 		91F7BBC11DCA468600EC3F83 /* Jacob.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BBC01DCA468600EC3F83 /* Jacob.jpg */; };
 		91F7BBC31DCA469100EC3F83 /* Sweatshirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BBC21DCA469100EC3F83 /* Sweatshirt.png */; };
 		91F7BBC51DCA4BB900EC3F83 /* sweat.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BBC41DCA4BB900EC3F83 /* sweat.png */; };
@@ -63,6 +67,10 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		91D1F8AB1DDCC93400451E1D /* pepe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pepe.png; path = ../../../Desktop/pepe.png; sourceTree = "<group>"; };
+		91D1F8AD1DDCCA2100451E1D /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../Desktop/2.png; sourceTree = "<group>"; };
+		91D1F8AF1DDCCAC100451E1D /* Hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Hit.mp3; path = "../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Hit.mp3"; sourceTree = "<group>"; };
+		91D1F8B11DDCCC7C00451E1D /* PowerTreasure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerTreasure.swift; sourceTree = "<group>"; };
 		91F7BBC01DCA468600EC3F83 /* Jacob.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Jacob.jpg; path = ../../../Desktop/Jacob.jpg; sourceTree = "<group>"; };
 		91F7BBC21DCA469100EC3F83 /* Sweatshirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sweatshirt.png; path = ../../../Desktop/Sweatshirt.png; sourceTree = "<group>"; };
 		91F7BBC41DCA4BB900EC3F83 /* sweat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sweat.png; path = ../../../Desktop/sweat.png; sourceTree = "<group>"; };
@@ -130,6 +138,8 @@
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
+				91D1F8B11DDCCC7C00451E1D /* PowerTreasure.swift */,
+				91D1F8AF1DDCCAC100451E1D /* Hit.mp3 */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				91F7BBC01DCA468600EC3F83 /* Jacob.jpg */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
@@ -143,8 +153,10 @@
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
 				522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */,
 				52524D551AD5036F0068A3F5 /* MainCharacter.swift */,
+				91D1F8AD1DDCCA2100451E1D /* 2.png */,
 				52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */,
 				52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */,
+				91D1F8AB1DDCC93400451E1D /* pepe.png */,
 				52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */,
 				3F54A49A1AC75CD00035AB2C /* Tunnel.swift */,
 				E7950A351AC2842D008328E7 /* GameViewController.swift */,
@@ -268,9 +280,12 @@
 				91F7BBC31DCA469100EC3F83 /* Sweatshirt.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
+				91D1F8B01DDCCAC100451E1D /* Hit.mp3 in Resources */,
+				91D1F8AC1DDCC93400451E1D /* pepe.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
+				91D1F8AE1DDCCA2100451E1D /* 2.png in Resources */,
 				91F7BBC71DCA4C8500EC3F83 /* Music.mp3 in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				91F7BBC11DCA468600EC3F83 /* Jacob.jpg in Resources */,
@@ -297,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52524D561AD5036F0068A3F5 /* MainCharacter.swift in Sources */,
+				91D1F8B21DDCCC7C00451E1D /* PowerTreasure.swift in Sources */,
 				52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */,
 				52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */,
 				3F54A49D1AC886C60035AB2C /* Constants.swift in Sources */,

@@ -57,6 +57,10 @@ class GameScene: SKScene {
         var bowl:Bool = true
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
+                if (aTunnel === tunnel5) && (i == 4) {
+                    let dotCharacter = PowerTreasure(imageNamed: "2", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }
                 if (bowl == true) {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
@@ -75,7 +79,7 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Jacob", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"pepe", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
@@ -129,8 +133,15 @@ class GameScene: SKScene {
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
+                            if otherCharacter is PowerTreasure {
+                                
+                            }
                         }
-                        else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
+                        else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                            if () {
+                                anOpponent.hidden = true
+                                opponents.remove(anOpponent)
+                            }
                             gameResultLabel.text = "WOOFLESS!"
                             gameResultLabel.hidden = false
                             self.endTheGame()
