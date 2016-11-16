@@ -39,7 +39,7 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 7, gridY: 13, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 2, gridY: 10, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
         let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 2, gridY: 3, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
@@ -51,7 +51,12 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                if (i % 2 == 0) {
+                if (aTunnel === tunnel1) && (i % 2 == 0) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "goldfish", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    
+                }
+                else if i%2 == 0 {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                 }
