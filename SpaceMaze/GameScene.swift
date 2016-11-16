@@ -23,7 +23,7 @@ class GameScene: SKScene {
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
-    var opponents:[OpponentCharacter] = []
+    var opponents = Set<OpponentCharacter>()
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
@@ -83,7 +83,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "goldfish", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "goldfish", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
