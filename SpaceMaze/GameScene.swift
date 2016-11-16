@@ -57,6 +57,8 @@ class GameScene: SKScene {
         self.addChild(tunnel18.tunnelSpriteNode)
         let tunnel19 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 16, gridX: 8, gridY: 0, colorAlpha: 0.0)
         self.addChild(tunnel19.tunnelSpriteNode)
+        let tunnel20 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 1, colorAlpha: 1.0)
+        self.addChild(tunnel20.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
@@ -129,11 +131,22 @@ class GameScene: SKScene {
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
+                            if otherCharacter is PowerTreasure {
+                                mainCharacter.powerMeUp ()
+                            }
                         }
-                        else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "The evil Goldfish gobbled you up!"
-                            gameResultLabel.hidden = false
-                            self.endTheGame()
+                        else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponente
+                            if mainCharacter.Eatenemy {
+                                anOpponent.hidden = true
+                                opponents.remove(anOpponent)
+                                allCharacters.remove(anOpponent)
+                                return
+                            }
+                            else {
+                                gameResultLabel.text = "The evil Goldfish gobbled you up!"
+                                gameResultLabel.hidden = false
+                                self.endTheGame()
+                            }
                         }
                     }
             }

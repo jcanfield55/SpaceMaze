@@ -34,6 +34,7 @@ class GameOverScene: SKScene {
         // Add tryAgainButton
         self.tryAgainButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) * 0.25)
         self.tryAgainButton.name = "SavageButton2"
+        // self.tryAgainButton.frame = CGRectMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) * 0.25, 50.0, 20.0)
         self.addChild(self.tryAgainButton)
 
     }
