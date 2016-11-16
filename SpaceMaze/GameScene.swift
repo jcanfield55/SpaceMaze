@@ -45,10 +45,10 @@ class GameScene: SKScene {
         self.addChild(tunnel2.tunnelSpriteNode)
         //let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY:6, colorAlpha: 1.0)
         //self.addChild(tunnel3.tunnelSpriteNode)
-        //let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 2, gridY: 5, colorAlpha: 1.0)
-        //self.addChild(tunnel4.tunnelSpriteNode)
-        // let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 2, gridY: 5, colorAlpha: 1.0)
-        // self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 7, gridX: 5, gridY: 5, colorAlpha: 1.0)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 10, gridX: 2, gridY: 10, colorAlpha: 1.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
         let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 2, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel6.tunnelSpriteNode)
 
@@ -128,6 +128,13 @@ class GameScene: SKScene {
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
+                            
+                            if otherCharacter is PowerTreasure {
+                                mainCharacter.powerMeUp ()
+                                
+                            }
+                            
+                            
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
                             gameResultLabel.text = "You scrued up!"
