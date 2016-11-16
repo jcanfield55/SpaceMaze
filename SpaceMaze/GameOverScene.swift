@@ -20,7 +20,7 @@ class GameOverScene: SKScene {
         
         // Add score label
         self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
-        self.scoreLabel.fontSize = 16
+        self.scoreLabel.fontSize = 1
         self.scoreLabel.fontName = "Helvetica-Bold"
         self.addChild(self.scoreLabel)
         

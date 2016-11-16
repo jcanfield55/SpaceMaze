@@ -125,6 +125,10 @@ class GameScene: SKScene {
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
+                            if otherCharacter is PowerTreasure { // If we hit a PowerTreasure
+                                // TODO put in the mainCharacter powerMeUp funtion
+                                mainCharacter.powerMeUp()
+                            }
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
                             gameResultLabel.text = "You Lose!"
