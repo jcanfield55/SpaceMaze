@@ -130,7 +130,7 @@ class GameScene: SKScene {
                             }
                             
                             if otherCharacter is PowerTreasure {
-                                mainCharacter.powerMeUp ()
+                                mainCharacter.powerMeUp () 
                                 
                             }
                             
