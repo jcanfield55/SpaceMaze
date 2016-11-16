@@ -136,6 +136,7 @@ class GameScene: SKScene {
                             self.endTheGame()
                         }
                     }
+                
             }
         }
     }
