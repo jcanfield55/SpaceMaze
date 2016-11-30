@@ -6,4 +6,9 @@
 //  Copyright © 2016 Diana Smetters. All rights reserved.
 //
 
-import Foundation class PowerTreasure:TreasureCharacter
+import Foundation
+import SpriteKit
+
+class PowerTreasure:TreasureCharacter {
+    
+}

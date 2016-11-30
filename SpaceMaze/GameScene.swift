@@ -52,7 +52,7 @@ class GameScene: SKScene {
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
                 if (aTunnel === tunnel1) && (i % 2 == 0) {
-                    let dotCharacter = TreasureCharacter(imageNamed: "goldfish", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter = PowerTreasure(imageNamed: "goldfish", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     
                 }
