@@ -136,10 +136,17 @@ class GameScene: SKScene {
                             
                             
                         }
-                        else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You scrued up!"
-                            gameResultLabel.hidden = false
-                            self.endTheGame()
+                        else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                            if (mainCharacter.powerupmode) {
+                                anOpponent.hidden = true
+                                opponents.remove(anOpponent)
+                                allCharacters.remove(anOpponent)
+                            }
+                            else {
+                                gameResultLabel.text = "You scrued up!"
+                                gameResultLabel.hidden = false
+                                self.endTheGame()
+                            }
                         }
                     }
             }
@@ -180,10 +187,20 @@ class GameScene: SKScene {
                 anOpponent.chaseCharacter(c)
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
-                    if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "YOU LOOSE "
-                        gameResultLabel.hidden = false
-                        self.endTheGame()
+                    if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        if (theMainCharacter.powerupmode) {
+                            anOpponent.hidden = true
+                            opponents.remove(anOpponent)
+                            allCharacters.remove(anOpponent)
+                            RETURN
+
+                        
+                        }
+                        else {
+                            gameResultLabel.text = "YOU LOOSE "
+                            gameResultLabel.hidden = false
+                            self.endTheGame()
+                        }
                     }
                 }
             }
