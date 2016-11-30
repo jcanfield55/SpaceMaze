@@ -20,6 +20,8 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		91CD0E341DEF3D8F002D800B /* Grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CD0E331DEF3D8F002D800B /* Grass.png */; };
+		91CD0E361DEF3EDF002D800B /* Ultimate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91CD0E351DEF3EDF002D800B /* Ultimate.mp3 */; };
 		91D1F8AC1DDCC93400451E1D /* pepe.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F8AB1DDCC93400451E1D /* pepe.png */; };
 		91D1F8AE1DDCCA2100451E1D /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F8AD1DDCCA2100451E1D /* 2.png */; };
 		91D1F8B01DDCCAC100451E1D /* Hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F8AF1DDCCAC100451E1D /* Hit.mp3 */; };
@@ -67,6 +69,8 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		91CD0E331DEF3D8F002D800B /* Grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Grass.png; path = ../../../Desktop/Grass.png; sourceTree = "<group>"; };
+		91CD0E351DEF3EDF002D800B /* Ultimate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Ultimate.mp3; path = ../../../Desktop/Ultimate.mp3; sourceTree = "<group>"; };
 		91D1F8AB1DDCC93400451E1D /* pepe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pepe.png; path = ../../../Desktop/pepe.png; sourceTree = "<group>"; };
 		91D1F8AD1DDCCA2100451E1D /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../Desktop/2.png; sourceTree = "<group>"; };
 		91D1F8AF1DDCCAC100451E1D /* Hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Hit.mp3; path = "../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Hit.mp3"; sourceTree = "<group>"; };
@@ -145,9 +149,11 @@
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				91F7BBC21DCA469100EC3F83 /* Sweatshirt.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
+				91CD0E331DEF3D8F002D800B /* Grass.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				91F7BBC41DCA4BB900EC3F83 /* sweat.png */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
+				91CD0E351DEF3EDF002D800B /* Ultimate.mp3 */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
 				526C47451AF9E152002CA512 /* GameOverScene.swift */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
@@ -278,12 +284,14 @@
 			files = (
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				91F7BBC31DCA469100EC3F83 /* Sweatshirt.png in Resources */,
+				91CD0E361DEF3EDF002D800B /* Ultimate.mp3 in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				91D1F8B01DDCCAC100451E1D /* Hit.mp3 in Resources */,
 				91D1F8AC1DDCC93400451E1D /* pepe.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
+				91CD0E341DEF3D8F002D800B /* Grass.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				91D1F8AE1DDCCA2100451E1D /* 2.png in Resources */,
 				91F7BBC71DCA4C8500EC3F83 /* Music.mp3 in Resources */,

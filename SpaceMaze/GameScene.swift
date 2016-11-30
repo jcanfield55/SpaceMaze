@@ -33,7 +33,18 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {        
         
         /* Setup your scene here */
-        self.backgroundColor = color
+        let sn:SKSpriteNode = SKSpriteNode.init(imageNamed: "Grass")
+        
+        sn.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+        sn.size = self.scene!.size;
+        sn.name = "BACKGROUND";
+        sn.zPosition = -1.0;
+        
+        self.addChild(sn)
+        //#Music :p
+        
+        runAction(SKAction.playSoundFileNamed("Ultimate.mp3", waitForCompletion: false))
+
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
@@ -118,8 +129,7 @@ class GameScene: SKScene {
             for touch in touches {
                     let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
                     mainCharacter.moveCharacter(command)
-                    runAction(SKAction.playSoundFileNamed("Music.mp3", waitForCompletion: false))
-                    // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
+                                    // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
                     let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
                     for otherCharacter in samePositionCharacters {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
@@ -138,7 +148,7 @@ class GameScene: SKScene {
                             }
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if () {
+                            if (mainCharacter.SupaMan) {
                                 anOpponent.hidden = true
                                 opponents.remove(anOpponent)
                             }
