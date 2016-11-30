@@ -28,11 +28,14 @@ class GameScene: SKScene {
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
     var gameOver:Bool = false
+    var background = SKSpriteNode(imageNamed: "")
     
     override func didMoveToView(view: SKView) {        
         
         /* Setup your scene here */
         self.backgroundColor = color
+        background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        addChild(background)
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
@@ -121,7 +124,7 @@ class GameScene: SKScene {
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "You Win!"
+                                gameResultLabel.text = "You Won Bro"
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
@@ -131,7 +134,7 @@ class GameScene: SKScene {
                             }
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "Sm"
                             gameResultLabel.hidden = false
                             self.endTheGame()
                         }
@@ -176,7 +179,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "You Lose!"
+                        gameResultLabel.text = "What The"
                         gameResultLabel.hidden = false
                         self.endTheGame()
                     }
