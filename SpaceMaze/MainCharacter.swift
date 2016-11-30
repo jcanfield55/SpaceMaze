@@ -25,6 +25,7 @@ class MainCharacter:Character {
     
     // function called when the time is up on the PowerTreasure power
     func powerMeDown(timer: NSTimer) {
+        badassmode = false
         //TODO - set the powered up variable to false
         
     }

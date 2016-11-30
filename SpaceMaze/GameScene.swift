@@ -39,11 +39,11 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 7, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 5, gridY: 5, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 2, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 4, gridY: 6, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
@@ -119,11 +119,21 @@ class GameScene: SKScene {
                                 gameResultLabel.hidden = false
                                 self.endTheGame()
                             }
+                            if otherCharacter is PowerTreasure {
+                                mainCharacter.powerMeUp()
+                            }
                         }
-                        else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
-                            gameResultLabel.hidden = false
-                            self.endTheGame()
+                        else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                            if (mainCharacter.badassmode) {
+                                anOpponent.hidden = true
+                                opponents.remove(anOpponent)
+                                allCharacters.remove(anOpponent)
+                            }
+                            else {
+                                gameResultLabel.text = "You Lose!"
+                                gameResultLabel.hidden = false
+                                self.endTheGame()
+                            }
                         }
                     }
             }
@@ -164,10 +174,18 @@ class GameScene: SKScene {
                 anOpponent.chaseCharacter(c)
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
-                    if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "You Lose!"
-                        gameResultLabel.hidden = false
-                        self.endTheGame()
+                    if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        if (mainCharacter!.badassmode) {
+                            anOpponent.hidden = true
+                            opponents.remove(anOpponent)
+                            allCharacters.remove(anOpponent)
+                            return
+                        }
+                        else {
+                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.hidden = false
+                            self.endTheGame()
+                        }
                     }
                 }
             }
