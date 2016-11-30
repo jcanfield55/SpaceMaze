@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let color = UIColor(red:0.0, green:1.19, blue:0.0, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:NSTimer?
@@ -57,7 +57,7 @@ class GameScene: SKScene {
         self.addChild(tunnel18.tunnelSpriteNode)
         let tunnel19 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 16, gridX: 8, gridY: 0, colorAlpha: 0.0)
         self.addChild(tunnel19.tunnelSpriteNode)
-        let tunnel20 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 1, colorAlpha: 1.0)
+        let tunnel20 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 9, gridX: 0, gridY: 1, colorAlpha: 1.0)
         self.addChild(tunnel20.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
