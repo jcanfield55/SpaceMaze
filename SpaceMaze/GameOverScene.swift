@@ -15,34 +15,34 @@ class GameOverScene: SKScene {
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "TryAgainButton")
 
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
         
         // Add score label
-        self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
+        self.scoreLabel.position = CGPoint(x: self.frame.midX, y: 20)
         self.scoreLabel.fontSize = 1
         self.scoreLabel.fontName = "Helvetica-Bold"
         self.addChild(self.scoreLabel)
         
         // Add gameResultLabel
-        self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.gameResultLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         self.gameResultLabel.fontSize = 20
         self.gameResultLabel.fontName = "Helvetica-BoldOblique"
-        self.gameResultLabel.fontColor = UIColor.redColor()
+        self.gameResultLabel.fontColor = UIColor.red
         self.addChild(self.gameResultLabel)
         
         // Add tryAgainButton
-        self.tryAgainButton.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) * 0.25)
+        self.tryAgainButton.position = CGPoint(x: self.frame.midX, y: self.frame.maxY * 0.25)
         self.tryAgainButton.name = "tryAgainButton"
         self.addChild(self.tryAgainButton)
 
     }
     
-    override func touchesBegan(touches:Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         for touch in touches {
-            let touchLocation:CGPoint = touch.locationInNode(self)
-            let node:SKNode = self.nodeAtPoint(touchLocation)
+            let touchLocation:CGPoint = touch.location(in: self)
+            let node:SKNode = self.atPoint(touchLocation)
             if node.name == "tryAgainButton" {
                 // User pressed the tryAgainButton
                 
@@ -51,9 +51,9 @@ class GameOverScene: SKScene {
                 allTunnels.removeAll()
                 
                 // Show a fresh GameScene
-                let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+                let reveal:SKTransition = SKTransition.flipHorizontal(withDuration: 0.5)
                 let scene:GameScene = GameScene(size:self.frame.size)
-                scene.scaleMode = SKSceneScaleMode.AspectFill
+                scene.scaleMode = SKSceneScaleMode.aspectFill
                 if let theView:SKView = self.view {
                     theView.presentScene(scene, transition:reveal)
                 }

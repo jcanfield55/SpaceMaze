@@ -12,7 +12,7 @@ import SpriteKit
 class MainCharacter:Character {
 
     var treasureScore:Int = 0
-    var powerUpTimer:NSTimer?
+    var powerUpTimer:Timer?
     //TODO - create a variable to keep track of whether or not you are powered up.
     var badassMode:Bool = false
     
@@ -20,11 +20,11 @@ class MainCharacter:Character {
     func powerMeUp() {
         //TODO - set the powered up variable to true
         badassMode = true
-        powerUpTimer = NSTimer.scheduledTimerWithTimeInterval(15.0, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: false)
+        powerUpTimer = Timer.scheduledTimer(timeInterval: 15.0, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: false)
     }
     
     // function called when the time is up on the PowerTreasure power
-    func powerMeDown(timer: NSTimer) {
+    func powerMeDown(_ timer: Timer) {
         //TODO - set the powered up variable to false
         badassMode = false
     }
