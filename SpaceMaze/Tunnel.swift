@@ -41,14 +41,14 @@ class Tunnel {
             height = gridSize ;
             width = gridSize * CGFloat(self.length);
         }
-        let tunnelSize:CGSize = CGSizeMake(width - (tunnelBoundaryDistance * 2), height - (tunnelBoundaryDistance * 2));
+        let tunnelSize:CGSize = CGSize(width: width - (tunnelBoundaryDistance * 2), height: height - (tunnelBoundaryDistance * 2));
         
         // Set position
-        tunnelCenter = CGPointMake(CGFloat(gridX) * gridSize + (width/2) + xPadding, CGFloat(gridY) * gridSize + (height/2) + yPadding)
+        tunnelCenter = CGPoint(x: CGFloat(gridX) * gridSize + (width/2) + xPadding, y: CGFloat(gridY) * gridSize + (height/2) + yPadding)
         
         // Initializing connecting tunnel arrays
-        connectingTunnels = [Tunnel?](count:length, repeatedValue:nil)
-        connectingPositions = [Int?](count:length, repeatedValue:nil)
+        connectingTunnels = [Tunnel?](repeating: nil, count: length)
+        connectingPositions = [Int?](repeating: nil, count: length)
         
         // Create tunnelSpriteNode
         let tunnelColor = UIColor(white: 1.0, alpha: colorAlpha)
@@ -83,8 +83,8 @@ class Tunnel {
         allTunnels.append(self)  // Add this tunnel to allTunnel tracker
     }
     
-    func pointAtTunnelPosition(position:Int) -> CGPoint {
-        var point:CGPoint = CGPointMake(0.0, 0.0)
+    func pointAtTunnelPosition(_ position:Int) -> CGPoint {
+        var point:CGPoint = CGPoint(x: 0.0, y: 0.0)
         if self.orientation == TunnelOrientation.horizontalTunnel {
             point.x = self.tunnelCenter.x + (CGFloat(position) - (CGFloat(self.length)/2 - 0.5)) * gridSize
             point.y = self.tunnelCenter.y
@@ -102,20 +102,20 @@ class Tunnel {
     //    2) The tunnel the character is in after the move (usually self, but could be a new tunnel)
     //    3) The position in the specified the tunnel the character is now in
     //
-    func canMoveInDirection(direction:TouchCommand, position:Int, checkConnections:Bool) -> (Bool, Tunnel, Int) {
+    func canMoveInDirection(_ direction:TouchCommand, position:Int, checkConnections:Bool) -> (Bool, Tunnel, Int) {
         if (self.orientation == TunnelOrientation.verticalTunnel) {
-            if (direction == TouchCommand.MOVE_UP && position < self.length - 1) {
+            if (direction == TouchCommand.move_UP && position < self.length - 1) {
                 return (true, self, position+1); // Can move up except at top of tunnel
             }
-            else if (direction == TouchCommand.MOVE_DOWN && position > 0) {
+            else if (direction == TouchCommand.move_DOWN && position > 0) {
                 return (true, self, position-1);  // Can move down except at end of tunnel
             }
         }
         else {  // Horizontal tunnel
-            if (direction == TouchCommand.MOVE_LEFT && position > 0) {
+            if (direction == TouchCommand.move_LEFT && position > 0) {
                 return (true, self, position-1);  // Can move left except at beginning of tunnel
             }
-            else if (direction == TouchCommand.MOVE_RIGHT && position < self.length - 1) {
+            else if (direction == TouchCommand.move_RIGHT && position < self.length - 1) {
                 return (true, self, position+1);  // Can move right except at end of tunnel
             }
         }
