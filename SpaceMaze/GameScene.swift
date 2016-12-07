@@ -65,7 +65,7 @@ class GameScene: SKScene {
                     let dotCharacter = TreasureCharacter(imageNamed: "dog", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                 }else{
-                    let dotCharacter = TreasureCharacter(imageNamed: "graydot",
+                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot",
                                                          currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     
@@ -76,13 +76,13 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Pacman", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"PacMan", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "graydot", currentTunnel: tunnel6, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "grayDot", currentTunnel: tunnel6, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
