@@ -22,14 +22,14 @@ class Character:SKSpriteNode {
         self.tunnelPosition = tunnelPosition
         let texture:SKTexture = SKTexture(imageNamed:imageNamed)
         super.init(texture: texture, color:SKColor(white:1.0, alpha:1.0),
-            size: CGSizeMake(gridSize-tunnelBoundaryDistance, gridSize - tunnelBoundaryDistance))
+            size: CGSize(width: gridSize-tunnelBoundaryDistance, height: gridSize - tunnelBoundaryDistance))
         self.position = currentTunnel.pointAtTunnelPosition(tunnelPosition)
         allCharacters.add(self)
     }
     
     // Moves the character in the specified direction if possible
     // Returns true if character is able to move, false if the character is not able to move
-    func moveCharacter(direction:TouchCommand) -> Bool {
+    func moveCharacter(_ direction:TouchCommand) -> Bool {
         // Lesson 2a: Add the code here to check whether you can move in a certain direction in a tunnel before making the move
         // Hint: use Tunnel canMoveInDirection method
         
@@ -45,23 +45,23 @@ class Character:SKSpriteNode {
             
             // Here is the code from Lesson 1 moved over from GameScene to the Character method
             if rotateWithMovement {    // only rotate those characters with the property set to true
-                if (direction == TouchCommand.MOVE_UP) {
+                if (direction == TouchCommand.move_UP) {
                     self.zRotation = 0
                 }
-                if (direction == TouchCommand.MOVE_DOWN) {
+                if (direction == TouchCommand.move_DOWN) {
                     self.zRotation = PI
                 }
-                if (direction == TouchCommand.MOVE_LEFT) {
+                if (direction == TouchCommand.move_LEFT) {
                     self.zRotation = PI * 0.5
                 }
-                if (direction == TouchCommand.MOVE_RIGHT) {
+                if (direction == TouchCommand.move_RIGHT) {
                     self.zRotation = PI * 1.5
                 }
             }
             
             // Move to new position
-            let action:SKAction = SKAction.moveTo(self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition), duration:0.25)
-            self.runAction(action)
+            let action:SKAction = SKAction.move(to: self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition), duration:0.25)
+            self.run(action)
             
             return true   // we were able to move
         }

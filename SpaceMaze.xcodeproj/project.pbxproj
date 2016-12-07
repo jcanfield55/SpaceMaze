@@ -20,6 +20,7 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		916593441DF7E6AA00D68541 /* Sweatshirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 916593431DF7E6AA00D68541 /* Sweatshirt.png */; };
 		91CD0E341DEF3D8F002D800B /* Grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CD0E331DEF3D8F002D800B /* Grass.png */; };
 		91CD0E361DEF3EDF002D800B /* Ultimate.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91CD0E351DEF3EDF002D800B /* Ultimate.mp3 */; };
 		91D1F8AC1DDCC93400451E1D /* pepe.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F8AB1DDCC93400451E1D /* pepe.png */; };
@@ -27,7 +28,6 @@
 		91D1F8B01DDCCAC100451E1D /* Hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91D1F8AF1DDCCAC100451E1D /* Hit.mp3 */; };
 		91D1F8B21DDCCC7C00451E1D /* PowerTreasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D1F8B11DDCCC7C00451E1D /* PowerTreasure.swift */; };
 		91F7BBC11DCA468600EC3F83 /* Jacob.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BBC01DCA468600EC3F83 /* Jacob.jpg */; };
-		91F7BBC31DCA469100EC3F83 /* Sweatshirt.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BBC21DCA469100EC3F83 /* Sweatshirt.png */; };
 		91F7BBC51DCA4BB900EC3F83 /* sweat.png in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BBC41DCA4BB900EC3F83 /* sweat.png */; };
 		91F7BBC71DCA4C8500EC3F83 /* Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91F7BBC61DCA4C8500EC3F83 /* Music.mp3 */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
@@ -69,6 +69,7 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		916593431DF7E6AA00D68541 /* Sweatshirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweatshirt.png; sourceTree = "<group>"; };
 		91CD0E331DEF3D8F002D800B /* Grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Grass.png; path = ../../../Desktop/Grass.png; sourceTree = "<group>"; };
 		91CD0E351DEF3EDF002D800B /* Ultimate.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Ultimate.mp3; path = ../../../Desktop/Ultimate.mp3; sourceTree = "<group>"; };
 		91D1F8AB1DDCC93400451E1D /* pepe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pepe.png; path = ../../../Desktop/pepe.png; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		91D1F8AF1DDCCAC100451E1D /* Hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Hit.mp3; path = "../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/Hit.mp3"; sourceTree = "<group>"; };
 		91D1F8B11DDCCC7C00451E1D /* PowerTreasure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerTreasure.swift; sourceTree = "<group>"; };
 		91F7BBC01DCA468600EC3F83 /* Jacob.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Jacob.jpg; path = ../../../Desktop/Jacob.jpg; sourceTree = "<group>"; };
-		91F7BBC21DCA469100EC3F83 /* Sweatshirt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sweatshirt.png; path = ../../../Desktop/Sweatshirt.png; sourceTree = "<group>"; };
 		91F7BBC41DCA4BB900EC3F83 /* sweat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sweat.png; path = ../../../Desktop/sweat.png; sourceTree = "<group>"; };
 		91F7BBC61DCA4C8500EC3F83 /* Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Music.mp3; path = ../../../Desktop/Music.mp3; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,8 +147,8 @@
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				91F7BBC01DCA468600EC3F83 /* Jacob.jpg */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
-				91F7BBC21DCA469100EC3F83 /* Sweatshirt.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
+				916593431DF7E6AA00D68541 /* Sweatshirt.png */,
 				91CD0E331DEF3D8F002D800B /* Grass.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				91F7BBC41DCA4BB900EC3F83 /* sweat.png */,
@@ -251,9 +251,11 @@
 				TargetAttributes = {
 					E7950A291AC2842D008328E7 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0810;
 					};
 					E7950A421AC2842D008328E7 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0810;
 						TestTargetID = E7950A291AC2842D008328E7;
 					};
 				};
@@ -283,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
-				91F7BBC31DCA469100EC3F83 /* Sweatshirt.png in Resources */,
 				91CD0E361DEF3EDF002D800B /* Ultimate.mp3 in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
@@ -298,6 +299,7 @@
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				91F7BBC11DCA468600EC3F83 /* Jacob.jpg in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
+				916593441DF7E6AA00D68541 /* Sweatshirt.png in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
@@ -455,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -468,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -487,6 +491,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceMaze.app/SpaceMaze";
 			};
 			name = Debug;
@@ -503,6 +508,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceMaze.app/SpaceMaze";
 			};
 			name = Release;
