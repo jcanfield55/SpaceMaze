@@ -47,8 +47,6 @@ class GameScene: SKScene {
         self.addChild(tunnel3.tunnelSpriteNode)
         let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 7, colorAlpha: 1.0)
         self.addChild(tunnel5.tunnelSpriteNode)
-        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 5, colorAlpha: 1.0)
-        self.addChild(tunnel6.tunnelSpriteNode)
         let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 4, colorAlpha: 1.0)
         self.addChild(tunnel7.tunnelSpriteNode)
         let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 3, colorAlpha: 1.0)
