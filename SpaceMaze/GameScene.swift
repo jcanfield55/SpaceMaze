@@ -2,8 +2,8 @@
 //  GameScene.swift
 //  SpaceMaze
 //
-//  Created by Diana Smetters on 3/24/15.
-//  Copyright (c) 2015 Diana Smetters. All rights reserved.  Test
+//  Created by John Canfield & Diana Smetters on 3/24/15.
+//  Copyright (c) 2015 John Canfield & Diana Smetters. All rights reserved.  Test
 //
 
 import SpriteKit
