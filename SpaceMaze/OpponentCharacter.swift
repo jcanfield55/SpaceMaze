@@ -17,14 +17,14 @@ class OpponentCharacter:Character {
     // Now has two modes: moves toward you in one mode
     // If that mode gets blocked, then goes into random movement mode until it enters a new tunnel
     
-    func chaseCharacter(targetCharacter:Character) {
+    func chaseCharacter(_ targetCharacter:Character) {
         let selfPoint:CGPoint = self.currentTunnel.pointAtTunnelPosition(self.tunnelPosition)
         let targetPoint:CGPoint = targetCharacter.currentTunnel.pointAtTunnelPosition(targetCharacter.tunnelPosition)
         
         let xDiff:CGFloat = targetPoint.x - selfPoint.x
         let yDiff:CGFloat = targetPoint.y - selfPoint.y
-        let xCommand:TouchCommand = (xDiff > 0 ? TouchCommand.MOVE_RIGHT : (xDiff == 0 ? TouchCommand.NO_COMMAND :TouchCommand.MOVE_LEFT))
-        let yCommand:TouchCommand = (yDiff > 0 ? TouchCommand.MOVE_UP : (yDiff == 0 ? TouchCommand.NO_COMMAND : TouchCommand.MOVE_DOWN))
+        let xCommand:TouchCommand = (xDiff > 0 ? TouchCommand.move_RIGHT : (xDiff == 0 ? TouchCommand.no_COMMAND :TouchCommand.move_LEFT))
+        let yCommand:TouchCommand = (yDiff > 0 ? TouchCommand.move_UP : (yDiff == 0 ? TouchCommand.no_COMMAND : TouchCommand.move_DOWN))
         
         if !blockedMoveRandomly {  // Normal movement if not blocked
             if (xDiff == 0 && yDiff == 0) {
@@ -56,15 +56,15 @@ class OpponentCharacter:Character {
         else {  // blockedMoveRandomly = true, do a random movement until into another tunnel
             let myTunnel:Tunnel = self.currentTunnel
             let r:UInt32 = arc4random_uniform(4)
-            var direction:TouchCommand = TouchCommand.NO_COMMAND
+            var direction:TouchCommand = TouchCommand.no_COMMAND
             if r == 0 {
-                direction = TouchCommand.MOVE_DOWN
+                direction = TouchCommand.move_DOWN
             } else if r == 1 {
-                direction = TouchCommand.MOVE_LEFT
+                direction = TouchCommand.move_LEFT
             } else if r == 2 {
-                direction = TouchCommand.MOVE_RIGHT
+                direction = TouchCommand.move_RIGHT
             } else if r == 3 {
-                direction = TouchCommand.MOVE_UP
+                direction = TouchCommand.move_UP
             }
             let success:Bool = self.moveCharacter(direction)
             print("Move \(r)")

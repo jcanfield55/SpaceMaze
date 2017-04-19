@@ -17,7 +17,7 @@ class CharacterCollection {
     var characters:[Character] = []
     
     
-    func add(newCharacter:Character) {
+    func add(_ newCharacter:Character) {
         for aCharacter in characters {
             if aCharacter === newCharacter {
                 return  // no need to add a character if it is already there
@@ -31,11 +31,11 @@ class CharacterCollection {
         characters = []
     }
     
-    func remove(aCharacter:Character) {
+    func remove(_ aCharacter:Character) {
         for i in 0...characters.count {
             let oneCharacter:Character = characters[i]
             if oneCharacter === aCharacter {
-                characters.removeAtIndex(i)
+                characters.remove(at: i)
                 return
             }
         }
@@ -44,7 +44,7 @@ class CharacterCollection {
     // Returns an array of all other characters that are in the same location as aCharacter
     // Will not return aCharacter in the return array
     // If no other characters are in the same position, returns an empty array
-    func samePositionAs(aCharacter:Character) -> [Character] {
+    func samePositionAs(_ aCharacter:Character) -> [Character] {
         var returnedArray:[Character] = []
         let aPoint:CGPoint = aCharacter.currentTunnel.pointAtTunnelPosition(aCharacter.tunnelPosition)
         for otherCharacter in characters {

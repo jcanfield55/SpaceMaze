@@ -10,11 +10,11 @@ import SpriteKit
 
 // Enumeration -- defines a variable class with five different values
 enum TouchCommand {
-    case MOVE_UP,
-    MOVE_DOWN,
-    MOVE_LEFT,
-    MOVE_RIGHT,
-    NO_COMMAND
+    case move_UP,
+    move_DOWN,
+    move_LEFT,
+    move_RIGHT,
+    no_COMMAND
 }
 
 var highScore:Int = 0
@@ -24,21 +24,21 @@ class GameScene: SKScene {
     /* Properties */
     let color = UIColor(red:1.5, green:0.4, blue:0.3, alpha:1.0)
     var mainCharacter:MainCharacter?
-    let opponentMoveTiming:NSTimeInterval = 1.0  // number of seconds between opponent movement
-    var opponentTimer:NSTimer?
+    let opponentMoveTiming:TimeInterval = 1.0  // number of seconds between opponent movement
+    var opponentTimer:Timer?
     var opponents:[OpponentCharacter] = []
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var scoreLabel2:SKLabelNode = SKLabelNode(text: "HighScore: 0")
     var maxScore:Int = 0
     
-    override func didMoveToView(view: SKView) {        
+    override func didMove(to view: SKView) {        
         
         /* Setup your scene here */
         self.backgroundColor = color
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
-        opponentTimer = NSTimer.scheduledTimerWithTimeInterval(self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
+        opponentTimer = Timer.scheduledTimer(timeInterval: self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
@@ -56,6 +56,8 @@ class GameScene: SKScene {
         self.addChild(tunnel6.tunnelSpriteNode)
         let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 5, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 7, gridY: 8, colorAlpha: 1.0)
+        self.addChild(tunnel8.tunnelSpriteNode)
 
         
         // Create dots to pick up in tunnels
@@ -66,7 +68,7 @@ class GameScene: SKScene {
                 var imageString:String = ""
                 var treasure:TreasureCharacter
                 if (div3_remainder < 0.0) {
-                    imageString = "The_White_House.jpg"
+                    imageString = "The_White_House.png"
                     treasure = TreasureCharacter(imageNamed: "The_White_House", currentTunnel: aTunnel, tunnelPosition: i)
                     treasure.treasureValue = 153
                 }
@@ -112,30 +114,30 @@ class GameScene: SKScene {
         }
         
         // Add score label
-        self.scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), 20)
+        self.scoreLabel.position = CGPoint(x: self.frame.midX, y: 20)
         self.scoreLabel.fontSize = 16
         self.scoreLabel.fontName = "Helvetica-Bold"
         self.addChild(self.scoreLabel)
         //Add 2nd score label
-        self.scoreLabel2.position = CGPointMake(100.0,499.0)
+        self.scoreLabel2.position = CGPoint(x: 100.0,y: 499.0)
         self.scoreLabel2.fontSize = 16
         self.scoreLabel2.fontName = "Helvetica-Bold"
         self.addChild(self.scoreLabel2)
 
         
         // Add gameResultLabel
-        self.gameResultLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        self.gameResultLabel.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         self.gameResultLabel.fontSize = 20
         self.gameResultLabel.fontName = "Helvetica-BoldOblique"
-        self.gameResultLabel.fontColor = UIColor.redColor()
-        self.gameResultLabel.hidden = true
+        self.gameResultLabel.fontColor = UIColor.red
+        self.gameResultLabel.isHidden = true
         self.addChild(self.gameResultLabel)
         
-        runAction(SKAction.playSoundFileNamed("CNN.mp3", waitForCompletion: false))
+        run(SKAction.playSoundFileNamed("CNN.mp3", waitForCompletion: false))
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
-    override func touchesBegan(touches:Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
@@ -146,7 +148,7 @@ class GameScene: SKScene {
                     let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
                     for otherCharacter in samePositionCharacters {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
-                            dotCharacter.hidden = true
+                            dotCharacter.isHidden = true
                             allCharacters.remove(dotCharacter)
                             mainCharacter.treasureScore += dotCharacter.treasureValue
                             print("Treasure score is " + String(mainCharacter.treasureScore))
@@ -154,13 +156,13 @@ class GameScene: SKScene {
                             self.scoreLabel2.text = "Highscore: (highScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
                                 gameResultLabel.text = "You Win!"
-                                gameResultLabel.hidden = false
+                                gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
                         }
                         else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
                             gameResultLabel.text = "You Lose!"
-                            gameResultLabel.hidden = false
+                            gameResultLabel.isHidden = false
                             self.endTheGame()
                         }
                     }
@@ -170,30 +172,30 @@ class GameScene: SKScene {
     
     // Figures out which way the user wants to move the character based on which
     // edge of the screen the user touched.
-    func commandForTouch(touch:UITouch, node:SKNode) -> TouchCommand {
-        let location:CGPoint = touch.locationInNode(node)
+    func commandForTouch(_ touch:UITouch, node:SKNode) -> TouchCommand {
+        let location:CGPoint = touch.location(in: node)
         let frame:CGRect = node.frame
-        let height = CGRectGetHeight(frame)
-        let width = CGRectGetWidth(frame)
+        let height = frame.height
+        let width = frame.width
         print("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
        
         if (location.y/height < 0.25) {
-            return TouchCommand.MOVE_DOWN
+            return TouchCommand.move_DOWN
         }
         if (location.y/height > 0.75) {
-            return TouchCommand.MOVE_UP
+            return TouchCommand.move_UP
         }
         if (location.x/width < 0.25) {
-            return TouchCommand.MOVE_LEFT
+            return TouchCommand.move_LEFT
         }
         if (location.x/width > 0.75) {
-            return TouchCommand.MOVE_RIGHT
+            return TouchCommand.move_RIGHT
         }
-        return TouchCommand.NO_COMMAND
+        return TouchCommand.no_COMMAND
     }
     
     // Function called whenever it is time for the opponent to move
-    @objc func moveOpponent(timer: NSTimer) {
+    @objc func moveOpponent(_ timer: Timer) {
         for anOpponent in opponents {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
@@ -201,7 +203,7 @@ class GameScene: SKScene {
                 for otherCharacter in samePositionCharacters {
                     if let _ = otherCharacter as? MainCharacter { // If it is the main Character
                         gameResultLabel.text = "You Lose!"
-                        gameResultLabel.hidden = false
+                        gameResultLabel.isHidden = false
                         self.endTheGame()
                     }
                 }
@@ -217,16 +219,16 @@ class GameScene: SKScene {
                 highScore = mc.treasureScore
             }
         }
-        NSTimer.scheduledTimerWithTimeInterval(1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
     }
     
-    @objc func showPlayAgainScreen(timer: NSTimer) {
+    @objc func showPlayAgainScreen(_ timer: Timer) {
         // Show the GameOverScene
-        let reveal:SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+        let reveal:SKTransition = SKTransition.flipHorizontal(withDuration: 0.5)
         let scene:GameOverScene = GameOverScene(size:self.frame.size)
         scene.scoreLabel.text = self.scoreLabel.text
         scene.gameResultLabel.text = self.gameResultLabel.text
-        scene.scaleMode = SKSceneScaleMode.AspectFill
+        scene.scaleMode = SKSceneScaleMode.aspectFill
         if let theView:SKView = self.view {
             theView.presentScene(scene, transition:reveal)
         }
