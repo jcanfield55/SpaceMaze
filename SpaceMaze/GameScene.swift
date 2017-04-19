@@ -38,13 +38,24 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 0.1)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 1, gridY: 2, colorAlpha: 0.1)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 0.1)
         self.addChild(tunnel3.tunnelSpriteNode)
-        
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 6, gridX: 4, gridY: 5, colorAlpha: 0.1)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 10, colorAlpha: 0.1)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 2, colorAlpha: 0.1)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 13, gridX: 6, gridY: 2, colorAlpha: 0.1)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 4, gridY: 14, colorAlpha: 0.1)
+        self.addChild(tunnel8.tunnelSpriteNode)
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 4, gridY: 14, colorAlpha: 0.1)
+        self.addChild(tunnel9.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
