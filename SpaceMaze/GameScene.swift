@@ -56,9 +56,7 @@ class GameScene: SKScene {
         self.addChild(tunnel6.tunnelSpriteNode)
         let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 5, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel7.tunnelSpriteNode)
-        let tunnel8 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 7, gridY: 8, colorAlpha: 1.0)
-        self.addChild(tunnel8.tunnelSpriteNode)
-
+      
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
@@ -93,7 +91,7 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Hillary Clinton", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"Donald Drumpf", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
