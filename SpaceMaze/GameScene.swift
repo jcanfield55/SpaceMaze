@@ -3,7 +3,7 @@
 //  SpaceMaze
 //
 //  Created by John Canfield & Diana Smetters on 3/24/15.
-//  Copyright (c) 2015 John Canfield & Diana Smetters. All rights reserved.  Test2
+//  Copyright (c) 2015 John Canfield & Diana Smetters. All rights reserved.  Test3
 //
 
 import SpriteKit
