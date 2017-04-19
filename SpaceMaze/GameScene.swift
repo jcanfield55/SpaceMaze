@@ -44,6 +44,21 @@ class GameScene: SKScene {
         self.addChild(tunnel2.tunnelSpriteNode)
         let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 3, gridY: 6, colorAlpha: 1.0)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 6, gridY: 5, colorAlpha: 1.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 13, colorAlpha: 1.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 5, gridX: 4, gridY: 9, colorAlpha: 1.0)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 1, gridY: 9, colorAlpha: 1.0)
+        self.addChild(tunnel8.tunnelSpriteNode)
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        self.addChild(tunnel9.tunnelSpriteNode)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 1, gridX: 3, gridY: 4, colorAlpha: 1.0)
+        self.addChild(tunnel10.tunnelSpriteNode)
+
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
