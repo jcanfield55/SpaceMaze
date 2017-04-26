@@ -48,8 +48,14 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
+                if (aTunnel === tunnel2 && i == 2) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "squirrel", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }
+                else {
+                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }
                 maxScore += 1   // Keep track of the total number of treasure dots
             }
         }
@@ -120,22 +126,24 @@ class GameScene: SKScene {
     // edge of the screen the user touched.
     func commandForTouch(_ touch:UITouch, node:SKNode) -> TouchCommand {
         let location:CGPoint = touch.location(in: node)
-        let frame:CGRect = node.frame
-        let height = frame.height
-        let width = frame.width
-        print("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
-       
-        if (location.y/height < 0.25) {
-            return TouchCommand.move_DOWN
-        }
-        if (location.y/height > 0.75) {
-            return TouchCommand.move_UP
-        }
-        if (location.x/width < 0.25) {
-            return TouchCommand.move_LEFT
-        }
-        if (location.x/width > 0.75) {
-            return TouchCommand.move_RIGHT
+        if let mainCharacter:MainCharacter = self.mainCharacter {
+            let mc:CGPoint = mainCharacter.position
+            if abs(mc.x - location.x)  > abs(mc.y - location.y) {  // Horizontal movement
+                if location.x > mc.x {
+                    return TouchCommand.move_RIGHT
+                }
+                else {
+                    return TouchCommand.move_LEFT
+                }
+            }
+            else {  // vertical movement
+                if location.y > mc.y {
+                    return TouchCommand.move_UP
+                }
+                else {
+                    return TouchCommand.move_DOWN
+                }
+            }
         }
         return TouchCommand.no_COMMAND
     }
