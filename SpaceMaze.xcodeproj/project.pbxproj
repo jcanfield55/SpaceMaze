@@ -20,14 +20,12 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
-		91C8E60A1EA7C68C00094AD6 /* The_White_House.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C8E6091EA7C68C00094AD6 /* The_White_House.png */; };
-		CE3BE59B1CB4D384009156FB /* Bernie Sanders.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE5991CB4D384009156FB /* Bernie Sanders.png */; };
+		913CDB521EB0FAE400C2D8A8 /* vladimir-putin.png in Resources */ = {isa = PBXBuildFile; fileRef = 913CDB511EB0FAE400C2D8A8 /* vladimir-putin.png */; };
+		913CDB541EB0FBD100C2D8A8 /* Kim-Jong-Un.png in Resources */ = {isa = PBXBuildFile; fileRef = 913CDB531EB0FBD100C2D8A8 /* Kim-Jong-Un.png */; };
+		913CDB561EB0FD7000C2D8A8 /* Constitution.png in Resources */ = {isa = PBXBuildFile; fileRef = 913CDB551EB0FD7000C2D8A8 /* Constitution.png */; };
+		913CDB581EB0FF1200C2D8A8 /* Suprem Court.png in Resources */ = {isa = PBXBuildFile; fileRef = 913CDB571EB0FF1100C2D8A8 /* Suprem Court.png */; };
 		CE3BE59C1CB4D384009156FB /* Donald Drumpf.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE59A1CB4D384009156FB /* Donald Drumpf.png */; };
 		CE3BE5A11CB4D38F009156FB /* Hillary Clinton.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE59D1CB4D38F009156FB /* Hillary Clinton.png */; };
-		CE3BE5A21CB4D38F009156FB /* John Kasik.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE59E1CB4D38F009156FB /* John Kasik.png */; };
-		CE3BE5A41CB4D38F009156FB /* ted-cruz.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE5A01CB4D38F009156FB /* ted-cruz.png */; };
-		CE3DE9531CD11F92003E7A2E /* Cnn.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3DE9521CD11F92003E7A2E /* Cnn.png */; };
-		CE3DE9561CD1221B003E7A2E /* California.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3DE9551CD1221B003E7A2E /* California.png */; };
 		CE67E3A51CBEA4CD0073EF4E /* CNN.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
@@ -38,7 +36,6 @@
 		E7950A541AC2866C008328E7 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = E7950A531AC2866C008328E7 /* Spaceship.png */; };
 		E7950A561AC2867D008328E7 /* PacMan.png in Resources */ = {isa = PBXBuildFile; fileRef = E7950A551AC2867D008328E7 /* PacMan.png */; };
 		E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D26D3B1AC2986E0076E8F9 /* dog.png */; };
-		E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D26D3C1AC2986E0076E8F9 /* goldfish.png */; };
 		E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D26D3D1AC2986E0076E8F9 /* squirrel.png */; };
 /* End PBXBuildFile section */
 
@@ -68,14 +65,12 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
-		91C8E6091EA7C68C00094AD6 /* The_White_House.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = The_White_House.png; sourceTree = "<group>"; };
-		CE3BE5991CB4D384009156FB /* Bernie Sanders.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bernie Sanders.png"; sourceTree = "<group>"; };
+		913CDB511EB0FAE400C2D8A8 /* vladimir-putin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vladimir-putin.png"; sourceTree = "<group>"; };
+		913CDB531EB0FBD100C2D8A8 /* Kim-Jong-Un.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Kim-Jong-Un.png"; sourceTree = "<group>"; };
+		913CDB551EB0FD7000C2D8A8 /* Constitution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Constitution.png; sourceTree = "<group>"; };
+		913CDB571EB0FF1100C2D8A8 /* Suprem Court.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Suprem Court.png"; sourceTree = "<group>"; };
 		CE3BE59A1CB4D384009156FB /* Donald Drumpf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Donald Drumpf.png"; sourceTree = "<group>"; };
 		CE3BE59D1CB4D38F009156FB /* Hillary Clinton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hillary Clinton.png"; sourceTree = "<group>"; };
-		CE3BE59E1CB4D38F009156FB /* John Kasik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "John Kasik.png"; sourceTree = "<group>"; };
-		CE3BE5A01CB4D38F009156FB /* ted-cruz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ted-cruz.png"; sourceTree = "<group>"; };
-		CE3DE9521CD11F92003E7A2E /* Cnn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cnn.png; sourceTree = "<group>"; };
-		CE3DE9551CD1221B003E7A2E /* California.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = California.png; sourceTree = "<group>"; };
 		CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CNN.mp3; sourceTree = "<group>"; };
 		CE6FA04E1CB5724C008657E4 /* CNN 2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CNN 2.m4a"; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +86,6 @@
 		E7950A531AC2866C008328E7 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		E7950A551AC2867D008328E7 /* PacMan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PacMan.png; sourceTree = "<group>"; };
 		E7D26D3B1AC2986E0076E8F9 /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
-		E7D26D3C1AC2986E0076E8F9 /* goldfish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldfish.png; sourceTree = "<group>"; };
 		E7D26D3D1AC2986E0076E8F9 /* squirrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squirrel.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,16 +132,13 @@
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				CE6FA04E1CB5724C008657E4 /* CNN 2.m4a */,
-				CE3DE9521CD11F92003E7A2E /* Cnn.png */,
-				CE3BE5991CB4D384009156FB /* Bernie Sanders.png */,
 				CE3BE59A1CB4D384009156FB /* Donald Drumpf.png */,
 				CE3BE59D1CB4D38F009156FB /* Hillary Clinton.png */,
-				CE3BE59E1CB4D38F009156FB /* John Kasik.png */,
-				CE3BE5A01CB4D38F009156FB /* ted-cruz.png */,
-				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
-				91C8E6091EA7C68C00094AD6 /* The_White_House.png */,
-				CE3DE9551CD1221B003E7A2E /* California.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
+				913CDB511EB0FAE400C2D8A8 /* vladimir-putin.png */,
+				913CDB531EB0FBD100C2D8A8 /* Kim-Jong-Un.png */,
+				913CDB571EB0FF1100C2D8A8 /* Suprem Court.png */,
+				913CDB551EB0FD7000C2D8A8 /* Constitution.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */,
@@ -285,25 +276,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE67E3A51CBEA4CD0073EF4E /* CNN.mp3 in Resources */,
-				CE3DE9531CD11F92003E7A2E /* Cnn.png in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
-				CE3BE59B1CB4D384009156FB /* Bernie Sanders.png in Resources */,
-				CE3BE5A21CB4D38F009156FB /* John Kasik.png in Resources */,
-				91C8E60A1EA7C68C00094AD6 /* The_White_House.png in Resources */,
+				913CDB561EB0FD7000C2D8A8 /* Constitution.png in Resources */,
+				913CDB521EB0FAE400C2D8A8 /* vladimir-putin.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				CE3BE5A11CB4D38F009156FB /* Hillary Clinton.png in Resources */,
-				CE3DE9561CD1221B003E7A2E /* California.png in Resources */,
+				913CDB581EB0FF1200C2D8A8 /* Suprem Court.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				CE3BE59C1CB4D384009156FB /* Donald Drumpf.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
-				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
+				913CDB541EB0FBD100C2D8A8 /* Kim-Jong-Un.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
-				CE3BE5A41CB4D38F009156FB /* ted-cruz.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

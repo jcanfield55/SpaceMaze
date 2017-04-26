@@ -22,7 +22,7 @@ var highScore:Int = 0
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:1.5, green:0.4, blue:0.3, alpha:1.0)
+    let color = UIColor(red:1.0, green:1.4, blue:1.0, alpha:0.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:TimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:Timer?
@@ -56,6 +56,12 @@ class GameScene: SKScene {
         self.addChild(tunnel6.tunnelSpriteNode)
         let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 5, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 4, gridX: 1, gridY: 8, colorAlpha: 1.0)
+        self.addChild(tunnel8.tunnelSpriteNode)
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 9, colorAlpha: 1.0)
+        self.addChild(tunnel9.tunnelSpriteNode)
+        let tunne20 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 10, colorAlpha: 1.0)
+        self.addChild(tunne20.tunnelSpriteNode)
       
         
         // Create dots to pick up in tunnels
@@ -66,21 +72,21 @@ class GameScene: SKScene {
                 var imageString:String = ""
                 var treasure:TreasureCharacter
                 if (div3_remainder < 0.0) {
-                    imageString = "The_White_House.png"
-                    treasure = TreasureCharacter(imageNamed: "The_White_House", currentTunnel: aTunnel, tunnelPosition: i)
+                    imageString = "grayDot.png"
+                    treasure = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     treasure.treasureValue = 153
                 }
                 // Put in a  else if (...) {  } clause to put in another picture in the other third of the cases 
                 else if (div3_remainder == 0.0){
-                    imageString = "California"
-                    treasure = TreasureCharacter(imageNamed: "California", currentTunnel: aTunnel, tunnelPosition: i)
+                    imageString = "grayDot.png"
+                    treasure = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(treasure)
                     treasure.treasureValue = 1338
                 }
 
                 else {
-                    imageString = "Cnn"
-                    treasure = TreasureCharacter(imageNamed: "Cnn", currentTunnel: aTunnel, tunnelPosition: i)
+                    imageString = "grayDot.png"
+                    treasure = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     treasure.treasureValue = 562
                 }
                 let dotCharacter = TreasureCharacter(imageNamed: imageString, currentTunnel: aTunnel, tunnelPosition: i)
@@ -96,15 +102,15 @@ class GameScene: SKScene {
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
-        // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "Donald Drumpf", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents[0].enemyName = "Donald"
-        opponents.append(OpponentCharacter(imageNamed: "John Kasik", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents[1].enemyName = "John"
-        opponents.append(OpponentCharacter(imageNamed: "ted-cruz", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents[2].enemyName = "Ted"
-        opponents.append(OpponentCharacter(imageNamed: "Bernie Sanders", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents[3].enemyName = "Bernie"
+  // Create opponents
+        opponents.append(OpponentCharacter(imageNamed: "vladimir-putin", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents[0].enemyName = "Vladimir"
+        opponents.append(OpponentCharacter(imageNamed: "Kim-Jong-Un", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents[1].enemyName = "Kim"
+        opponents.append(OpponentCharacter(imageNamed: "Constitution", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents[2].enemyName = "Constitution"
+        opponents.append(OpponentCharacter(imageNamed: "Suprem Court", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents[3].enemyName = "Court"
         
     
         for anOpponent in opponents {
@@ -117,7 +123,7 @@ class GameScene: SKScene {
         self.scoreLabel.fontName = "Helvetica-Bold"
         self.addChild(self.scoreLabel)
         //Add 2nd score label
-        self.scoreLabel2.position = CGPoint(x: 100.0,y: 499.0)
+        self.scoreLabel2.position = CGPoint(x: self.frame.midX, y: 33)
         self.scoreLabel2.fontSize = 16
         self.scoreLabel2.fontName = "Helvetica-Bold"
         self.addChild(self.scoreLabel2)
