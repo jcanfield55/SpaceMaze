@@ -52,13 +52,26 @@ class GameScene: SKScene {
         self.addChild(tunnel6.tunnelSpriteNode)
         let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY:8, colorAlpha: 1.0)
         self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX:4, gridY:11, colorAlpha: 1.0)
+        self.addChild(tunnel8.tunnelSpriteNode)
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX:6, gridY:4, colorAlpha: 1.0)
+        self.addChild(tunnel9.tunnelSpriteNode)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 1, gridY:10, colorAlpha: 1.0)
+        self.addChild(tunnel10.tunnelSpriteNode)
 
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
-                maxScore += 1   // Keep track of the total number of treasure dots
+            if  (aTunnel===tunnel7)  && (i==3) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "oni-mask", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
+                else {
+                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
             }
         }
         
