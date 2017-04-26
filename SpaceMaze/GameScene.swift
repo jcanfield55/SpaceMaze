@@ -56,16 +56,28 @@ class GameScene: SKScene {
         self.addChild(tunnel8.tunnelSpriteNode)
         let tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 1, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel9.tunnelSpriteNode)
-        let tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 1, gridX: 3, gridY: 4, colorAlpha: 1.0)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 1, gridX: 3, gridY: 4, colorAlpha: 0.0)
         self.addChild(tunnel10.tunnelSpriteNode)
 
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
-                maxScore += 1   // Keep track of the total number of treasure dots
+                
+                if (aTunnel === tunnel10) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "puppy", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }
+                else if (aTunnel === tunnel6) && (i == 3) {
+                    let tennisBall = TreasureCharacter(imageNamed:"hi my name is tennis ball clip art.png", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(tennisBall)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
+                else{
+                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
             }
         }
         
@@ -75,6 +87,9 @@ class GameScene: SKScene {
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
+        
+        let puppyCharacter = Character(imageNamed:"puppy.png", currentTunnel:tunnel10, tunnelPosition:0)
+        self.addChild(puppyCharacter)
         
         // Create opponents
         opponents.append(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
