@@ -11,5 +11,6 @@ import SpriteKit
 
 class TreasureCharacter:Character {
 
+    var isPowerUp:Bool = false
     
 }
