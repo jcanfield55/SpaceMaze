@@ -67,6 +67,8 @@ class GameScene: SKScene {
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
                    // TODO set the dotCharacter.isPowerUp variable to true
+                  dotCharacter.isPowerUp=true
+                
                 }
                 else {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
@@ -128,9 +130,10 @@ class GameScene: SKScene {
                                 self.endTheGame()
                             }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
+                            mainCharacter.powerMeUp()
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if (false) {  // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                            if (mainCharacter.rammer) {  // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                                 anOpponent.isHidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
@@ -178,7 +181,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
-                        if (false) { // TODO instead of “false” check if theMainCharacter powered up variable you created is true.  Use . format
+                        if (theMainCharacter.rammer) { // TODO instead of “false” check if theMainCharacter powered up variable you created is true.  Use . format
                             anOpponent.isHidden = true
                             opponents.remove(anOpponent)
                             allCharacters.remove(anOpponent)
