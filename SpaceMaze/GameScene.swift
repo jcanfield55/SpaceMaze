@@ -67,12 +67,15 @@ class GameScene: SKScene {
                 if (aTunnel === tunnel10) {
                     let dotCharacter = TreasureCharacter(imageNamed: "puppy", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
+                    maxScore += 1
                 }
-                else if (aTunnel === tunnel6) && (i == 3) {
+                else if (aTunnel === tunnel6) && (i == 2) {
                     let tennisBall = TreasureCharacter(imageNamed:"hi my name is tennis ball clip art.png", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(tennisBall)
-                    maxScore += 1   // Keep track of the total number of treasure dots
+                    maxScore += 1
+                    // Keep track of the total number of treasure dots
                     // TODO set the dotCharacter.isPowerUp variable to true
+                    tennisBall.isPowerUp = true
                 }
                 else{
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
