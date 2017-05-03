@@ -22,7 +22,7 @@ var highScore:Int = 0
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:1.0, green:1.4, blue:1.0, alpha:0.0)
+    let color = UIColor(red:34.0, green:0.0, blue:0.0, alpha:0.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:TimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:Timer?
@@ -69,30 +69,32 @@ class GameScene: SKScene {
             for i:Int in 0 ..< aTunnel.length {
                 let div3_remainder:Double = remainder(Double(i),3.0)
                 print("remainder = " + String(div3_remainder))
-                var imageString:String = ""
                 var treasure:TreasureCharacter
-                if (div3_remainder < 0.0) {
-                    imageString = "grayDot.png"
+                if (aTunnel === tunnel7) && (i == 2) {
+                    treasure = TreasureCharacter(imageNamed: "Trump Tower", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(treasure)
+                    treasure.treasureValue = 1338
+                    treasure.amIPoweredup = true
+                }
+                else if (div3_remainder < 0.0) {
                     treasure = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(treasure)
                     treasure.treasureValue = 153
                 }
                 // Put in a  else if (...) {  } clause to put in another picture in the other third of the cases 
                 else if (div3_remainder == 0.0){
-                    imageString = "grayDot.png"
                     treasure = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(treasure)
                     treasure.treasureValue = 1338
-                    // TODO set the dotCharacter.isPowerUp variable to true
 
                 }
+
 
                 else {
-                    imageString = "grayDot.png"
                     treasure = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(treasure)
                     treasure.treasureValue = 562
                 }
-                let dotCharacter = TreasureCharacter(imageNamed: imageString, currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
                 maxScore += treasure.treasureValue   // Keep track of the total number of treasure dots
             }
         }
@@ -166,6 +168,9 @@ class GameScene: SKScene {
                                 self.endTheGame()
                             }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
+                            if (dotCharacter.amIPoweredup) {
+                                mainCharacter.powerMeUp()
+                            }
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
                             if (false) {  // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format

@@ -24,6 +24,7 @@
 		913CDB541EB0FBD100C2D8A8 /* Kim-Jong-Un.png in Resources */ = {isa = PBXBuildFile; fileRef = 913CDB531EB0FBD100C2D8A8 /* Kim-Jong-Un.png */; };
 		913CDB561EB0FD7000C2D8A8 /* Constitution.png in Resources */ = {isa = PBXBuildFile; fileRef = 913CDB551EB0FD7000C2D8A8 /* Constitution.png */; };
 		913CDB581EB0FF1200C2D8A8 /* Suprem Court.png in Resources */ = {isa = PBXBuildFile; fileRef = 913CDB571EB0FF1100C2D8A8 /* Suprem Court.png */; };
+		91408DD41EBA3ACA008101D0 /* Trump Tower.png in Resources */ = {isa = PBXBuildFile; fileRef = 91408DD31EBA3ACA008101D0 /* Trump Tower.png */; };
 		CE3BE59C1CB4D384009156FB /* Donald Drumpf.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE59A1CB4D384009156FB /* Donald Drumpf.png */; };
 		CE3BE5A11CB4D38F009156FB /* Hillary Clinton.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3BE59D1CB4D38F009156FB /* Hillary Clinton.png */; };
 		CE67E3A51CBEA4CD0073EF4E /* CNN.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */; };
@@ -69,6 +70,7 @@
 		913CDB531EB0FBD100C2D8A8 /* Kim-Jong-Un.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Kim-Jong-Un.png"; sourceTree = "<group>"; };
 		913CDB551EB0FD7000C2D8A8 /* Constitution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Constitution.png; sourceTree = "<group>"; };
 		913CDB571EB0FF1100C2D8A8 /* Suprem Court.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Suprem Court.png"; sourceTree = "<group>"; };
+		91408DD31EBA3ACA008101D0 /* Trump Tower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trump Tower.png"; sourceTree = "<group>"; };
 		CE3BE59A1CB4D384009156FB /* Donald Drumpf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Donald Drumpf.png"; sourceTree = "<group>"; };
 		CE3BE59D1CB4D38F009156FB /* Hillary Clinton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hillary Clinton.png"; sourceTree = "<group>"; };
 		CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CNN.mp3; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				913CDB531EB0FBD100C2D8A8 /* Kim-Jong-Un.png */,
 				913CDB571EB0FF1100C2D8A8 /* Suprem Court.png */,
 				913CDB551EB0FD7000C2D8A8 /* Constitution.png */,
+				91408DD31EBA3ACA008101D0 /* Trump Tower.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				CE67E3A41CBEA4CD0073EF4E /* CNN.mp3 */,
@@ -287,6 +290,7 @@
 				CE3BE59C1CB4D384009156FB /* Donald Drumpf.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
+				91408DD41EBA3ACA008101D0 /* Trump Tower.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				913CDB541EB0FBD100C2D8A8 /* Kim-Jong-Un.png in Resources */,
