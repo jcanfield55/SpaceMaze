@@ -26,7 +26,7 @@ class GameScene: SKScene {
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:TimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:Timer?
-    var opponents:[OpponentCharacter] = []
+    var opponents = Set<OpponentCharacter>()
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var scoreLabel2:SKLabelNode = SKLabelNode(text: "HighScore: 0")
@@ -82,6 +82,8 @@ class GameScene: SKScene {
                     treasure = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(treasure)
                     treasure.treasureValue = 1338
+                    // TODO set the dotCharacter.isPowerUp variable to true
+
                 }
 
                 else {
@@ -103,14 +105,14 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
   // Create opponents
-        opponents.append(OpponentCharacter(imageNamed: "vladimir-putin", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents[0].enemyName = "Vladimir"
-        opponents.append(OpponentCharacter(imageNamed: "Kim-Jong-Un", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents[1].enemyName = "Kim"
-        opponents.append(OpponentCharacter(imageNamed: "Constitution", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents[2].enemyName = "Constitution"
-        opponents.append(OpponentCharacter(imageNamed: "Suprem Court", currentTunnel: tunnel3, tunnelPosition: 3))
-        opponents[3].enemyName = "Court"
+        opponents.insert(OpponentCharacter(imageNamed: "vladimir-putin", currentTunnel: tunnel3, tunnelPosition: 3))
+        // opponents[0].enemyName = "Vladimir"
+        opponents.insert(OpponentCharacter(imageNamed: "Kim-Jong-Un", currentTunnel: tunnel3, tunnelPosition: 3))
+        // opponents[1].enemyName = "Kim"
+        opponents.insert(OpponentCharacter(imageNamed: "Constitution", currentTunnel: tunnel3, tunnelPosition: 3))
+        // opponents[2].enemyName = "Constitution"
+        opponents.insert(OpponentCharacter(imageNamed: "Suprem Court", currentTunnel: tunnel3, tunnelPosition: 3))
+        // opponents[3].enemyName = "Court"
         
     
         for anOpponent in opponents {
@@ -146,7 +148,7 @@ class GameScene: SKScene {
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
                     let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
-                    mainCharacter.moveCharacter(command)
+                    _ = mainCharacter.moveCharacter(command)
                     
                     // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
                     let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
@@ -163,11 +165,19 @@ class GameScene: SKScene {
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
+                            // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
                         }
-                        else if let _ = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            gameResultLabel.text = "You Lose!"
-                            gameResultLabel.isHidden = false
-                            self.endTheGame()
+                        else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
+                            if (false) {  // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                                anOpponent.isHidden = true
+                                opponents.remove(anOpponent)
+                                allCharacters.remove(anOpponent)
+                            }
+                            else {
+                                gameResultLabel.text = "You Lose!"
+                                gameResultLabel.isHidden = false
+                                self.endTheGame()
+                            }
                         }
                     }
             }
@@ -205,10 +215,18 @@ class GameScene: SKScene {
                 anOpponent.chaseCharacter(c)
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
-                    if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        gameResultLabel.text = "You Lose!"
-                        gameResultLabel.isHidden = false
-                        self.endTheGame()
+                    if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        if (false) { // TODO instead of “false” check if theMainCharacter powered up variable you created is true.  Use . format
+                            anOpponent.isHidden = true
+                            opponents.remove(anOpponent)
+                            allCharacters.remove(anOpponent)
+                        }
+                        else {
+                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.isHidden = false
+                            self.endTheGame()
+                        }
+
                     }
                 }
             }
