@@ -188,7 +188,7 @@ class GameScene: SKScene {
         }
     }
     
-    // Functions for ending the game and showing the try again screen
+    // Functions for ending the game and showing the try again screen 
 
     func endTheGame() {
         Timer.scheduledTimer(timeInterval: 1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
