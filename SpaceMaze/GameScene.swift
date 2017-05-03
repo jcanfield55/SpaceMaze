@@ -50,15 +50,18 @@ class GameScene: SKScene {
         self.addChild(tunnel5.tunnelSpriteNode)
         let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY:7, colorAlpha: 1.0)
         self.addChild(tunnel6.tunnelSpriteNode)
-        let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 2, gridY:6, colorAlpha: 1.0)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 2, gridY:6, colorAlpha: 1.0)
         self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY:9, colorAlpha: 1.0)
+        self.addChild(tunnel8.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
                 if (aTunnel === tunnel3) && (i == 1){
                     let dotCharacter = TreasureCharacter(imageNamed: "treasure-chest", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
-                    maxScore += 5   // Keep track of the total number of treasure dots
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                    dotCharacter.superpower = true
                     // TODO set the dotCharacter.isPowerUp variable to true
                 }
                 else{
@@ -119,6 +122,9 @@ class GameScene: SKScene {
                                 gameResultLabel.text = "You Win!"
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
+                            }
+                            if (dotCharacter.superpower) {
+                                mainCharacter.powerMeUp()
                             }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
                         }
