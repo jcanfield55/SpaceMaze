@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let color = UIColor(red:0.0, green:14.0, blue:7.3, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:TimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:Timer?
@@ -71,7 +71,7 @@ class GameScene: SKScene {
                     maxScore += 1   // Keep track of the total number of treasure dots
                     // TODO set the dotCharacter.isPowerUp variable to true
                 }
-                else { let dotCharacter = TreasureCharacter(imageNamed: "graydot", currentTunnel: aTunnel, tunnelPosition: i)
+                else { let dotCharacter = TreasureCharacter(imageNamed: "basketballball", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
                     
@@ -88,8 +88,10 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel3, tunnelPosition: 3))
-        
+        opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel11, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel11, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel11, tunnelPosition: 3))
+
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }

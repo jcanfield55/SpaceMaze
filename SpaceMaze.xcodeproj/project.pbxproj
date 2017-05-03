@@ -20,6 +20,7 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		916647321EBA36E400E3350E /* basketballball.png in Resources */ = {isa = PBXBuildFile; fileRef = 916647311EBA36E400E3350E /* basketballball.png */; };
 		91D6D7D01EB103F7005FCAC0 /* terralinda.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6D7CF1EB103F7005FCAC0 /* terralinda.png */; };
 		91D6D7D21EB10463005FCAC0 /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6D7D11EB10463005FCAC0 /* basketball.png */; };
 		91D6D7D41EB10481005FCAC0 /* charter.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6D7D31EB10481005FCAC0 /* charter.png */; };
@@ -62,6 +63,7 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		916647311EBA36E400E3350E /* basketballball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basketballball.png; path = ../../../Desktop/basketballball.png; sourceTree = "<group>"; };
 		91D6D7CF1EB103F7005FCAC0 /* terralinda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terralinda.png; path = ../../../Desktop/terralinda.png; sourceTree = "<group>"; };
 		91D6D7D11EB10463005FCAC0 /* basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basketball.png; path = ../../../Desktop/basketball.png; sourceTree = "<group>"; };
 		91D6D7D31EB10481005FCAC0 /* charter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = charter.png; path = ../../../Desktop/charter.png; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				91D6D7D31EB10481005FCAC0 /* charter.png */,
 				91D6D7CF1EB103F7005FCAC0 /* terralinda.png */,
+				916647311EBA36E400E3350E /* basketballball.png */,
 				91D6D7D11EB10463005FCAC0 /* basketball.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
+				916647321EBA36E400E3350E /* basketballball.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				91D6D7D41EB10481005FCAC0 /* charter.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
