@@ -60,8 +60,14 @@ class GameScene: SKScene {
         self.addChild(tunnel8.tunnelSpriteNode)
         let tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 9, colorAlpha: 1.0)
         self.addChild(tunnel9.tunnelSpriteNode)
-        let tunne20 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 10, colorAlpha: 1.0)
-        self.addChild(tunne20.tunnelSpriteNode)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 10, colorAlpha: 1.0)
+        self.addChild(tunnel10.tunnelSpriteNode)
+        let tunnel11 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 0, gridY: 0, colorAlpha: 1.0)
+        self.addChild(tunnel11.tunnelSpriteNode)
+        let tunnel12 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 12, gridX: 6, gridY: 0, colorAlpha: 1.0)
+        self.addChild(tunnel12.tunnelSpriteNode)
+        let tunnel13 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 4, gridY: 1, colorAlpha: 1.0)
+        self.addChild(tunnel13.tunnelSpriteNode)
       
         
         // Create dots to pick up in tunnels
@@ -173,7 +179,7 @@ class GameScene: SKScene {
                             }
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if (false) {  // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                            if (mainCharacter.amIPoweredup) {  // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                                 anOpponent.isHidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
@@ -221,7 +227,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
-                        if (false) { // TODO instead of “false” check if theMainCharacter powered up variable you created is true.  Use . format
+                        if (theMainCharacter.amIPoweredup) { // TODO instead of “false” check if theMainCharacter powered up variable you created is true.  Use . format
                             anOpponent.isHidden = true
                             opponents.remove(anOpponent)
                             allCharacters.remove(anOpponent)
