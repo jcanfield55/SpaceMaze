@@ -19,12 +19,15 @@ class MainCharacter:Character {
     func powerMeUp() {
         // TODO set the powered up variable to true
         rammer=true
-        powerUpTimer = Timer.scheduledTimer(timeInterval:15.0, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: true)
+        powerUpTimer = Timer.scheduledTimer(timeInterval:6.0, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: true)
     }
     
     // function to call when you time is up on the PowerTreasure power
     func powerMeDown(_ timer: Timer) {
         // TODO set the powered up variable to false
         rammer=false
+        let texture:SKTexture = SKTexture(imageNamed:"lockheed harrier1")
+        self.texture = texture
+
     }
 }

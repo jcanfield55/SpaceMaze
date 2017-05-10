@@ -56,7 +56,7 @@ class GameScene: SKScene {
         self.addChild(tunnel8.tunnelSpriteNode)
         let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX:6, gridY:4, colorAlpha: 1.0)
         self.addChild(tunnel9.tunnelSpriteNode)
-        let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 1, gridY:10, colorAlpha: 1.0)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 1, gridY:10, colorAlpha: 0.1)
         self.addChild(tunnel10.tunnelSpriteNode)
 
         // Create dots to pick up in tunnels
@@ -80,7 +80,8 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        //let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"lockheed harrier1", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
@@ -130,7 +131,11 @@ class GameScene: SKScene {
                                 self.endTheGame()
                             }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
-                            mainCharacter.powerMeUp()
+                            if (dotCharacter.isPowerUp) {
+                                mainCharacter.powerMeUp()
+                                let texture:SKTexture = SKTexture(imageNamed:"thanatos")
+                                mainCharacter.texture = texture
+                            }
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
                             if (mainCharacter.rammer) {  // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
