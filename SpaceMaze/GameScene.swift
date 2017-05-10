@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.0, green:14.0, blue:7.3, alpha:1.0)
+    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:TimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:Timer?
@@ -69,9 +69,10 @@ class GameScene: SKScene {
                     let dotCharacter = TreasureCharacter(imageNamed: "charter", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
+                    dotCharacter.istreasurepowered=true
                     // TODO set the dotCharacter.isPowerUp variable to true
                 }
-                else { let dotCharacter = TreasureCharacter(imageNamed: "basketballball", currentTunnel: aTunnel, tunnelPosition: i)
+                else { let dotCharacter = TreasureCharacter(imageNamed: "graydot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
                     
@@ -133,11 +134,14 @@ class GameScene: SKScene {
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
+                            if (dotCharacter.istreasurepowered) {
+                                mainCharacter.powerMeUp()
+                            }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
 
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if (false) {   // // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                            if (mainCharacter.amIPoweredUp) {   // // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                                 anOpponent.isHidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
@@ -185,7 +189,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
-                        if (false) { // TODO instead of “false” check if theMainCharacter powered up variable you created is true.  Use . format
+                        if (theMainCharacter.amIPoweredUp) { // TODO instead of “false” check if theMainCharacter powered up variable you created is true.  Use . format
                             anOpponent.isHidden = true
                             opponents.remove(anOpponent)
                             allCharacters.remove(anOpponent)
