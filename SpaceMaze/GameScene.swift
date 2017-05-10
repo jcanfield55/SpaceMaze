@@ -67,7 +67,6 @@ class GameScene: SKScene {
                 if (aTunnel === tunnel10) {
                     let dotCharacter = TreasureCharacter(imageNamed: "puppy", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
-                    maxScore += 1
                 }
                 else if (aTunnel === tunnel6) && (i == 2) {
                     let tennisBall = TreasureCharacter(imageNamed:"hi my name is tennis ball clip art.png", currentTunnel: aTunnel, tunnelPosition: i)
@@ -139,10 +138,14 @@ class GameScene: SKScene {
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
-                            // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
+                            if (dotCharacter.isPowerUp) {
+                                mainCharacter.powerMeUp()
+
+                            }
+
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if (false) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                            if (mainCharacter.powerUp) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                                 anOpponent.isHidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
@@ -189,8 +192,8 @@ class GameScene: SKScene {
                 anOpponent.chaseCharacter(c)
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
-                    if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        if (false) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                    if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
+                        if (theMainCharacter.powerUp) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                             anOpponent.isHidden = true
                             opponents.remove(anOpponent)
                             allCharacters.remove(anOpponent)
