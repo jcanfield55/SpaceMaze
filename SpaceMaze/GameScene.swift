@@ -159,23 +159,27 @@ class GameScene: SKScene {
     func commandForTouch(_ touch:UITouch, node:SKNode) -> TouchCommand {
         let location:CGPoint = touch.location(in: node)
         let frame:CGRect = node.frame
-        let height = frame.height
-        let width = frame.width
-        print("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
-       
-        if (location.y/height < 0.25) {
-            return TouchCommand.move_DOWN
-        }
-        if (location.y/height > 0.75) {
-            return TouchCommand.move_UP
-        }
-        if (location.x/width < 0.25) {
-            return TouchCommand.move_LEFT
-        }
-        if (location.x/width > 0.75) {
-            return TouchCommand.move_RIGHT
+        if let mainCharacter:MainCharacter = self.mainCharacter {
+            let mc:CGPoint = mainCharacter.position
+            let height = frame.height
+            let width = frame.width
+            print("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
+            //change controls plz
+            if (location.y/height < 0.25) {
+                return TouchCommand.move_DOWN
+            }
+            if (location.y/height > 0.75) {
+                return TouchCommand.move_UP
+            }
+            if (location.x/width < 0.25) {
+                return TouchCommand.move_LEFT
+            }
+            if (location.x/width > 0.75) {
+                return TouchCommand.move_RIGHT
+            }
         }
         return TouchCommand.no_COMMAND
+
     }
     
     // Function called whenever it is time for the opponent to move
