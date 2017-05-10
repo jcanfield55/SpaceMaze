@@ -21,6 +21,7 @@
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
 		91B5B3BA1EB1001000009268 /* treasure-chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B5B3B91EB1001000009268 /* treasure-chest.png */; };
+		91CCCF081EC37A5F00D630C4 /* Enemy Pirate!.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CCCF071EC37A5F00D630C4 /* Enemy Pirate!.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
@@ -61,6 +62,7 @@
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		91B5B3B91EB1001000009268 /* treasure-chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treasure-chest.png"; sourceTree = "<group>"; };
+		91CCCF071EC37A5F00D630C4 /* Enemy Pirate!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Enemy Pirate!.png"; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		E7950A211AC2842D008328E7 = {
 			isa = PBXGroup;
 			children = (
+				91CCCF071EC37A5F00D630C4 /* Enemy Pirate!.png */,
 				E7950A2C1AC2842D008328E7 /* SpaceMaze */,
 				E7950A461AC2842D008328E7 /* SpaceMazeTests */,
 				E7950A2B1AC2842D008328E7 /* Products */,
@@ -264,6 +267,7 @@
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
+				91CCCF081EC37A5F00D630C4 /* Enemy Pirate!.png in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				91B5B3BA1EB1001000009268 /* treasure-chest.png in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,

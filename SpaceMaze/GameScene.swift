@@ -63,6 +63,7 @@ class GameScene: SKScene {
                     maxScore += 1   // Keep track of the total number of treasure dots
                     dotCharacter.superpower = true
                     // TODO set the dotCharacter.isPowerUp variable to true
+                    
                 }
                 else{
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
@@ -80,7 +81,10 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
+
         opponents.insert(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        
+        opponents.insert(OpponentCharacter(imageNamed: "Enemy Pirate!", currentTunnel: tunnel4, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -127,9 +131,10 @@ class GameScene: SKScene {
                                 mainCharacter.powerMeUp()
                             }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
+                           
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if (false) {   // // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                            if (mainCharacter.iampoweredup == true) {   // // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                                 anOpponent.isHidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
@@ -178,7 +183,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
-                        if (false) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                        if (mainCharacter?.iampoweredup == true) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                             anOpponent.isHidden = true
                             opponents.remove(anOpponent)
                             allCharacters.remove(anOpponent)
