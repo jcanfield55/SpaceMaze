@@ -65,7 +65,7 @@ class GameScene: SKScene {
             for i:Int in 0 ..< aTunnel.length {
                 
                 if (aTunnel === tunnel10) {
-                    let dotCharacter = TreasureCharacter(imageNamed: "puppy", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter = TreasureCharacter(imageNamed: "hippo", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                 }
                 else if (aTunnel === tunnel6) && (i == 2) {
@@ -91,8 +91,8 @@ class GameScene: SKScene {
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
-        let puppyCharacter = Character(imageNamed:"puppy.png", currentTunnel:tunnel10, tunnelPosition:0)
-        self.addChild(puppyCharacter)
+        let hippoCharacter = Character(imageNamed:"hippo.png", currentTunnel:tunnel10, tunnelPosition:0)
+        self.addChild(hippoCharacter)
         
         // Create opponents
         opponents.insert(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))

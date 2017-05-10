@@ -20,6 +20,8 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		910FCDC41EC378E600EF66C8 /* hippo.png in Resources */ = {isa = PBXBuildFile; fileRef = 910FCDC31EC378E600EF66C8 /* hippo.png */; };
+		910FCDC61EC37B4100EF66C8 /* spacedog.png in Resources */ = {isa = PBXBuildFile; fileRef = 910FCDC51EC37B4000EF66C8 /* spacedog.png */; };
 		91B909EC1EB101EB009B3C48 /* puppy.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909EB1EB101EB009B3C48 /* puppy.png */; };
 		91B909EE1EB103E8009B3C48 /* hi my name is tennis ball clip art.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909ED1EB103E8009B3C48 /* hi my name is tennis ball clip art.png */; };
 		91B909F01EB104B5009B3C48 /* puppy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909EF1EB104B5009B3C48 /* puppy2.png */; };
@@ -62,6 +64,8 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		910FCDC31EC378E600EF66C8 /* hippo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hippo.png; sourceTree = "<group>"; };
+		910FCDC51EC37B4000EF66C8 /* spacedog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacedog.png; sourceTree = "<group>"; };
 		91B909EB1EB101EB009B3C48 /* puppy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy.png; sourceTree = "<group>"; };
 		91B909ED1EB103E8009B3C48 /* hi my name is tennis ball clip art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hi my name is tennis ball clip art.png"; sourceTree = "<group>"; };
 		91B909EF1EB104B5009B3C48 /* puppy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy2.png; sourceTree = "<group>"; };
@@ -128,7 +132,9 @@
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
+				910FCDC31EC378E600EF66C8 /* hippo.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
+				910FCDC51EC37B4000EF66C8 /* spacedog.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				91B909EB1EB101EB009B3C48 /* puppy.png */,
 				91B909ED1EB103E8009B3C48 /* hi my name is tennis ball clip art.png */,
@@ -268,8 +274,10 @@
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
+				910FCDC61EC37B4100EF66C8 /* spacedog.png in Resources */,
 				91B909EE1EB103E8009B3C48 /* hi my name is tennis ball clip art.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
+				910FCDC41EC378E600EF66C8 /* hippo.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
