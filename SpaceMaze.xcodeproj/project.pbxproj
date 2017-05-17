@@ -20,6 +20,8 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		911DFBAC1ECCAAC600ADB008 /* Our_Pirate.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFBAB1ECCAAC600ADB008 /* Our_Pirate.png */; };
+		911DFBAE1ECCB46C00ADB008 /* Floor Coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFBAD1ECCB46C00ADB008 /* Floor Coin.png */; };
 		91B5B3BA1EB1001000009268 /* treasure-chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B5B3B91EB1001000009268 /* treasure-chest.png */; };
 		91CCCF081EC37A5F00D630C4 /* Enemy Pirate!.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CCCF071EC37A5F00D630C4 /* Enemy Pirate!.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
@@ -61,6 +63,8 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		911DFBAB1ECCAAC600ADB008 /* Our_Pirate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Our_Pirate.png; sourceTree = "<group>"; };
+		911DFBAD1ECCB46C00ADB008 /* Floor Coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Floor Coin.png"; sourceTree = "<group>"; };
 		91B5B3B91EB1001000009268 /* treasure-chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treasure-chest.png"; sourceTree = "<group>"; };
 		91CCCF071EC37A5F00D630C4 /* Enemy Pirate!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Enemy Pirate!.png"; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,7 @@
 		E7950A211AC2842D008328E7 = {
 			isa = PBXGroup;
 			children = (
+				911DFBAB1ECCAAC600ADB008 /* Our_Pirate.png */,
 				91CCCF071EC37A5F00D630C4 /* Enemy Pirate!.png */,
 				E7950A2C1AC2842D008328E7 /* SpaceMaze */,
 				E7950A461AC2842D008328E7 /* SpaceMazeTests */,
@@ -125,6 +130,7 @@
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
+				911DFBAD1ECCB46C00ADB008 /* Floor Coin.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
@@ -261,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
+				911DFBAC1ECCAAC600ADB008 /* Our_Pirate.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
@@ -273,6 +280,7 @@
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
+				911DFBAE1ECCB46C00ADB008 /* Floor Coin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

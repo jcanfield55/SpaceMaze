@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)
+    let color = UIColor(red:0.15, green:0.15, blue:0.8, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:TimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:Timer?
@@ -66,7 +66,7 @@ class GameScene: SKScene {
                     
                 }
                 else{
-                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter = TreasureCharacter(imageNamed: "Floor Coin", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
                 }
@@ -75,14 +75,14 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"Our_Pirate", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
 
-        opponents.insert(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "Enemy Pirate!", currentTunnel: tunnel3, tunnelPosition: 3))
         
         opponents.insert(OpponentCharacter(imageNamed: "Enemy Pirate!", currentTunnel: tunnel4, tunnelPosition: 3))
         
@@ -123,7 +123,7 @@ class GameScene: SKScene {
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "You Win!"
+                                gameResultLabel.text = "Da Gold Be Ours!"
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
@@ -140,7 +140,7 @@ class GameScene: SKScene {
                                 allCharacters.remove(anOpponent)
                             }
                             else {
-                                gameResultLabel.text = "You Lose!"
+                                gameResultLabel.text = "Shiver Me Timbers!"
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
@@ -189,7 +189,7 @@ class GameScene: SKScene {
                             allCharacters.remove(anOpponent)
                         }
                         else {
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "Shiver Me Timbers!"
                             gameResultLabel.isHidden = false
                             self.endTheGame()
                         }
