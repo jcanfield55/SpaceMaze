@@ -22,6 +22,7 @@
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
 		910FCDC41EC378E600EF66C8 /* hippo.png in Resources */ = {isa = PBXBuildFile; fileRef = 910FCDC31EC378E600EF66C8 /* hippo.png */; };
 		910FCDC61EC37B4100EF66C8 /* spacedog.png in Resources */ = {isa = PBXBuildFile; fileRef = 910FCDC51EC37B4000EF66C8 /* spacedog.png */; };
+		911982751ECCA88C0007D2DF /* Rufus.png in Resources */ = {isa = PBXBuildFile; fileRef = 911982741ECCA88C0007D2DF /* Rufus.png */; };
 		91B909EC1EB101EB009B3C48 /* puppy.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909EB1EB101EB009B3C48 /* puppy.png */; };
 		91B909EE1EB103E8009B3C48 /* hi my name is tennis ball clip art.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909ED1EB103E8009B3C48 /* hi my name is tennis ball clip art.png */; };
 		91B909F01EB104B5009B3C48 /* puppy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909EF1EB104B5009B3C48 /* puppy2.png */; };
@@ -66,6 +67,7 @@
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		910FCDC31EC378E600EF66C8 /* hippo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hippo.png; sourceTree = "<group>"; };
 		910FCDC51EC37B4000EF66C8 /* spacedog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacedog.png; sourceTree = "<group>"; };
+		911982741ECCA88C0007D2DF /* Rufus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rufus.png; sourceTree = "<group>"; };
 		91B909EB1EB101EB009B3C48 /* puppy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy.png; sourceTree = "<group>"; };
 		91B909ED1EB103E8009B3C48 /* hi my name is tennis ball clip art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hi my name is tennis ball clip art.png"; sourceTree = "<group>"; };
 		91B909EF1EB104B5009B3C48 /* puppy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy2.png; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				910FCDC31EC378E600EF66C8 /* hippo.png */,
+				911982741ECCA88C0007D2DF /* Rufus.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				910FCDC51EC37B4000EF66C8 /* spacedog.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
@@ -277,6 +280,7 @@
 				910FCDC61EC37B4100EF66C8 /* spacedog.png in Resources */,
 				91B909EE1EB103E8009B3C48 /* hi my name is tennis ball clip art.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
+				911982751ECCA88C0007D2DF /* Rufus.png in Resources */,
 				910FCDC41EC378E600EF66C8 /* hippo.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,

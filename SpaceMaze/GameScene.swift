@@ -27,6 +27,7 @@ class GameScene: SKScene {
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
+    var powerUpTreasure:TreasureCharacter?
     
     override func didMove(to view: SKView) {        
         
@@ -58,6 +59,12 @@ class GameScene: SKScene {
         self.addChild(tunnel9.tunnelSpriteNode)
         let tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 1, gridX: 3, gridY: 4, colorAlpha: 0.0)
         self.addChild(tunnel10.tunnelSpriteNode)
+        let tunnel11 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 7, gridY: 2, colorAlpha: 1.0)
+        self.addChild(tunnel11.tunnelSpriteNode)
+        let tunnel12 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 5, gridY: 9, colorAlpha: 1.0)
+        self.addChild(tunnel12.tunnelSpriteNode)
+
+
 
         
         // Create dots to pick up in tunnels
@@ -75,6 +82,7 @@ class GameScene: SKScene {
                     // Keep track of the total number of treasure dots
                     // TODO set the dotCharacter.isPowerUp variable to true
                     tennisBall.isPowerUp = true
+                    powerUpTreasure = tennisBall
                 }
                 else{
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
@@ -140,15 +148,18 @@ class GameScene: SKScene {
                             }
                             if (dotCharacter.isPowerUp) {
                                 mainCharacter.powerMeUp()
+                                let newTexture:SKTexture = SKTexture(imageNamed:"spacedog")
+                                for anOpponent in opponents {
+                                    anOpponent.texture = newTexture
+                                }
 
                             }
 
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
                             if (mainCharacter.powerUp) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
-                                anOpponent.isHidden = true
-                                opponents.remove(anOpponent)
-                                allCharacters.remove(anOpponent)
+
+
                             }
                             else {
                                 gameResultLabel.text = "You Lose!"
@@ -189,14 +200,29 @@ class GameScene: SKScene {
     @objc func moveOpponent(_ timer: Timer) {
         for anOpponent in opponents {
             if let c = self.mainCharacter {
-                anOpponent.chaseCharacter(c)
-                let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
+                if (c.powerUp == false) {
+                       let newTexture:SKTexture = SKTexture(imageNamed:"AlienSpaceship1.png")
+                    for anOpponent in opponents {
+                        anOpponent.texture = newTexture
+                    }
+                }
+                if (c.powerUp) {
+                    if let pt = self.powerUpTreasure {
+                        anOpponent.chaseCharacter(pt)
+                    }
+                    else {
+                        anOpponent.chaseCharacter(c)
+                    }
+                }
+                else {
+                    anOpponent.chaseCharacter(c)
+
+                }
+                                let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
                         if (theMainCharacter.powerUp) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
-                            anOpponent.isHidden = true
-                            opponents.remove(anOpponent)
-                            allCharacters.remove(anOpponent)
+
                         }
                         else {
                             gameResultLabel.text = "You Lose!"
