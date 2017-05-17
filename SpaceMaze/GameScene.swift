@@ -110,6 +110,8 @@ class GameScene: SKScene {
         self.gameResultLabel.fontColor = UIColor.red
         self.gameResultLabel.isHidden = true
         self.addChild(self.gameResultLabel)
+        
+        run(SKAction.playSoundFileNamed("Star Wars.mp3", waitForCompletion: false))
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
