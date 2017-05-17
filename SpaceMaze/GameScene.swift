@@ -88,7 +88,9 @@ class GameScene: SKScene {
         
         // Create opponents
         opponents.insert(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
-        
+        //create opponent 2
+        opponents.insert(OpponentCharacter(imageNamed: "zippppppppy", currentTunnel: tunnel10, tunnelPosition: 3))
+
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }

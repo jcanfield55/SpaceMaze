@@ -24,6 +24,7 @@
 		91CAAECC1EC371F3009270C9 /* lockheed harrier.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CAAECB1EC371F3009270C9 /* lockheed harrier.png */; };
 		91CAAECE1EC372FF009270C9 /* lockheed harrier1.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CAAECD1EC372FF009270C9 /* lockheed harrier1.png */; };
 		91CAAED01EC374EB009270C9 /* thanatos.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CAAECF1EC374EB009270C9 /* thanatos.png */; };
+		91CAAED21ECCA83F009270C9 /* zippppppppy.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CAAED11ECCA83F009270C9 /* zippppppppy.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
@@ -67,6 +68,7 @@
 		91CAAECB1EC371F3009270C9 /* lockheed harrier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lockheed harrier.png"; sourceTree = "<group>"; };
 		91CAAECD1EC372FF009270C9 /* lockheed harrier1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lockheed harrier1.png"; sourceTree = "<group>"; };
 		91CAAECF1EC374EB009270C9 /* thanatos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thanatos.png; sourceTree = "<group>"; };
+		91CAAED11ECCA83F009270C9 /* zippppppppy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zippppppppy.png; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				91CAAECF1EC374EB009270C9 /* thanatos.png */,
+				91CAAED11ECCA83F009270C9 /* zippppppppy.png */,
 				91CAAECB1EC371F3009270C9 /* lockheed harrier.png */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				917EBAE61EB0FFE20042179D /* oni-mask.png */,
@@ -280,6 +283,7 @@
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				917EBAE71EB0FFE20042179D /* oni-mask.png in Resources */,
+				91CAAED21ECCA83F009270C9 /* zippppppppy.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
