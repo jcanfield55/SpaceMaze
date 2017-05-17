@@ -13,7 +13,7 @@ class GameOverScene: SKScene {
     
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
-    var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "election.day.png")
+    var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "election_day.png")
 
     override func didMove(to view: SKView) {
         // self.background = SKSpriteNode(imageNamed: "Donald Drumpf.png")
