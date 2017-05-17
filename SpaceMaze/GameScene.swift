@@ -196,7 +196,7 @@ class GameScene: SKScene {
         return TouchCommand.no_COMMAND
     }
     
-    // Function called whenever it is time for the opponent to move
+    // Function called whenever it is time for the opponent to move 
     @objc func moveOpponent(_ timer: Timer) {
         for anOpponent in opponents {
             if let c = self.mainCharacter {
