@@ -51,7 +51,7 @@ class Tunnel {
         connectingPositions = [Int?](repeating: nil, count: length)
         
         // Create tunnelSpriteNode
-        let tunnelColor = UIColor.orange
+        let tunnelColor = UIColor.green
         
         // Hey everyone, Gus & Kevin found out how to put a tile background into their tunnel.
         // Uncomment the below to try it

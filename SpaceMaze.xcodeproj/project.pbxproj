@@ -22,6 +22,7 @@
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
 		911DFBAC1ECCAAC600ADB008 /* Our_Pirate.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFBAB1ECCAAC600ADB008 /* Our_Pirate.png */; };
 		911DFBAE1ECCB46C00ADB008 /* Floor Coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 911DFBAD1ECCB46C00ADB008 /* Floor Coin.png */; };
+		91275CD41ED5EBBC003C5BB0 /* pirate-ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 91275CD31ED5EBBC003C5BB0 /* pirate-ship.png */; };
 		91B5B3BA1EB1001000009268 /* treasure-chest.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B5B3B91EB1001000009268 /* treasure-chest.png */; };
 		91CCCF081EC37A5F00D630C4 /* Enemy Pirate!.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CCCF071EC37A5F00D630C4 /* Enemy Pirate!.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
@@ -65,6 +66,7 @@
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		911DFBAB1ECCAAC600ADB008 /* Our_Pirate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Our_Pirate.png; sourceTree = "<group>"; };
 		911DFBAD1ECCB46C00ADB008 /* Floor Coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Floor Coin.png"; sourceTree = "<group>"; };
+		91275CD31ED5EBBC003C5BB0 /* pirate-ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pirate-ship.png"; sourceTree = "<group>"; };
 		91B5B3B91EB1001000009268 /* treasure-chest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "treasure-chest.png"; sourceTree = "<group>"; };
 		91CCCF071EC37A5F00D630C4 /* Enemy Pirate!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Enemy Pirate!.png"; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 				91B5B3B91EB1001000009268 /* treasure-chest.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
+				91275CD31ED5EBBC003C5BB0 /* pirate-ship.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
@@ -274,6 +277,7 @@
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
+				91275CD41ED5EBBC003C5BB0 /* pirate-ship.png in Resources */,
 				91CCCF081EC37A5F00D630C4 /* Enemy Pirate!.png in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				91B5B3BA1EB1001000009268 /* treasure-chest.png in Resources */,

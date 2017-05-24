@@ -19,7 +19,7 @@ enum TouchCommand {
 class GameScene: SKScene {
     
     /* Properties */
-    let color = UIColor(red:0.15, green:0.15, blue:0.8, alpha:1.0)
+    let color = UIColor(red:0.1, green:0.4, blue:0.4, alpha:1.0)
     var mainCharacter:MainCharacter?
     let opponentMoveTiming:TimeInterval = 1.0  // number of seconds between opponent movement
     var opponentTimer:Timer?
@@ -27,6 +27,8 @@ class GameScene: SKScene {
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
+    
+    var runawayzombies:TreasureCharacter?
     
     override func didMove(to view: SKView) {        
         
@@ -65,6 +67,14 @@ class GameScene: SKScene {
                     // TODO set the dotCharacter.isPowerUp variable to true
                     
                 }
+                else if (aTunnel===tunnel8) && (i == 7) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "pirate-ship", currentTunnel: aTunnel, tunnelPosition: i)
+                    runawayzombies=dotCharacter
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
+                
+                
                 else{
                     let dotCharacter = TreasureCharacter(imageNamed: "Floor Coin", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
@@ -179,7 +189,14 @@ class GameScene: SKScene {
     @objc func moveOpponent(_ timer: Timer) {
         for anOpponent in opponents {
             if let c = self.mainCharacter {
-                anOpponent.chaseCharacter(c)
+                if c.iampoweredup {
+                    if let runaway:TreasureCharacter = runawayzombies {
+                        anOpponent.chaseCharacter(runaway)
+                    }
+                }
+                else {
+                    anOpponent.chaseCharacter(c)
+                }
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let theMainCharacter = otherCharacter as? MainCharacter { // If it is the main Character
