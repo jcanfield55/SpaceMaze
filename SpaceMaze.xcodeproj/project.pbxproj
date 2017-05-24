@@ -13,17 +13,19 @@
 		522A87C41AF09F060058F70B /* pac.wav in Resources */ = {isa = PBXBuildFile; fileRef = 522A87C31AF09F060058F70B /* pac.wav */; };
 		522A87C61AF09F7F0058F70B /* LessonSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */; };
 		52524D4B1AD4E03A0068A3F5 /* CharactersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */; };
-		52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */; };
 		52524D541AD4FE660068A3F5 /* grayDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 52524D531AD4FE660068A3F5 /* grayDot.png */; };
 		52524D561AD5036F0068A3F5 /* MainCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D551AD5036F0068A3F5 /* MainCharacter.swift */; };
 		52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */; };
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
-		525B26551ED54FF8001328F2 /* Spaceship_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 525B26541ED54FF8001328F2 /* Spaceship_icon.png */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
 		910FCDC41EC378E600EF66C8 /* hippo.png in Resources */ = {isa = PBXBuildFile; fileRef = 910FCDC31EC378E600EF66C8 /* hippo.png */; };
 		910FCDC61EC37B4100EF66C8 /* spacedog.png in Resources */ = {isa = PBXBuildFile; fileRef = 910FCDC51EC37B4000EF66C8 /* spacedog.png */; };
 		911982751ECCA88C0007D2DF /* Rufus.png in Resources */ = {isa = PBXBuildFile; fileRef = 911982741ECCA88C0007D2DF /* Rufus.png */; };
+		91250E051ED5E237009E48CE /* speechBubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 91250E041ED5E237009E48CE /* speechBubble.png */; };
+		91250E071ED5E56C009E48CE /* speechBubble:wText.png in Resources */ = {isa = PBXBuildFile; fileRef = 91250E061ED5E56C009E48CE /* speechBubble:wText.png */; };
+		91250E091ED5EA8E009E48CE /* app-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 91250E081ED5EA8E009E48CE /* app-logo.png */; };
+		91250E0B1ED5ED24009E48CE /* AlienSpaceship1.png in Resources */ = {isa = PBXBuildFile; fileRef = 91250E0A1ED5ED24009E48CE /* AlienSpaceship1.png */; };
 		91B909EC1EB101EB009B3C48 /* puppy.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909EB1EB101EB009B3C48 /* puppy.png */; };
 		91B909EE1EB103E8009B3C48 /* hi my name is tennis ball clip art.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909ED1EB103E8009B3C48 /* hi my name is tennis ball clip art.png */; };
 		91B909F01EB104B5009B3C48 /* puppy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B909EF1EB104B5009B3C48 /* puppy2.png */; };
@@ -57,19 +59,21 @@
 		522A87C31AF09F060058F70B /* pac.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pac.wav; sourceTree = "<group>"; };
 		522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonSuggestions.swift; sourceTree = "<group>"; };
 		52524D4A1AD4E03A0068A3F5 /* CharactersCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollection.swift; sourceTree = "<group>"; };
-		52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship1.png; sourceTree = "<group>"; };
 		52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Alien Spaceship icons.jpg"; sourceTree = "<group>"; };
 		52524D521AD4FBCE0068A3F5 /* grayDot.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = grayDot.psd; sourceTree = "<group>"; };
 		52524D531AD4FE660068A3F5 /* grayDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayDot.png; sourceTree = "<group>"; };
 		52524D551AD5036F0068A3F5 /* MainCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCharacter.swift; sourceTree = "<group>"; };
 		52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureCharacter.swift; sourceTree = "<group>"; };
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
-		525B26541ED54FF8001328F2 /* Spaceship_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship_icon.png; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		910FCDC31EC378E600EF66C8 /* hippo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hippo.png; sourceTree = "<group>"; };
 		910FCDC51EC37B4000EF66C8 /* spacedog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spacedog.png; sourceTree = "<group>"; };
 		911982741ECCA88C0007D2DF /* Rufus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rufus.png; sourceTree = "<group>"; };
+		91250E041ED5E237009E48CE /* speechBubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speechBubble.png; sourceTree = "<group>"; };
+		91250E061ED5E56C009E48CE /* speechBubble:wText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speechBubble:wText.png"; sourceTree = "<group>"; };
+		91250E081ED5EA8E009E48CE /* app-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-logo.png"; sourceTree = "<group>"; };
+		91250E0A1ED5ED24009E48CE /* AlienSpaceship1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AlienSpaceship1.png; sourceTree = "<group>"; };
 		91B909EB1EB101EB009B3C48 /* puppy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy.png; sourceTree = "<group>"; };
 		91B909ED1EB103E8009B3C48 /* hi my name is tennis ball clip art.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hi my name is tennis ball clip art.png"; sourceTree = "<group>"; };
 		91B909EF1EB104B5009B3C48 /* puppy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puppy2.png; sourceTree = "<group>"; };
@@ -129,9 +133,9 @@
 		E7950A2C1AC2842D008328E7 /* SpaceMaze */ = {
 			isa = PBXGroup;
 			children = (
-				52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
+				91250E0A1ED5ED24009E48CE /* AlienSpaceship1.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
@@ -139,12 +143,14 @@
 				910FCDC31EC378E600EF66C8 /* hippo.png */,
 				911982741ECCA88C0007D2DF /* Rufus.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
-				525B26541ED54FF8001328F2 /* Spaceship_icon.png */,
 				910FCDC51EC37B4000EF66C8 /* spacedog.png */,
+				91250E081ED5EA8E009E48CE /* app-logo.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				91B909EB1EB101EB009B3C48 /* puppy.png */,
 				91B909ED1EB103E8009B3C48 /* hi my name is tennis ball clip art.png */,
 				91B909EF1EB104B5009B3C48 /* puppy2.png */,
+				91250E041ED5E237009E48CE /* speechBubble.png */,
+				91250E061ED5E56C009E48CE /* speechBubble:wText.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
@@ -278,18 +284,20 @@
 			files = (
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
-				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				910FCDC61EC37B4100EF66C8 /* spacedog.png in Resources */,
 				91B909EE1EB103E8009B3C48 /* hi my name is tennis ball clip art.png in Resources */,
+				91250E071ED5E56C009E48CE /* speechBubble:wText.png in Resources */,
+				91250E051ED5E237009E48CE /* speechBubble.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				911982751ECCA88C0007D2DF /* Rufus.png in Resources */,
 				910FCDC41EC378E600EF66C8 /* hippo.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
+				91250E0B1ED5ED24009E48CE /* AlienSpaceship1.png in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
-				525B26551ED54FF8001328F2 /* Spaceship_icon.png in Resources */,
+				91250E091ED5EA8E009E48CE /* app-logo.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				91B909EC1EB101EB009B3C48 /* puppy.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,

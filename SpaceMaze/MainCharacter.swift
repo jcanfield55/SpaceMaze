@@ -23,7 +23,7 @@ class MainCharacter:Character {
         if let put:Timer = powerUpTimer {  // If a timer is already going, invalidate it before creating a new one
             put.invalidate()
         }
-        powerUpTimer = Timer.scheduledTimer(timeInterval:15.0, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: true)
+        powerUpTimer = Timer.scheduledTimer(timeInterval:8.5, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: true)
         let newTexture:SKTexture = SKTexture(imageNamed:"Rufus.png")
         self.texture = newTexture
         
