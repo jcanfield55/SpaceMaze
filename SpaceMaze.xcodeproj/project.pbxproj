@@ -21,7 +21,7 @@
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
 		916647321EBA36E400E3350E /* basketballball.png in Resources */ = {isa = PBXBuildFile; fileRef = 916647311EBA36E400E3350E /* basketballball.png */; };
-		918C313C1ECCB43B00CA051A /* Star Wars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 918C313B1ECCB43B00CA051A /* Star Wars.mp3 */; };
+		918C313C1ECCB43B00CA051A /* Star_Wars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 918C313B1ECCB43B00CA051A /* Star_Wars.mp3 */; };
 		91D6D7D01EB103F7005FCAC0 /* terralinda.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6D7CF1EB103F7005FCAC0 /* terralinda.png */; };
 		91D6D7D21EB10463005FCAC0 /* basketball.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6D7D11EB10463005FCAC0 /* basketball.png */; };
 		91D6D7D41EB10481005FCAC0 /* charter.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D6D7D31EB10481005FCAC0 /* charter.png */; };
@@ -66,7 +66,7 @@
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		916647311EBA36E400E3350E /* basketballball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basketballball.png; path = ../../../Desktop/basketballball.png; sourceTree = "<group>"; };
 		918C313A1ECCB02600CA051A /* Star Wars.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Star Wars.m4a"; path = "../../../Desktop/Star Wars.m4a"; sourceTree = "<group>"; };
-		918C313B1ECCB43B00CA051A /* Star Wars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Star Wars.mp3"; path = "../../../Desktop/Star Wars.mp3"; sourceTree = "<group>"; };
+		918C313B1ECCB43B00CA051A /* Star_Wars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Star_Wars.mp3; path = ../../../Desktop/Star_Wars.mp3; sourceTree = "<group>"; };
 		91D6D7CF1EB103F7005FCAC0 /* terralinda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = terralinda.png; path = ../../../Desktop/terralinda.png; sourceTree = "<group>"; };
 		91D6D7D11EB10463005FCAC0 /* basketball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basketball.png; path = ../../../Desktop/basketball.png; sourceTree = "<group>"; };
 		91D6D7D31EB10481005FCAC0 /* charter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = charter.png; path = ../../../Desktop/charter.png; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				526C47471AF9E8C5002CA512 /* TryAgainButton.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
-				918C313B1ECCB43B00CA051A /* Star Wars.mp3 */,
+				918C313B1ECCB43B00CA051A /* Star_Wars.mp3 */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				918C313A1ECCB02600CA051A /* Star Wars.m4a */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
@@ -273,7 +273,7 @@
 			files = (
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				916647321EBA36E400E3350E /* basketballball.png in Resources */,
-				918C313C1ECCB43B00CA051A /* Star Wars.mp3 in Resources */,
+				918C313C1ECCB43B00CA051A /* Star_Wars.mp3 in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				91D6D7D41EB10481005FCAC0 /* charter.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,

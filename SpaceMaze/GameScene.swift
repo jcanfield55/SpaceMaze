@@ -48,18 +48,20 @@ class GameScene: SKScene {
         self.addChild(tunnel4.tunnelSpriteNode)
         let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 0, gridY: 10, colorAlpha: 0.1)
         self.addChild(tunnel5.tunnelSpriteNode)
-        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 1, gridY: 2, colorAlpha: 0.1)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 1, gridY: 2, colorAlpha: 0.0)
         self.addChild(tunnel6.tunnelSpriteNode)
         let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 13, gridX: 6, gridY: 2, colorAlpha: 0.1)
         self.addChild(tunnel7.tunnelSpriteNode)
-        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 4, gridY: 14, colorAlpha: 0.1)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 4, gridY: 14, colorAlpha: 0.0)
         self.addChild(tunnel8.tunnelSpriteNode)
-        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 4, gridY: 14, colorAlpha: 0.1)
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 3, gridX: 4, gridY: 14, colorAlpha: 0.0)
         self.addChild(tunnel9.tunnelSpriteNode)
         let tunnel10 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 2, gridY: 16, colorAlpha: 0.1)
         self.addChild(tunnel10.tunnelSpriteNode)
-        let tunnel11 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 7, gridX: 2, gridY: 10, colorAlpha: 0.1)
+        let tunnel11 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 7, gridX: 2, gridY: 10, colorAlpha: 0.0)
         self.addChild(tunnel11.tunnelSpriteNode)
+        let tunnel12 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 2, gridX: 2, gridY: 14, colorAlpha: 0.0)
+        self.addChild(tunnel12.tunnelSpriteNode)
 
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
@@ -68,13 +70,13 @@ class GameScene: SKScene {
                 {
                     let dotCharacter = TreasureCharacter(imageNamed: "charter", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
-                    maxScore += 1   // Keep track of the total number of treasure dots
+                    maxScore += 9   // Keep track of the total number of treasure dots
                     dotCharacter.istreasurepowered=true
                     // TODO set the dotCharacter.isPowerUp variable to true
                 }
                 else { let dotCharacter = TreasureCharacter(imageNamed: "graydot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
-                    maxScore += 1   // Keep track of the total number of treasure dots
+                    maxScore += 9  // Keep track of the total number of treasure dots
                     
                     
                 }
@@ -89,9 +91,9 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
+        opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel11, tunnelPosition: 4))
         opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel11, tunnelPosition: 3))
-        opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel11, tunnelPosition: 3))
-        opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel11, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "terralinda", currentTunnel: tunnel11, tunnelPosition: 2))
 
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -111,7 +113,7 @@ class GameScene: SKScene {
         self.gameResultLabel.isHidden = true
         self.addChild(self.gameResultLabel)
         
-        run(SKAction.playSoundFileNamed("Star Wars.mp3", waitForCompletion: false))
+        run(SKAction.playSoundFileNamed("Star_Wars.mp3", waitForCompletion: false))
     }
     
     // Responds to touches by the user on the screen & moves mainCharacter as needed
@@ -128,7 +130,7 @@ class GameScene: SKScene {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
                             dotCharacter.isHidden = true
                             allCharacters.remove(dotCharacter)
-                            mainCharacter.treasureScore += 1
+                            mainCharacter.treasureScore += 10
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
