@@ -18,6 +18,7 @@
 		52524D561AD5036F0068A3F5 /* MainCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D551AD5036F0068A3F5 /* MainCharacter.swift */; };
 		52524D581AD503CE0068A3F5 /* TreasureCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */; };
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
+		525B26551ED54FF8001328F2 /* Spaceship_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 525B26541ED54FF8001328F2 /* Spaceship_icon.png */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
 		910FCDC41EC378E600EF66C8 /* hippo.png in Resources */ = {isa = PBXBuildFile; fileRef = 910FCDC31EC378E600EF66C8 /* hippo.png */; };
@@ -63,6 +64,7 @@
 		52524D551AD5036F0068A3F5 /* MainCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCharacter.swift; sourceTree = "<group>"; };
 		52524D571AD503CE0068A3F5 /* TreasureCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureCharacter.swift; sourceTree = "<group>"; };
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
+		525B26541ED54FF8001328F2 /* Spaceship_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship_icon.png; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		910FCDC31EC378E600EF66C8 /* hippo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hippo.png; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				910FCDC31EC378E600EF66C8 /* hippo.png */,
 				911982741ECCA88C0007D2DF /* Rufus.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
+				525B26541ED54FF8001328F2 /* Spaceship_icon.png */,
 				910FCDC51EC37B4000EF66C8 /* spacedog.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
 				91B909EB1EB101EB009B3C48 /* puppy.png */,
@@ -239,6 +242,7 @@
 				TargetAttributes = {
 					E7950A291AC2842D008328E7 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = T5C2L42U5V;
 						LastSwiftMigration = 0830;
 					};
 					E7950A421AC2842D008328E7 = {
@@ -285,6 +289,7 @@
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
+				525B26551ED54FF8001328F2 /* Spaceship_icon.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				91B909EC1EB101EB009B3C48 /* puppy.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
@@ -436,10 +441,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T5C2L42U5V;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.SpaceMaze-as";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -450,10 +456,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T5C2L42U5V;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.SpaceMaze-as";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
