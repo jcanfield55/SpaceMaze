@@ -29,6 +29,13 @@ class GameScene: SKScene {
     var maxScore:Int = 0
     var powerUpTreasure:TreasureCharacter?
     
+    // Variables for ball repositioning
+    var canRepositionBall:Bool = false  // This is set true when mainCharacter eats powerUp Treasure.  When true, ball gets repositioned via touches
+    var repositionBallUnderway:Bool = false
+    var repositionTouch:UITouch?
+    let pickUpBallVicinity:CGFloat = 20  // Distance horizontally or vertically you can touch away from the ball and still pick it up
+
+    
     override func didMove(to view: SKView) {        
         
         /* Setup your scene here */
@@ -78,9 +85,6 @@ class GameScene: SKScene {
                 else if (aTunnel === tunnel6) && (i == 2) {
                     let tennisBall = TreasureCharacter(imageNamed:"hi my name is tennis ball clip art.png", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(tennisBall)
-                    maxScore += 1
-                    // Keep track of the total number of treasure dots
-                    // TODO set the dotCharacter.isPowerUp variable to true
                     tennisBall.isPowerUp = true
                     powerUpTreasure = tennisBall
                 }
@@ -129,6 +133,16 @@ class GameScene: SKScene {
         /* Called when a touch begins */
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
+                if self.canRepositionBall {   // If in repositionBall mode, do not move spaceship and keep track of reposition touches
+                    if let pt = self.powerUpTreasure {
+                        if abs(pt.frame.midX - touch.location(in:self).x) < pickUpBallVicinity && abs(pt.frame.midY - touch.location(in:self).y) < pickUpBallVicinity {
+                            repositionBallUnderway = true
+                            print("Reposition Underway")
+                            repositionTouch = touch
+                        }
+                    }
+                }
+                else {
                     let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
                     _ = mainCharacter.moveCharacter(command)
                     
@@ -136,23 +150,25 @@ class GameScene: SKScene {
                     let samePositionCharacters:[Character] = allCharacters.samePositionAs(mainCharacter)
                     for otherCharacter in samePositionCharacters {
                         if let dotCharacter = otherCharacter as? TreasureCharacter {  // Only remove Treasure characters
-                            dotCharacter.isHidden = true
-                            allCharacters.remove(dotCharacter)
-                            mainCharacter.treasureScore += 1
-                            print("Treasure score is " + String(mainCharacter.treasureScore))
-                            self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
-                            if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "You Win!"
-                                gameResultLabel.isHidden = false
-                                self.endTheGame()
-                            }
-                            if (dotCharacter.isPowerUp) {
+                            if (dotCharacter.isPowerUp) {  // If powerUp treasure, do not remove from board.  Turn opponent to dog and go into reposition mode
                                 mainCharacter.powerMeUp()
                                 let newTexture:SKTexture = SKTexture(imageNamed:"spacedog")
                                 for anOpponent in opponents {
                                     anOpponent.texture = newTexture
                                 }
-
+                                canRepositionBall = true  // Now go to ball repositioning mode
+                            }
+                            else {
+                                dotCharacter.isHidden = true
+                                allCharacters.remove(dotCharacter)
+                                mainCharacter.treasureScore += 1
+                                print("Treasure score is " + String(mainCharacter.treasureScore))
+                                self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
+                                if (mainCharacter.treasureScore >= maxScore) {
+                                    gameResultLabel.text = "You Win!"
+                                    gameResultLabel.isHidden = false
+                                    self.endTheGame()
+                                }
                             }
 
                         }
@@ -168,9 +184,63 @@ class GameScene: SKScene {
                             }
                         }
                     }
+                }
             }
         }
     }
+    
+    // Responds to movement of touches if repositionBallUnderway is true
+    override func touchesMoved(_ touches:Set<UITouch>, with event: UIEvent?) {
+        if (repositionBallUnderway) {
+            if let powerUpTreasure = self.powerUpTreasure {
+                for touch in touches {
+                    if touch === repositionTouch { // only move ball if this is the same touch that picked up the ball
+                        var closestTunnel:Tunnel?
+                        var closestTunnelPosition:Int?
+                        var closestDistance:CGFloat = 1000000000
+                        for aTunnel in allTunnels {
+                            for i:Int in 0 ..< aTunnel.length {
+                                let distance:CGFloat = sqrt(pow((touch.location(in:self).x - aTunnel.pointAtTunnelPosition(i).x),2) +
+                                pow((touch.location(in:self).y - aTunnel.pointAtTunnelPosition(i).y),2))
+                                if (distance < closestDistance) {
+                                    closestTunnel = aTunnel
+                                    closestTunnelPosition = i
+                                    closestDistance = distance
+                                }
+                            }
+                        }
+                        if let ct:Tunnel = closestTunnel {
+                            powerUpTreasure.currentTunnel = ct
+                            if let ctp:Int = closestTunnelPosition {
+                                powerUpTreasure.tunnelPosition = ctp
+                                print("Reposition move to position \(ctp)")
+                                // Move to new position
+                                let action:SKAction = SKAction.move(to: powerUpTreasure.currentTunnel.pointAtTunnelPosition(powerUpTreasure.tunnelPosition), duration:0.0)
+                                powerUpTreasure.run(action)
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // Responds to movement of touches if repositionBallUnderway is true
+    override func touchesEnded(_ touches:Set<UITouch>, with event: UIEvent?) {
+        if (repositionBallUnderway) {
+            if let powerUpTreasure = self.powerUpTreasure {
+                for touch in touches {
+                    if touch === repositionTouch {
+                        repositionBallUnderway = false  // if the repositionTouch is ended, then end repositioning
+                        canRepositionBall = false
+                        print("Reposition completed")
+                    }
+                }
+            }
+        }
+    }
+
     
     // Figures out which way the user wants to move the character based on which
     // edge of the screen the user touched.
