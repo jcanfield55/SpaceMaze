@@ -32,13 +32,14 @@ class CharacterCollection {
     }
     
     func remove(_ aCharacter:Character) {
-        for i in 0...characters.count {
+        for i in 0..<characters.count {
             let oneCharacter:Character = characters[i]
             if oneCharacter === aCharacter {
                 characters.remove(at: i)
                 return
             }
         }
+        print("Error: could not find the character to remove")
     }
     
     // Returns an array of all other characters that are in the same location as aCharacter

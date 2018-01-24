@@ -27,6 +27,7 @@ class GameScene: SKScene {
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
+    var gameOver:Bool = false
     
     override func didMove(to view: SKView) {        
         
@@ -86,6 +87,9 @@ class GameScene: SKScene {
     // Responds to touches by the user on the screen & moves mainCharacter as needed
     override func touchesBegan(_ touches:Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
+        if gameOver {
+            return
+        }
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
                     let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
@@ -150,6 +154,9 @@ class GameScene: SKScene {
     
     // Function called whenever it is time for the opponent to move
     @objc func moveOpponent(_ timer: Timer) {
+        if gameOver {
+            return
+        }
         for anOpponent in opponents {
             if let c = self.mainCharacter {
                 anOpponent.chaseCharacter(c)
@@ -175,6 +182,8 @@ class GameScene: SKScene {
     // Functions for ending the game and showing the try again screen
 
     func endTheGame() {
+        gameOver = true
+        opponentTimer?.invalidate()
         Timer.scheduledTimer(timeInterval: 1.0, target:self, selector:#selector(GameScene.showPlayAgainScreen(_:)), userInfo: nil, repeats: false)
     }
     
