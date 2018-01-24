@@ -23,7 +23,7 @@ class MainCharacter:Character {
     }
     
     // function to call when you time is up on the PowerTreasure power
-    func powerMeDown(_ timer: Timer) {
+    @objc func powerMeDown(_ timer: Timer) {
         // TODO set the powered up variable to false
     }
 }
