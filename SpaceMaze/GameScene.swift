@@ -41,15 +41,18 @@ class GameScene: SKScene {
         // Lesson 1 - create tunnels for the maze pattern you want
         let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 9, gridX: 1, gridY: 1, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
         let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 1, colorAlpha: 1.0)
+        self.addChild(tunnel4.tunnelSpriteNode)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 5, gridY: 1, colorAlpha: 1.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                let dotCharacter = TreasureCharacter(imageNamed: "acorn", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
                 maxScore += 1   // Keep track of the total number of treasure dots
             }
@@ -57,13 +60,13 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"squirrel", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "dog", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
