@@ -57,7 +57,7 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"unicornpng", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
@@ -169,7 +169,7 @@ class GameScene: SKScene {
                             allCharacters.remove(anOpponent)
                         }
                         else {
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "UNICORNS NEVER LOSE!!!" 
                             gameResultLabel.isHidden = false
                             self.endTheGame()
                         }

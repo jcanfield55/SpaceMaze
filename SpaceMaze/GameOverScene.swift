@@ -13,7 +13,7 @@ class GameOverScene: SKScene {
     
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
-    var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "TryAgainButton")
+    var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "tryAgainUP")
 
     override func didMove(to view: SKView) {
         self.backgroundColor = UIColor(red:0.15, green:0.15, blue:0.3, alpha:1.0)

@@ -20,6 +20,9 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		919758552018F39C00F51C0E /* Try-Again-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 919758542018F39C00F51C0E /* Try-Again-Button.png */; };
+		919758572018F69500F51C0E /* tryAgainUP.png in Resources */ = {isa = PBXBuildFile; fileRef = 919758562018F69500F51C0E /* tryAgainUP.png */; };
+		91D2FD612018FD7000C4469F /* unicornpng.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D2FD602018FD7000C4469F /* unicornpng.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
@@ -59,6 +62,9 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		919758542018F39C00F51C0E /* Try-Again-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Try-Again-Button.png"; path = "../../../Downloads/Try-Again-Button.png"; sourceTree = "<group>"; };
+		919758562018F69500F51C0E /* tryAgainUP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tryAgainUP.png; path = ../../../Downloads/tryAgainUP.png; sourceTree = "<group>"; };
+		91D2FD602018FD7000C4469F /* unicornpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unicornpng.png; path = ../../../Downloads/unicornpng.png; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,8 +122,11 @@
 			isa = PBXGroup;
 			children = (
 				52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
+				919758562018F69500F51C0E /* tryAgainUP.png */,
+				91D2FD602018FD7000C4469F /* unicornpng.png */,
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
+				919758542018F39C00F51C0E /* Try-Again-Button.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
@@ -254,6 +263,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91D2FD612018FD7000C4469F /* unicornpng.png in Resources */,
+				919758552018F39C00F51C0E /* Try-Again-Button.png in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
@@ -262,6 +273,7 @@
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
+				919758572018F69500F51C0E /* tryAgainUP.png in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
