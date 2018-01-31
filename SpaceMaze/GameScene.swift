@@ -35,11 +35,9 @@ class GameScene: SKScene {
         self.backgroundColor = color
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
-        opponentTimer = Timer.scheduledTimer(timeInterval: self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
-
-        // Create tunnels
+        opponentTimer = Timer.scheduledTimer(timeInterval: self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)        // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 0, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
         let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 17, gridX: 7, gridY: 0, colorAlpha: 1.0)
         self.addChild(tunnel4.tunnelSpriteNode)
@@ -51,6 +49,11 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
+                if ((aTunnel===tunnel2) && (i==5)) {
+                    // set a cheesecake treasure
+                    let dotCharacter = TreasureCharacter(imageNamed: "cheesecake", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }
                 let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
                 maxScore += 1   // Keep track of the total number of treasure dots
@@ -65,7 +68,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "whitebear", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "whitebea", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible

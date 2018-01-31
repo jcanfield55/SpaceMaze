@@ -20,6 +20,7 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		9162C5B32022357100134AFF /* cheesecake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9162C5B22022357000134AFF /* cheesecake.jpg */; };
 		91C153E42018F400009B2212 /* bear.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C153E32018F400009B2212 /* bear.png */; };
 		91C153E62018F5BE009B2212 /* whitebear.png in Resources */ = {isa = PBXBuildFile; fileRef = 91C153E52018F5BD009B2212 /* whitebear.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
@@ -61,6 +62,7 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		9162C5B22022357000134AFF /* cheesecake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cheesecake.jpg; sourceTree = "<group>"; };
 		91C153E32018F400009B2212 /* bear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bear.png; sourceTree = "<group>"; };
 		91C153E52018F5BD009B2212 /* whitebear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitebear.png; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				91C153E52018F5BD009B2212 /* whitebear.png */,
+				9162C5B22022357000134AFF /* cheesecake.jpg */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				91C153E32018F400009B2212 /* bear.png */,
@@ -268,6 +271,7 @@
 				91C153E42018F400009B2212 /* bear.png in Resources */,
 				91C153E62018F5BE009B2212 /* whitebear.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
+				9162C5B32022357100134AFF /* cheesecake.jpg in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
