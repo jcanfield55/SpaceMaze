@@ -52,9 +52,16 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "acorn", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
-                maxScore += 1   // Keep track of the total number of treasure dots
+                if (aTunnel === tunnel1) && (i == 0) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "W_scar20", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                    
+                } else {
+                    let dotCharacter = TreasureCharacter(imageNamed: "acorn", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
             }
         }
         
