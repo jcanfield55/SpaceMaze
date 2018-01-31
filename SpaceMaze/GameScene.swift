@@ -49,7 +49,16 @@ class GameScene: SKScene {
         self.addChild(tunnel4.tunnelSpriteNode)
         let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:7,  gridX:0, gridY: 11, colorAlpha: 1.0)
         self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:13,  gridX:0, gridY: 6, colorAlpha: 1.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:7,  gridX:0, gridY:7, colorAlpha: 1.0)
+        self.addChild(tunnel7.tunnelSpriteNode)
+   
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:7,  gridX:0, gridY:10 , colorAlpha: 1.0)
+        self.addChild(tunnel8.tunnelSpriteNode)
         
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:7,  gridX:6, gridY: 0, colorAlpha: 1.0)
+        self.addChild(tunnel9.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
@@ -57,7 +66,11 @@ class GameScene: SKScene {
                 self.addChild(dotCharacter)
                 maxScore += 1   // Keep track of the total number of treasure dots
             }
+            let tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:3,  gridX:4, gridY: 4, colorAlpha: 1.0)
+            self.addChild(tunnel10.tunnelSpriteNode)
         }
+        
+        
         
         // Create character
         // Place the sprite in a tunnel
