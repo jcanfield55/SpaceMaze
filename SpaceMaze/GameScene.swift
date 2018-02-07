@@ -39,31 +39,33 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 0.1)
         self.addChild(tunnel1.tunnelSpriteNode)
         
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 17, gridX: 1, gridY: 0, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 16, gridX: 1, gridY: 0, colorAlpha: 0.4)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 4, gridY: 0, colorAlpha: 1.0)
+        let tunnel4 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 16, gridX: 4, gridY: 0, colorAlpha: 0.2)
         self.addChild(tunnel4.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 1.0)
+        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 4, gridX: 0, gridY: 6, colorAlpha: 0.0)
         self.addChild(tunnel3.tunnelSpriteNode)
-        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 4, gridY: 11, colorAlpha: 1.0)
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 6, gridX: 4, gridY: 11, colorAlpha: 0.3)
         self.addChild(tunnel5.tunnelSpriteNode)
-        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 1, gridY: 10, colorAlpha: 1.0)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 8, gridX: 1, gridY: 10, colorAlpha: 0.9)
         self.addChild(tunnel6.tunnelSpriteNode)
-        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 8, gridY: 10, colorAlpha: 1.0)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 8, gridY: 10, colorAlpha: 0.7)
         self.addChild(tunnel7.tunnelSpriteNode)
-        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 9, gridX: 0, gridY: 15, colorAlpha: 1.0)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 9, gridX: 0, gridY: 15, colorAlpha: 0.09)
         self.addChild(tunnel8.tunnelSpriteNode)
-       
-       
+        let tunnel9 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 5, gridX: 4, gridY: 0, colorAlpha: 0.8)
+        self.addChild(tunnel9.tunnelSpriteNode)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 11, gridX: 8, gridY: 0, colorAlpha: 0.8)
+        self.addChild(tunnel10.tunnelSpriteNode)
         
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
                 if (aTunnel===tunnel7 && i==6) {
-                    let dotCharacter = TreasureCharacter(imageNamed: "dog", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter = TreasureCharacter(imageNamed: "lewandowski", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
                 } else {

@@ -23,6 +23,7 @@
 		9183386B20222AF30075040E /* Ugly Messi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9183386A20222AF30075040E /* Ugly Messi.png */; };
 		9183386D20222C9B0075040E /* Big Headed Messi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9183386C20222C9B0075040E /* Big Headed Messi.jpg */; };
 		91AAAA552018FD0600C970A3 /* soccerball.png in Resources */ = {isa = PBXBuildFile; fileRef = 91AAAA542018FD0600C970A3 /* soccerball.png */; };
+		91ED3C73202B6683008D625F /* lewandowski.png in Resources */ = {isa = PBXBuildFile; fileRef = 91ED3C72202B6683008D625F /* lewandowski.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
@@ -65,6 +66,7 @@
 		9183386A20222AF30075040E /* Ugly Messi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ugly Messi.png"; sourceTree = "<group>"; };
 		9183386C20222C9B0075040E /* Big Headed Messi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Big Headed Messi.jpg"; sourceTree = "<group>"; };
 		91AAAA542018FD0600C970A3 /* soccerball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soccerball.png; path = ../../../Downloads/soccerball.png; sourceTree = "<group>"; };
+		91ED3C72202B6683008D625F /* lewandowski.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lewandowski.png; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				9183386C20222C9B0075040E /* Big Headed Messi.jpg */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
+				91ED3C72202B6683008D625F /* lewandowski.png */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				9183386A20222AF30075040E /* Ugly Messi.png */,
 				91AAAA542018FD0600C970A3 /* soccerball.png */,
@@ -267,6 +270,7 @@
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
+				91ED3C73202B6683008D625F /* lewandowski.png in Resources */,
 				9183386B20222AF30075040E /* Ugly Messi.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
