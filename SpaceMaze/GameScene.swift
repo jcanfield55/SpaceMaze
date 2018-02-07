@@ -49,6 +49,8 @@ class GameScene: SKScene {
         self.addChild(tunnel4.tunnelSpriteNode)
         let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 5, gridY: 1, colorAlpha: 1.0)
         self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 4, gridY: 1, colorAlpha: 1.0)
+        self.addChild(tunnel3.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
@@ -67,13 +69,13 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"squirrel", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"UgandianKnuckles", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "dog", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "SmallSonic", currentTunnel: tunnel3, tunnelPosition: 3))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -115,7 +117,7 @@ class GameScene: SKScene {
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "You Win!"
+                                gameResultLabel.text = "You Are Ugandian Knuckles"
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
@@ -128,7 +130,7 @@ class GameScene: SKScene {
                                 allCharacters.remove(anOpponent)
                             }
                             else {
-                                gameResultLabel.text = "You Lose!"
+                                gameResultLabel.text = "You Fart Stinko"
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
@@ -179,7 +181,7 @@ class GameScene: SKScene {
                             allCharacters.remove(anOpponent)
                         }
                         else {
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "You Fart Stinko"
                             gameResultLabel.isHidden = false
                             self.endTheGame()
                         }
@@ -206,10 +208,14 @@ class GameScene: SKScene {
         scene.scaleMode = SKSceneScaleMode.aspectFill
         if let theView:SKView = self.view {
             theView.presentScene(scene, transition:reveal)
+            
+ 
+            
         }
     }
     /*
      Improvements:
       - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
+     
     */
 }
