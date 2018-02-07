@@ -4,7 +4,7 @@
 //
 //  Created by John Canfield & Diana Smetters on 3/24/15.
 //  Copyright (c) 2015 John Canfield & Diana Smetters. All rights reserved.  Test3
-//  
+//
 
 import SpriteKit
 
@@ -56,18 +56,25 @@ class GameScene: SKScene {
    
         let tunnel8 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:7,  gridX:0, gridY:10 , colorAlpha: 1.0)
         self.addChild(tunnel8.tunnelSpriteNode)
+        let tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:3,  gridX:4, gridY: 4, colorAlpha: 1.0)
+        self.addChild(tunnel10.tunnelSpriteNode)
+
         
         let tunnel9 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:7,  gridX:6, gridY: 0, colorAlpha: 1.0)
         self.addChild(tunnel9.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
-                maxScore += 1   // Keep track of the total number of treasure dots
+                if (aTunnel === tunnel7 ) && (i == 0) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "gold-machine-gun", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                } else {
+                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
             }
-            let tunnel10 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length:3,  gridX:4, gridY: 4, colorAlpha: 1.0)
-            self.addChild(tunnel10.tunnelSpriteNode)
         }
         
         
@@ -80,7 +87,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel:tunnel1, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "AlienSpaceship1", currentTunnel:tunnel4, tunnelPosition: 1))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
