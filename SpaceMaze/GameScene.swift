@@ -47,7 +47,7 @@ class GameScene: SKScene {
         self.addChild(tunnel3.tunnelSpriteNode)
         let tunnel5 = Tunnel(orientation: TunnelOrientation.verticalTunnel, length: 12, gridX: 8, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel5.tunnelSpriteNode)
-        let tunnel6 = Tunnel(orientation: TunnelOrientation.horizontalTunnel, length: 5, gridX: 7, gridY: 5, colorAlpha: 1.0)
+        let tunnel6 = Tunnel(orientation: TunnelOrientation.horizontalTunnel, length: 10, gridX: 1, gridY: 5, colorAlpha: 0.5)
          self.addChild(tunnel6.tunnelSpriteNode)
 
         
@@ -61,6 +61,8 @@ class GameScene: SKScene {
                     let dotCharacter = TreasureCharacter(imageNamed: "goldfish", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
+                } else if (aTunnel===tunnel6) {
+                    
                 } else {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
@@ -119,7 +121,7 @@ class GameScene: SKScene {
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "You Win!"
+                                gameResultLabel.text = "CONGRATS, U DON'T SUCK!"
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
