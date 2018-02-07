@@ -21,8 +21,9 @@
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
 		911158CF20222EFC00DA535A /* CUPCAKE.png in Resources */ = {isa = PBXBuildFile; fileRef = 911158CE20222EFC00DA535A /* CUPCAKE.png */; };
-		911158D1202231E900DA535A /* sprinkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 911158D0202231E900DA535A /* sprinkle.png */; };
-		911158D32022369800DA535A /* Sprinkle4.0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 911158D22022369800DA535A /* Sprinkle4.0.jpg */; };
+		91964B78202B659200D5DF76 /* Sprinkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 91964B77202B659200D5DF76 /* Sprinkle.png */; };
+		91964B7A202B6AB200D5DF76 /* unicorn poop.png in Resources */ = {isa = PBXBuildFile; fileRef = 91964B79202B6AB100D5DF76 /* unicorn poop.png */; };
+		91964B7C202B6F3900D5DF76 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 91964B7B202B6F3900D5DF76 /* background.png */; };
 		919758552018F39C00F51C0E /* Try-Again-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 919758542018F39C00F51C0E /* Try-Again-Button.png */; };
 		919758572018F69500F51C0E /* tryAgainUP.png in Resources */ = {isa = PBXBuildFile; fileRef = 919758562018F69500F51C0E /* tryAgainUP.png */; };
 		91D2FD612018FD7000C4469F /* unicornpng.png in Resources */ = {isa = PBXBuildFile; fileRef = 91D2FD602018FD7000C4469F /* unicornpng.png */; };
@@ -66,8 +67,9 @@
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		911158CE20222EFC00DA535A /* CUPCAKE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CUPCAKE.png; sourceTree = "<group>"; };
-		911158D0202231E900DA535A /* sprinkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprinkle.png; sourceTree = "<group>"; };
-		911158D22022369800DA535A /* Sprinkle4.0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sprinkle4.0.jpg; sourceTree = "<group>"; };
+		91964B77202B659200D5DF76 /* Sprinkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sprinkle.png; sourceTree = "<group>"; };
+		91964B79202B6AB100D5DF76 /* unicorn poop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unicorn poop.png"; sourceTree = "<group>"; };
+		91964B7B202B6F3900D5DF76 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		919758542018F39C00F51C0E /* Try-Again-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Try-Again-Button.png"; path = "../../../Downloads/Try-Again-Button.png"; sourceTree = "<group>"; };
 		919758562018F69500F51C0E /* tryAgainUP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tryAgainUP.png; path = ../../../Downloads/tryAgainUP.png; sourceTree = "<group>"; };
 		91D2FD602018FD7000C4469F /* unicornpng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unicornpng.png; path = ../../../Downloads/unicornpng.png; sourceTree = "<group>"; };
@@ -131,14 +133,15 @@
 				919758562018F69500F51C0E /* tryAgainUP.png */,
 				91D2FD602018FD7000C4469F /* unicornpng.png */,
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
-				911158D0202231E900DA535A /* sprinkle.png */,
-				911158D22022369800DA535A /* Sprinkle4.0.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				919758542018F39C00F51C0E /* Try-Again-Button.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
+				91964B7B202B6F3900D5DF76 /* background.png */,
 				911158CE20222EFC00DA535A /* CUPCAKE.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
+				91964B79202B6AB100D5DF76 /* unicorn poop.png */,
+				91964B77202B659200D5DF76 /* Sprinkle.png */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				E7D26D3D1AC2986E0076E8F9 /* squirrel.png */,
@@ -275,13 +278,14 @@
 				91D2FD612018FD7000C4469F /* unicornpng.png in Resources */,
 				919758552018F39C00F51C0E /* Try-Again-Button.png in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
+				91964B7A202B6AB200D5DF76 /* unicorn poop.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
+				91964B7C202B6F3900D5DF76 /* background.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
-				911158D1202231E900DA535A /* sprinkle.png in Resources */,
+				91964B78202B659200D5DF76 /* Sprinkle.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
-				911158D32022369800DA535A /* Sprinkle4.0.jpg in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				919758572018F69500F51C0E /* tryAgainUP.png in Resources */,

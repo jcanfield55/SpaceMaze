@@ -28,12 +28,16 @@ class GameScene: SKScene {
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
     var gameOver:Bool = false
+    var backgroundSprite:SKSpriteNode = SKSpriteNode(imageNamed: "background")
+
     
     override func didMove(to view: SKView) {        
         
         /* Setup your scene here */
         self.backgroundColor = color
-        
+        self.backgroundSprite.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        self.addChild(self.backgroundSprite)
+
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = Timer.scheduledTimer(timeInterval: self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
 
@@ -53,10 +57,15 @@ class GameScene: SKScene {
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
                 if (aTunnel===tunnel2) && (i==0) {
-                    let dotCharacter = TreasureCharacter(imageNamed: "Sprinkle4.0", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter = TreasureCharacter(imageNamed: "Sprinkle", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
-                } else {
+                } else if (aTunnel===tunnel3) && (i==3) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "unicorn poop", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                }
+                else {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
