@@ -22,7 +22,7 @@ class Character:SKSpriteNode {
         self.tunnelPosition = tunnelPosition
         let texture:SKTexture = SKTexture(imageNamed:imageNamed)
         super.init(texture: texture, color:SKColor(white:1.0, alpha:1.0),
-            size: CGSize(width: gridSize-tunnelBoundaryDistance, height: gridSize - tunnelBoundaryDistance))
+                   size: CGSize(width: gridSize-tunnelBoundaryDistance, height: gridSize - tunnelBoundaryDistance))
         self.position = currentTunnel.pointAtTunnelPosition(tunnelPosition)
         allCharacters.add(self)
     }
