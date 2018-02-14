@@ -14,16 +14,23 @@ class MainCharacter:Character {
     var treasureScore:Int = 0
     
     var powerUpTimer:Timer?
+    var poweredUpTime:Bool = false
     // TODO create a variable to keep track of whether or not you are powered up
     
     // function to call when you catch a PowerTreasure
     func powerMeUp() {
         // TODO set the powered up variable to true
+         poweredUpTime = true
+        texture = SKTexture(imageNamed: "armySquirrel")
         powerUpTimer = Timer.scheduledTimer(timeInterval:15.0, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: true)
     }
     
     // function to call when you time is up on the PowerTreasure power
-    @objc func powerMeDown(_ timer: Timer) {
+    @objc func powerMeDown(_ timer: Timer){
+        poweredUpTime = false
+        texture = SKTexture(imageNamed: "squirrel")
         // TODO set the powered up variable to false
+        
+
     }
 }
