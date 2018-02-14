@@ -28,15 +28,15 @@ class GameScene: SKScene {
     var scoreLabel:SKLabelNode = SKLabelNode(text: "Score: 0")
     var maxScore:Int = 0
     var gameOver:Bool = false
-    var backgroundSprite:SKSpriteNode = SKSpriteNode(imageNamed: "background")
+    //var backgroundSprite:SKSpriteNode = SKSpriteNode(imageNamed: "background")
 
     
     override func didMove(to view: SKView) {        
         
         /* Setup your scene here */
         self.backgroundColor = color
-        self.backgroundSprite.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-        self.addChild(self.backgroundSprite)
+        //self.backgroundSprite.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        //self.addChild(self.backgroundSprite)
 
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = Timer.scheduledTimer(timeInterval: self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
@@ -51,8 +51,18 @@ class GameScene: SKScene {
         self.addChild(tunnel3.tunnelSpriteNode)
         let tunnel4 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 9, gridX: 0, gridY: 0, colorAlpha: 1.0)
         self.addChild(tunnel4.tunnelSpriteNode)
-        
-        
+        let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 10, gridX: 0,
+            gridY: 5, colorAlpha: 1.0)
+        self.addChild(tunnel5.tunnelSpriteNode)
+        let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 12,gridX: 1,
+                             gridY: 1, colorAlpha: 1.0)
+        self.addChild(tunnel6.tunnelSpriteNode)
+        let tunnel7 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 17, gridX: 7,
+                             gridY: 0, colorAlpha: 1.0)
+        self.addChild(tunnel7.tunnelSpriteNode)
+        let tunnel8 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 15, gridX:0,
+                             gridY: 14, colorAlpha: 1.0)
+        self.addChild(tunnel8.tunnelSpriteNode)
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
@@ -60,10 +70,13 @@ class GameScene: SKScene {
                     let dotCharacter = TreasureCharacter(imageNamed: "Sprinkle", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
+                    dotCharacter.powertreasure = true
                 } else if (aTunnel===tunnel3) && (i==3) {
-                    let dotCharacter = TreasureCharacter(imageNamed: "unicorn poop", currentTunnel: aTunnel, tunnelPosition: i)
+                    let dotCharacter = TreasureCharacter(imageNamed: "unicorn poop", currentTunnel:
+                        aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
+                    dotCharacter.powertreasure = true
                 }
                 else {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
