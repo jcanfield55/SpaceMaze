@@ -13,8 +13,8 @@ class GameOverScene: SKScene {
     
     var gameResultLabel:SKLabelNode = SKLabelNode(text:"Outcome")
     var scoreLabel:SKLabelNode = SKLabelNode(text: "WOW U SUCK")
-    var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "Unknown123")
-    var tryAgainButtonWin:SKSpriteNode = SKSpriteNode(imageNamed: "Unknown123")
+    var tryAgainButton:SKSpriteNode = SKSpriteNode(imageNamed: "giphy")
+    var tryAgainButtonWin:SKSpriteNode = SKSpriteNode(imageNamed: "giphy")
 
 
     override func didMove(to view: SKView) {

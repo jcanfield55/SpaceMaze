@@ -57,8 +57,9 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                if (aTunnel===tunnel2) && (i==7) {
+                if (aTunnel===tunnel5) && (i==11) {
                     let dotCharacter = TreasureCharacter(imageNamed: "goldfish", currentTunnel: aTunnel, tunnelPosition: i)
+                    dotCharacter.hi = true
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
                 } else if (aTunnel===tunnel6) {
@@ -73,13 +74,14 @@ class GameScene: SKScene {
         
         // Create character
         // Place the sprite in a tunnel
-        let newCharacter = MainCharacter(imageNamed:"Spaceship", currentTunnel:tunnel1, tunnelPosition:3)
+        let newCharacter = MainCharacter(imageNamed:"PacMan", currentTunnel:tunnel1, tunnelPosition:3)
         newCharacter.rotateWithMovement = true
         self.mainCharacter = newCharacter
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "TROLL FACE", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "TROLL FACE", currentTunnel: tunnel5, tunnelPosition: 11))
+                opponents.insert(OpponentCharacter(imageNamed: "TROLL FACE", currentTunnel: tunnel5, tunnelPosition: 11))
         
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
@@ -121,20 +123,24 @@ class GameScene: SKScene {
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
-                                gameResultLabel.text = "CONGRATS, U DON'T SUCK!"
+                                gameResultLabel.text = "HACKER!!!!!!!!!!!!!!!"
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
+                            }
+                            if (dotCharacter.hi) {
+                              mainCharacter.powerMeUp()
+                                mainCharacter.texture = SKTexture(imageNamed:"HI")
                             }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if (false) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                            if (mainCharacter.hi == true) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                                 anOpponent.isHidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
                             }
                             else {
-                                gameResultLabel.text = "You Lose!"
+                                gameResultLabel.text = "Nice try!"
                                 gameResultLabel.isHidden = false
                                 self.endTheGame()
                             }
@@ -179,13 +185,13 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        if (false) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                        if (c.hi == true) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                             anOpponent.isHidden = true
                             opponents.remove(anOpponent)
                             allCharacters.remove(anOpponent)
                         }
                         else {
-                            gameResultLabel.text = "You Lose!"
+                            gameResultLabel.text = "LOL!!!!"
                             gameResultLabel.isHidden = false
                             self.endTheGame()
                         }
