@@ -1,4 +1,4 @@
-//
+  //
 //  MainCharacter.swift
 //  SpaceMaze
 //
@@ -12,7 +12,7 @@ import SpriteKit
 class MainCharacter:Character {
 
     var treasureScore:Int = 0
-    
+    var Iampoweredup:Bool = false
     var powerUpTimer:Timer?
     // TODO create a variable to keep track of whether or not you are powered up
     
