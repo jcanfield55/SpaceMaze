@@ -72,10 +72,12 @@ class GameScene: SKScene {
                 if (aTunnel === tunnel7 ) && (i == 0) {
                     let dotCharacter = TreasureCharacter(imageNamed: "gold-machine-gun", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
+                    dotCharacter.Powerup=true
                     maxScore += 1   // Keep track of the total number of treasure dots
                 } else if (aTunnel === tunnel12) && (i == 3) {
                     let dotCharacter = TreasureCharacter(imageNamed: "Gun", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
+                      dotCharacter.Powerup=true
                     maxScore += 1   // Keep track of the total number of treasure dots
                 } else {
                     let dotCharacter = TreasureCharacter(imageNamed: "Money", currentTunnel: aTunnel, tunnelPosition: i)
@@ -97,7 +99,8 @@ class GameScene: SKScene {
         
         // Create opponents
         opponents.insert(OpponentCharacter(imageNamed: "Policelambo", currentTunnel:tunnel4, tunnelPosition: 1))
-        
+               opponents.insert(OpponentCharacter(imageNamed: "Policelambo", currentTunnel:tunnel5, tunnelPosition: 2))
+          opponents.insert(OpponentCharacter(imageNamed: "Policelambo", currentTunnel:tunnel7, tunnelPosition: 3))
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }
@@ -143,9 +146,13 @@ class GameScene: SKScene {
                                 self.endTheGame()
                             }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
+                            if (dotCharacter.Powerup==true) {
+                                mainCharacter.powerMeUp()
+                            }
+                        
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if (false) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                            if (mainCharacter.Iampoweredup==true) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                                 anOpponent.isHidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
@@ -196,7 +203,7 @@ class GameScene: SKScene {
                 let samePositionCharacters:[Character] = allCharacters.samePositionAs(anOpponent)
                 for otherCharacter in samePositionCharacters {
                     if let _ = otherCharacter as? MainCharacter { // If it is the main Character
-                        if (false) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                        if (mainCharacter?.Iampoweredup==true) { // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                             anOpponent.isHidden = true
                             opponents.remove(anOpponent)
                             allCharacters.remove(anOpponent)
@@ -236,3 +243,4 @@ class GameScene: SKScene {
       - Try another type of control motion (swipes, dragging a joystick, etc.  Look up the UITouch command documentation
     */
 }
+

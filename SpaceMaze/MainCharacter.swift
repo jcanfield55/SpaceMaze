@@ -19,11 +19,13 @@ class MainCharacter:Character {
     // function to call when you catch a PowerTreasure
     func powerMeUp() {
         // TODO set the powered up variable to true
+        Iampoweredup=true
         powerUpTimer = Timer.scheduledTimer(timeInterval:15.0, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: true)
     }
     
     // function to call when you time is up on the PowerTreasure power
     @objc func powerMeDown(_ timer: Timer) {
+        Iampoweredup=false
         // TODO set the powered up variable to false
     }
 }
