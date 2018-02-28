@@ -20,14 +20,14 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* lololol.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* lololol.png */; };
+		910AF4E2204715EA008FCEA0 /* maxresdefault.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 910AF4E1204715E9008FCEA0 /* maxresdefault.jpg */; };
+		910AF4E420471720008FCEA0 /* YOU SUCK BRO.png in Resources */ = {isa = PBXBuildFile; fileRef = 910AF4E32047171F008FCEA0 /* YOU SUCK BRO.png */; };
 		91286B6D2018F5B4003E7002 /* TROLL FACE.png in Resources */ = {isa = PBXBuildFile; fileRef = 91286B6C2018F5B4003E7002 /* TROLL FACE.png */; };
 		915DD3E6202B6538004926CB /* Unknown2.png in Resources */ = {isa = PBXBuildFile; fileRef = 915DD3E5202B6538004926CB /* Unknown2.png */; };
 		915DD3E8202B6580004926CB /* Unknown.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 915DD3E7202B657F004926CB /* Unknown.jpeg */; };
-		915DD3EA202B6676004926CB /* Unknown123.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 915DD3E9202B6675004926CB /* Unknown123.jpeg */; };
-		915DD3EC202B6785004926CB /* Unknown123.png in Resources */ = {isa = PBXBuildFile; fileRef = 915DD3EB202B6785004926CB /* Unknown123.png */; };
+		915DD3EA202B6676004926CB /* Unknown123.png in Resources */ = {isa = PBXBuildFile; fileRef = 915DD3E9202B6675004926CB /* Unknown123.png */; };
 		915DD3EE202B6F2A004926CB /* Unknown-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 915DD3ED202B6F2A004926CB /* Unknown-1.png */; };
 		9193141D2034A3F400C7BDC6 /* HI.png in Resources */ = {isa = PBXBuildFile; fileRef = 9193141C2034A3F300C7BDC6 /* HI.png */; };
-		9193141F2034AA8700C7BDC6 /* giphy.png in Resources */ = {isa = PBXBuildFile; fileRef = 9193141E2034AA8600C7BDC6 /* giphy.png */; };
 		E7950A301AC2842D008328E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A2F1AC2842D008328E7 /* AppDelegate.swift */; };
 		E7950A341AC2842D008328E7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A331AC2842D008328E7 /* GameScene.swift */; };
 		E7950A361AC2842D008328E7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7950A351AC2842D008328E7 /* GameViewController.swift */; };
@@ -67,14 +67,14 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* lololol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lololol.png; sourceTree = "<group>"; };
+		910AF4E1204715E9008FCEA0 /* maxresdefault.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maxresdefault.jpg; sourceTree = "<group>"; };
+		910AF4E32047171F008FCEA0 /* YOU SUCK BRO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YOU SUCK BRO.png"; sourceTree = "<group>"; };
 		91286B6C2018F5B4003E7002 /* TROLL FACE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TROLL FACE.png"; sourceTree = "<group>"; };
 		915DD3E5202B6538004926CB /* Unknown2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown2.png; sourceTree = "<group>"; };
 		915DD3E7202B657F004926CB /* Unknown.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Unknown.jpeg; sourceTree = "<group>"; };
-		915DD3E9202B6675004926CB /* Unknown123.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Unknown123.jpeg; path = ../../../Desktop/Unknown123.jpeg; sourceTree = "<group>"; };
-		915DD3EB202B6785004926CB /* Unknown123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown123.png; sourceTree = "<group>"; };
+		915DD3E9202B6675004926CB /* Unknown123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Unknown123.png; path = ../../../Desktop/Unknown123.png; sourceTree = "<group>"; };
 		915DD3ED202B6F2A004926CB /* Unknown-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unknown-1.png"; sourceTree = "<group>"; };
 		9193141C2034A3F300C7BDC6 /* HI.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HI.png; sourceTree = "<group>"; };
-		9193141E2034AA8600C7BDC6 /* giphy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giphy.png; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7950A2E1AC2842D008328E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7950A2F1AC2842D008328E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,11 +134,12 @@
 				52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
-				915DD3EB202B6785004926CB /* Unknown123.png */,
+				910AF4E1204715E9008FCEA0 /* maxresdefault.jpg */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
+				910AF4E32047171F008FCEA0 /* YOU SUCK BRO.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
 				915DD3E5202B6538004926CB /* Unknown2.png */,
 				91286B6C2018F5B4003E7002 /* TROLL FACE.png */,
@@ -147,7 +148,7 @@
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
-				915DD3E9202B6675004926CB /* Unknown123.jpeg */,
+				915DD3E9202B6675004926CB /* Unknown123.png */,
 				526C47451AF9E152002CA512 /* GameOverScene.swift */,
 				3F54A49E1AC8CBFA0035AB2C /* Character.swift */,
 				522A87C51AF09F7F0058F70B /* LessonSuggestions.swift */,
@@ -162,7 +163,6 @@
 				E7950A351AC2842D008328E7 /* GameViewController.swift */,
 				522A87C31AF09F060058F70B /* pac.wav */,
 				E7950A371AC2842D008328E7 /* Main.storyboard */,
-				9193141E2034AA8600C7BDC6 /* giphy.png */,
 				E7950A3A1AC2842D008328E7 /* Images.xcassets */,
 				E7950A2D1AC2842D008328E7 /* Supporting Files */,
 			);
@@ -245,6 +245,7 @@
 				TargetAttributes = {
 					E7950A291AC2842D008328E7 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = T5C2L42U5V;
 						LastSwiftMigration = 0920;
 					};
 					E7950A421AC2842D008328E7 = {
@@ -278,7 +279,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				915DD3EA202B6676004926CB /* Unknown123.jpeg in Resources */,
+				910AF4E420471720008FCEA0 /* YOU SUCK BRO.png in Resources */,
+				915DD3EA202B6676004926CB /* Unknown123.png in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* lololol.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
@@ -286,7 +288,6 @@
 				9193141D2034A3F400C7BDC6 /* HI.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				91286B6D2018F5B4003E7002 /* TROLL FACE.png in Resources */,
-				915DD3EC202B6785004926CB /* Unknown123.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				915DD3EE202B6F2A004926CB /* Unknown-1.png in Resources */,
@@ -295,7 +296,7 @@
 				915DD3E6202B6538004926CB /* Unknown2.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
-				9193141F2034AA8700C7BDC6 /* giphy.png in Resources */,
+				910AF4E2204715EA008FCEA0 /* maxresdefault.jpg in Resources */,
 				915DD3E8202B6580004926CB /* Unknown.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,10 +464,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T5C2L42U5V;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.scclc.iosfab.SpaceMaze.EricKyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -478,10 +480,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T5C2L42U5V;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.scclc.iosfab.SpaceMaze.EricKyle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
