@@ -37,6 +37,11 @@ class GameScene: SKScene {
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = Timer.scheduledTimer(timeInterval: self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
 
+        let background:SKSpriteNode = SKSpriteNode(imageNamed:"Soccer Field2")
+        background.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
+        background.zPosition = -10
+
+        self.addChild(background)
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
         let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 0.1)
@@ -85,14 +90,11 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "Ugly Messi", currentTunnel: tunnel3, tunnelPosition: 3))
-        
-        for anOpponent in opponents {
-            self.addChild(anOpponent)   // Make sprite visible
-        }
-        // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "suarez is horrible", currentTunnel: tunnel7, tunnelPosition: 1))
-        
+        opponents.insert(OpponentCharacter(imageNamed: "suarez is horriblle", currentTunnel: tunnel7, tunnelPosition: 1))
+        opponents.insert(OpponentCharacter(imageNamed: "Ugly Messi", currentTunnel: tunnel3, tunnelPosition: 2))
+opponents.insert(OpponentCharacter(imageNamed: "rooney", currentTunnel: tunnel3, tunnelPosition: 3))
+        opponents.insert(OpponentCharacter(imageNamed: "Toress", currentTunnel: tunnel4, tunnelPosition: 1))
+        // opponents.insert(OpponentCharacter(imageNamed: "Aguero", currentTunnel: tunnel3, tunnelPosition: 0))
         for anOpponent in opponents {
             self.addChild(anOpponent)   // Make sprite visible
         }

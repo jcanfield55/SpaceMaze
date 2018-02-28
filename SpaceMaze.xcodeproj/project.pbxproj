@@ -20,6 +20,11 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		9142FC7A204715A900DAB339 /* suarez is horriblle.png in Resources */ = {isa = PBXBuildFile; fileRef = 9142FC79204715A900DAB339 /* suarez is horriblle.png */; };
+		9142FC7C204715CB00DAB339 /* rooney.png in Resources */ = {isa = PBXBuildFile; fileRef = 9142FC7B204715CB00DAB339 /* rooney.png */; };
+		9142FC7E204715F300DAB339 /* Toress.png in Resources */ = {isa = PBXBuildFile; fileRef = 9142FC7D204715F300DAB339 /* Toress.png */; };
+		9142FC802047162700DAB339 /* Aguero .png in Resources */ = {isa = PBXBuildFile; fileRef = 9142FC7F2047162700DAB339 /* Aguero .png */; };
+		9142FC8620471DCA00DAB339 /* Soccer field2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9142FC8520471DCA00DAB339 /* Soccer field2.png */; };
 		9183386B20222AF30075040E /* Ugly Messi.png in Resources */ = {isa = PBXBuildFile; fileRef = 9183386A20222AF30075040E /* Ugly Messi.png */; };
 		9183386D20222C9B0075040E /* Big Headed Messi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9183386C20222C9B0075040E /* Big Headed Messi.jpg */; };
 		91AAAA552018FD0600C970A3 /* soccerball.png in Resources */ = {isa = PBXBuildFile; fileRef = 91AAAA542018FD0600C970A3 /* soccerball.png */; };
@@ -65,6 +70,11 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		9142FC79204715A900DAB339 /* suarez is horriblle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "suarez is horriblle.png"; path = "../../../Downloads/suarez is horriblle.png"; sourceTree = "<group>"; };
+		9142FC7B204715CB00DAB339 /* rooney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rooney.png; sourceTree = "<group>"; };
+		9142FC7D204715F300DAB339 /* Toress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Toress.png; sourceTree = "<group>"; };
+		9142FC7F2047162700DAB339 /* Aguero .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aguero .png"; sourceTree = "<group>"; };
+		9142FC8520471DCA00DAB339 /* Soccer field2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Soccer field2.png"; sourceTree = "<group>"; };
 		9183386A20222AF30075040E /* Ugly Messi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ugly Messi.png"; sourceTree = "<group>"; };
 		9183386C20222C9B0075040E /* Big Headed Messi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Big Headed Messi.jpg"; sourceTree = "<group>"; };
 		91AAAA542018FD0600C970A3 /* soccerball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soccerball.png; path = ../../../Downloads/soccerball.png; sourceTree = "<group>"; };
@@ -133,11 +143,16 @@
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				9183386C20222C9B0075040E /* Big Headed Messi.jpg */,
+				9142FC7D204715F300DAB339 /* Toress.png */,
 				52524D521AD4FBCE0068A3F5 /* grayDot.psd */,
 				91ED3C72202B6683008D625F /* lewandowski.png */,
+				9142FC7B204715CB00DAB339 /* rooney.png */,
 				91CB636E2034AAFE00AABCF5 /* suarez is horriblle.png */,
+				9142FC8520471DCA00DAB339 /* Soccer field2.png */,
+				9142FC7F2047162700DAB339 /* Aguero .png */,
 				E7950A551AC2867D008328E7 /* PacMan.png */,
 				9183386A20222AF30075040E /* Ugly Messi.png */,
+				9142FC79204715A900DAB339 /* suarez is horriblle.png */,
 				91CB636C2034A4F700AABCF5 /* liverpool.png */,
 				91AAAA542018FD0600C970A3 /* soccerball.png */,
 				E7950A531AC2866C008328E7 /* Spaceship.png */,
@@ -239,6 +254,7 @@
 				TargetAttributes = {
 					E7950A291AC2842D008328E7 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = T5C2L42U5V;
 						LastSwiftMigration = 0920;
 					};
 					E7950A421AC2842D008328E7 = {
@@ -272,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9142FC802047162700DAB339 /* Aguero .png in Resources */,
 				52524D541AD4FE660068A3F5 /* grayDot.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
@@ -280,11 +297,15 @@
 				91ED3C73202B6683008D625F /* lewandowski.png in Resources */,
 				9183386B20222AF30075040E /* Ugly Messi.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
+				9142FC7C204715CB00DAB339 /* rooney.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
+				9142FC8620471DCA00DAB339 /* Soccer field2.png in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
+				9142FC7E204715F300DAB339 /* Toress.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
+				9142FC7A204715A900DAB339 /* suarez is horriblle.png in Resources */,
 				9183386D20222C9B0075040E /* Big Headed Messi.jpg in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 				91CB636F2034AAFE00AABCF5 /* suarez is horriblle.png in Resources */,
@@ -455,10 +476,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T5C2L42U5V;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.scclc.iosfab.SpaceMaze.GeorgeSebastian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -470,10 +492,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T5C2L42U5V;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.scclc.iosfab.SpaceMaze.GeorgeSebastian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
