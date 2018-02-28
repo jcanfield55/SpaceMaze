@@ -122,7 +122,8 @@ class GameScene: SKScene {
                                 self.endTheGame()
                             }
                             if (dotCharacter.POWER == true){
-                                mainCharacter.powerMeUp()                              }
+                                mainCharacter.powerMeUp()
+                            }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent

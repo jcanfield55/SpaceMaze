@@ -24,6 +24,8 @@
 		911C431C202B6B030026C286 /* SmallSonic.png in Resources */ = {isa = PBXBuildFile; fileRef = 911C431A202B6B030026C286 /* SmallSonic.png */; };
 		911C431E202B6B110026C286 /* UgandianKnuckles.png in Resources */ = {isa = PBXBuildFile; fileRef = 911C431D202B6B100026C286 /* UgandianKnuckles.png */; };
 		911C431F202B6B110026C286 /* UgandianKnuckles.png in Resources */ = {isa = PBXBuildFile; fileRef = 911C431D202B6B100026C286 /* UgandianKnuckles.png */; };
+		91A40B5320471A4D001747F5 /* Army Squirrel.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A40B5220471A4D001747F5 /* Army Squirrel.png */; };
+		91A40B5420471A4D001747F5 /* Army Squirrel.png in Resources */ = {isa = PBXBuildFile; fileRef = 91A40B5220471A4D001747F5 /* Army Squirrel.png */; };
 		91B0E56E202233AA0082A049 /* W_scar20.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B0E56D202233AA0082A049 /* W_scar20.png */; };
 		91B0E56F202233AA0082A049 /* W_scar20.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B0E56D202233AA0082A049 /* W_scar20.png */; };
 		91E05E552018FBA100DD3AC8 /* acorn.png in Resources */ = {isa = PBXBuildFile; fileRef = 91E05E542018FBA000DD3AC8 /* acorn.png */; };
@@ -68,6 +70,7 @@
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
 		911C431A202B6B030026C286 /* SmallSonic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmallSonic.png; sourceTree = "<group>"; };
 		911C431D202B6B100026C286 /* UgandianKnuckles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UgandianKnuckles.png; sourceTree = "<group>"; };
+		91A40B5220471A4D001747F5 /* Army Squirrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Army Squirrel.png"; sourceTree = "<group>"; };
 		91B0E56D202233AA0082A049 /* W_scar20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = W_scar20.png; sourceTree = "<group>"; };
 		91E05E542018FBA000DD3AC8 /* acorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acorn.png; sourceTree = "<group>"; };
 		E7950A2A1AC2842D008328E7 /* SpaceMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +143,7 @@
 				91B0E56D202233AA0082A049 /* W_scar20.png */,
 				911C431A202B6B030026C286 /* SmallSonic.png */,
 				911C431D202B6B100026C286 /* UgandianKnuckles.png */,
+				91A40B5220471A4D001747F5 /* Army Squirrel.png */,
 				E7950A2F1AC2842D008328E7 /* AppDelegate.swift */,
 				3F54A49C1AC886C60035AB2C /* Constants.swift */,
 				E7950A331AC2842D008328E7 /* GameScene.swift */,
@@ -273,6 +277,7 @@
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
 				91B0E56E202233AA0082A049 /* W_scar20.png in Resources */,
+				91A40B5320471A4D001747F5 /* Army Squirrel.png in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				911C431B202B6B030026C286 /* SmallSonic.png in Resources */,
@@ -291,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A40B5420471A4D001747F5 /* Army Squirrel.png in Resources */,
 				911C431C202B6B030026C286 /* SmallSonic.png in Resources */,
 				911C431F202B6B110026C286 /* UgandianKnuckles.png in Resources */,
 				91B0E56F202233AA0082A049 /* W_scar20.png in Resources */,

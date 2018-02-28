@@ -21,16 +21,15 @@ class MainCharacter:Character {
     func powerMeUp() {
         // TODO set the powered up variable to true
          poweredUpTime = true
-        texture = SKTexture(imageNamed: "armySquirrel")
+        texture = SKTexture(imageNamed: "Army Squirrel")
         powerUpTimer = Timer.scheduledTimer(timeInterval:15.0, target:self, selector:#selector(MainCharacter.powerMeDown(_:)), userInfo: nil, repeats: true)
+        
     }
     
     // function to call when you time is up on the PowerTreasure power
     @objc func powerMeDown(_ timer: Timer){
         poweredUpTime = false
-        texture = SKTexture(imageNamed: "squirrel")
+        texture = SKTexture(imageNamed:"squirrel")
         // TODO set the powered up variable to false
-        
-
     }
 }
