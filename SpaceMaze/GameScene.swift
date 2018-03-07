@@ -79,6 +79,11 @@ class GameScene: SKScene {
                     self.addChild(dotCharacter)
                       dotCharacter.Powerup=true
                     maxScore += 1   // Keep track of the total number of treasure dots
+                }  else if (aTunnel === tunnel3 ) && (i == 3 ) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "Helicopter", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    dotCharacter.Powerup=true
+                    maxScore += 1   // Keep track of the total number of treasure dots
                 } else {
                     let dotCharacter = TreasureCharacter(imageNamed: "Money", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)

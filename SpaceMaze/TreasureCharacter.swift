@@ -12,5 +12,6 @@ import SpriteKit
 class TreasureCharacter:Character {
 
     //  TODO add a boolean variable to track whether this is a PowerUp treasure
-    var Powerup:Bool = false 
+    var Powerup:Bool = false
+    var anything:Bool=false
 }
