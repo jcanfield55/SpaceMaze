@@ -20,6 +20,10 @@
 		52524D5A1AD503FA0068A3F5 /* OpponentCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */; };
 		526C47461AF9E152002CA512 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C47451AF9E152002CA512 /* GameOverScene.swift */; };
 		526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 526C47471AF9E8C5002CA512 /* TryAgainButton.png */; };
+		91104FB420471EF100C93D4A /* 0257c892c74b636.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 91104FB320471EF000C93D4A /* 0257c892c74b636.jpg */; };
+		91104FB620471F2500C93D4A /* y2mate.com - drake_gods_plan_clean__-3ByifYrgg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91104FB520471F2400C93D4A /* y2mate.com - drake_gods_plan_clean__-3ByifYrgg.mp3 */; };
+		91104FB82050521200C93D4A /* drakegodsplanclean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91104FB72050521100C93D4A /* drakegodsplanclean.mp3 */; };
+		91104FBA2050534000C93D4A /* gods_plan_.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91104FB92050534000C93D4A /* gods_plan_.mp3 */; };
 		911158CF20222EFC00DA535A /* CUPCAKE.png in Resources */ = {isa = PBXBuildFile; fileRef = 911158CE20222EFC00DA535A /* CUPCAKE.png */; };
 		91964B78202B659200D5DF76 /* Sprinkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 91964B77202B659200D5DF76 /* Sprinkle.png */; };
 		91964B7A202B6AB200D5DF76 /* unicorn poop.png in Resources */ = {isa = PBXBuildFile; fileRef = 91964B79202B6AB100D5DF76 /* unicorn poop.png */; };
@@ -66,6 +70,10 @@
 		52524D591AD503FA0068A3F5 /* OpponentCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpponentCharacter.swift; sourceTree = "<group>"; };
 		526C47451AF9E152002CA512 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		526C47471AF9E8C5002CA512 /* TryAgainButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TryAgainButton.png; sourceTree = "<group>"; };
+		91104FB320471EF000C93D4A /* 0257c892c74b636.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0257c892c74b636.jpg; sourceTree = "<group>"; };
+		91104FB520471F2400C93D4A /* y2mate.com - drake_gods_plan_clean__-3ByifYrgg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "y2mate.com - drake_gods_plan_clean__-3ByifYrgg.mp3"; sourceTree = "<group>"; };
+		91104FB72050521100C93D4A /* drakegodsplanclean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drakegodsplanclean.mp3; sourceTree = "<group>"; };
+		91104FB92050534000C93D4A /* gods_plan_.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gods_plan_.mp3; sourceTree = "<group>"; };
 		911158CE20222EFC00DA535A /* CUPCAKE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CUPCAKE.png; sourceTree = "<group>"; };
 		91964B77202B659200D5DF76 /* Sprinkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sprinkle.png; sourceTree = "<group>"; };
 		91964B79202B6AB100D5DF76 /* unicorn poop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unicorn poop.png"; sourceTree = "<group>"; };
@@ -129,13 +137,17 @@
 		E7950A2C1AC2842D008328E7 /* SpaceMaze */ = {
 			isa = PBXGroup;
 			children = (
+				91104FB520471F2400C93D4A /* y2mate.com - drake_gods_plan_clean__-3ByifYrgg.mp3 */,
 				52524D4C1AD4E9330068A3F5 /* AlienSpaceship1.png */,
 				919758562018F69500F51C0E /* tryAgainUP.png */,
 				91D2FD602018FD7000C4469F /* unicornpng.png */,
 				52524D501AD4FBC20068A3F5 /* Alien Spaceship icons.jpg */,
+				91104FB72050521100C93D4A /* drakegodsplanclean.mp3 */,
+				91104FB92050534000C93D4A /* gods_plan_.mp3 */,
 				E7D26D3B1AC2986E0076E8F9 /* dog.png */,
 				919758542018F39C00F51C0E /* Try-Again-Button.png */,
 				E7D26D3C1AC2986E0076E8F9 /* goldfish.png */,
+				91104FB320471EF000C93D4A /* 0257c892c74b636.jpg */,
 				52524D531AD4FE660068A3F5 /* grayDot.png */,
 				91964B7B202B6F3900D5DF76 /* background.png */,
 				911158CE20222EFC00DA535A /* CUPCAKE.png */,
@@ -242,6 +254,7 @@
 				TargetAttributes = {
 					E7950A291AC2842D008328E7 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = T5C2L42U5V;
 						LastSwiftMigration = 0920;
 					};
 					E7950A421AC2842D008328E7 = {
@@ -281,16 +294,20 @@
 				91964B7A202B6AB200D5DF76 /* unicorn poop.png in Resources */,
 				526C47481AF9E8C5002CA512 /* TryAgainButton.png in Resources */,
 				52524D4D1AD4E9330068A3F5 /* AlienSpaceship1.png in Resources */,
+				91104FB82050521200C93D4A /* drakegodsplanclean.mp3 in Resources */,
 				E7D26D3E1AC2986E0076E8F9 /* dog.png in Resources */,
 				91964B7C202B6F3900D5DF76 /* background.png in Resources */,
+				91104FB620471F2500C93D4A /* y2mate.com - drake_gods_plan_clean__-3ByifYrgg.mp3 in Resources */,
 				522A87C41AF09F060058F70B /* pac.wav in Resources */,
 				91964B78202B659200D5DF76 /* Sprinkle.png in Resources */,
 				E7950A541AC2866C008328E7 /* Spaceship.png in Resources */,
 				E7950A3B1AC2842D008328E7 /* Images.xcassets in Resources */,
 				E7950A391AC2842D008328E7 /* Main.storyboard in Resources */,
 				919758572018F69500F51C0E /* tryAgainUP.png in Resources */,
+				91104FBA2050534000C93D4A /* gods_plan_.mp3 in Resources */,
 				E7D26D3F1AC2986E0076E8F9 /* goldfish.png in Resources */,
 				E7D26D401AC2986E0076E8F9 /* squirrel.png in Resources */,
+				91104FB420471EF100C93D4A /* 0257c892c74b636.jpg in Resources */,
 				911158CF20222EFC00DA535A /* CUPCAKE.png in Resources */,
 				E7950A561AC2867D008328E7 /* PacMan.png in Resources */,
 			);
@@ -459,10 +476,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T5C2L42U5V;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.scclc.swiftfab.test.SpaceMaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -474,10 +492,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = T5C2L42U5V;
 				INFOPLIST_FILE = SpaceMaze/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.scclc.iosfab.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.scclc.swiftfab.test.SpaceMaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

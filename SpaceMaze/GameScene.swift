@@ -37,6 +37,13 @@ class GameScene: SKScene {
         self.backgroundColor = color
         //self.backgroundSprite.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         //self.addChild(self.backgroundSprite)
+        
+        if #available(iOS 9.0, *) {
+            let backgroundSound = SKAudioNode(fileNamed: "gods_plan_.mp3")
+            self.addChild(backgroundSound)
+        } else {
+            // Fallback on earlier versions
+        }
 
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = Timer.scheduledTimer(timeInterval: self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
@@ -77,8 +84,19 @@ class GameScene: SKScene {
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
                     dotCharacter.powertreasure = true
-                }
-                else {
+                } else if (aTunnel===tunnel4) && (i==3) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "unicorn poop", currentTunnel:
+                        aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                    dotCharacter.powertreasure = true
+                } else if (aTunnel===tunnel5) && (i==4)  {
+                    let dotCharacter = TreasureCharacter(imageNamed: "squirrel", currentTunnel:
+                        aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                    dotCharacter.teleport = true
+                } else {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
@@ -133,7 +151,8 @@ class GameScene: SKScene {
                             dotCharacter.isHidden = true
                             allCharacters.remove(dotCharacter)
                             mainCharacter.treasureScore += 1
-                            print("Treasure score is " + String(mainCharacter.treasureScore))
+                            print("Treasure score is " + String(mainCharacter.treasureScore)
+                              + " out of " + String(maxScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
                                 gameResultLabel.text = "You Win!"
@@ -141,9 +160,20 @@ class GameScene: SKScene {
                                 self.endTheGame()
                             }
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
+                            if (dotCharacter.powertreasure) {
+                                mainCharacter.powerMeUp()
+                            }
+                            if (dotCharacter.teleport == true) {
+                                mainCharacter.currentTunnel = allTunnels [4]
+                                mainCharacter.tunnelPosition = 1
+                                let action:SKAction =
+                                SKAction.move(to:mainCharacter.currentTunnel.pointAtTunnelPosition(mainCharacter.tunnelPosition), duration:0.25)
+                                mainCharacter.run(action)
+                            }
+                        
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
-                            if (false) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
+                            if (mainCharacter.eatingunicorns) {   // TODO instead of “false” check if mainCharacter powered up variable you created is true.  Use . format
                                 anOpponent.isHidden = true
                                 opponents.remove(anOpponent)
                                 allCharacters.remove(anOpponent)
