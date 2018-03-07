@@ -29,19 +29,21 @@ class GameScene: SKScene {
     var maxScore:Int = 0
     var gameOver:Bool = false
     
-    override func didMove(to view: SKView) {        
+    override func didMove(to view: SKView) {
         
         /* Setup your scene here */
         self.backgroundColor = color
         
         // Set up timer that will call function moveOpponent every opponentMoveTiming
         opponentTimer = Timer.scheduledTimer(timeInterval: self.opponentMoveTiming, target:self, selector:#selector(GameScene.moveOpponent(_:)), userInfo: nil, repeats: true)
-
+    
         let background:SKSpriteNode = SKSpriteNode(imageNamed:"Soccer Field2")
         background.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
         background.zPosition = -10
-
-        self.addChild(background)
+         self.addChild(background)
+ 
+  
+        
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
         let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 5, colorAlpha: 0.1)
@@ -74,6 +76,12 @@ class GameScene: SKScene {
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
                     dotCharacter.shoot=true
+                }
+                if (aTunnel===tunnel9 && i==2) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "neuer", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
+                    dotCharacter.save=true
                 } else {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
@@ -90,7 +98,7 @@ class GameScene: SKScene {
         self.addChild(newCharacter)   // Make sprite visible
         
         // Create opponents
-        opponents.insert(OpponentCharacter(imageNamed: "suarez is horriblle", currentTunnel: tunnel7, tunnelPosition: 1))
+        opponents.insert(OpponentCharacter(imageNamed: "Ugly Messi", currentTunnel: tunnel7, tunnelPosition: 1))
         opponents.insert(OpponentCharacter(imageNamed: "Ugly Messi", currentTunnel: tunnel3, tunnelPosition: 2))
 opponents.insert(OpponentCharacter(imageNamed: "rooney", currentTunnel: tunnel3, tunnelPosition: 3))
         opponents.insert(OpponentCharacter(imageNamed: "Toress", currentTunnel: tunnel4, tunnelPosition: 1))
@@ -142,6 +150,16 @@ opponents.insert(OpponentCharacter(imageNamed: "rooney", currentTunnel: tunnel3,
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
                             if (dotCharacter.shoot==true){
                                 mainCharacter.powerMeUp()
+                            }
+                            if (dotCharacter.save==true){
+                                mainCharacter.currentTunnel = allTunnels [0]
+                                mainCharacter.tunnelPosition = 1
+                                let action:SKAction =
+                                    SKAction.move(to:mainCharacter.currentTunnel.pointAtTunnelPosition(mainCharacter.tunnelPosition), duration:0.25)
+                                        mainCharacter.run(action)
+                                
+                                
+                                
                             }
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
