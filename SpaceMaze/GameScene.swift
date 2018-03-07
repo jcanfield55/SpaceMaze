@@ -98,7 +98,7 @@ class GameScene: SKScene {
         }
         if let mainCharacter:MainCharacter = self.mainCharacter {
             for touch in touches {
-                    let command: TouchCommand = commandForTouch(touch as UITouch, node:self)
+                    let command: TouchCommand = commandForTouch(touch as UITouch, node:self, mainCharacterPosition:mainCharacter.position)
                     _ = mainCharacter.moveCharacter(command)
                     
                     // Check if you are on top of a treasure dot, and if so, remove it from the screen and increment your count
@@ -143,23 +143,21 @@ class GameScene: SKScene {
     
     // Figures out which way the user wants to move the character based on which
     // edge of the screen the user touched.
-    func commandForTouch(_ touch:UITouch, node:SKNode) -> TouchCommand {
+    func commandForTouch(_ touch:UITouch, node:SKNode, mainCharacterPosition:CGPoint) -> TouchCommand {
         let location:CGPoint = touch.location(in: node)
-        let frame:CGRect = node.frame
-        let height = frame.height
-        let width = frame.width
-        print("Touch position: \(location) x/width: \(location.x/width) y/height: \(location.y/height)")
-       
-        if (location.y/height < 0.25) {
+        let xDiff = location.x - mainCharacterPosition.x
+        let yDiff = location.y - mainCharacterPosition.y
+        
+        if (yDiff < 0 && abs(yDiff) > abs(xDiff)) {
             return TouchCommand.move_DOWN
         }
-        if (location.y/height > 0.75) {
+        if (yDiff > 0 && abs(yDiff) > abs(xDiff)) {
             return TouchCommand.move_UP
         }
-        if (location.x/width < 0.25) {
+        if (xDiff < 0 && abs(xDiff) > abs(yDiff)) {
             return TouchCommand.move_LEFT
         }
-        if (location.x/width > 0.75) {
+        if (xDiff > 0 && abs(xDiff) > abs(yDiff)) {
             return TouchCommand.move_RIGHT
         }
         return TouchCommand.no_COMMAND
