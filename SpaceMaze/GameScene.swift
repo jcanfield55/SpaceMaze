@@ -39,17 +39,23 @@ class GameScene: SKScene {
 
         // Create tunnels
         // Lesson 1 - create tunnels for the maze pattern you want
-        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 7, gridX: 0, gridY: 8, colorAlpha: 1.0)
+        let tunnel1 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 17, gridX: 0, gridY: 8, colorAlpha: 1.0)
         self.addChild(tunnel1.tunnelSpriteNode)
-        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 1, gridY: 2, colorAlpha: 1.0)
+        let tunnel2 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 24, gridX: 1, gridY: 2, colorAlpha: 1.0)
         self.addChild(tunnel2.tunnelSpriteNode)
-        let tunnel3 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 9, gridX: 0, gridY: 6, colorAlpha: 1.0)
-        self.addChild(tunnel3.tunnelSpriteNode)
-        let tunnel5 = Tunnel(orientation: TunnelOrientation.verticalTunnel, length: 12, gridX: 8, gridY: 5, colorAlpha: 1.0)
+         let tunnel5 = Tunnel(orientation: TunnelOrientation.verticalTunnel, length: 24, gridX: 8, gridY: 5, colorAlpha: 1.0)
         self.addChild(tunnel5.tunnelSpriteNode)
-        let tunnel6 = Tunnel(orientation: TunnelOrientation.horizontalTunnel, length: 10, gridX: 1, gridY: 5, colorAlpha: 0.5)
-         self.addChild(tunnel6.tunnelSpriteNode)
-
+        let tunnelSpace = 2
+        let tunnelStart = 6
+        var specialTunnel:Tunnel = tunnel5;
+        for i:Int in 0 ..< 7 {
+          let loopTunnel = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 15, gridX: 0, gridY: tunnelStart + i * tunnelSpace, colorAlpha: 1.0)
+          self.addChild(loopTunnel.tunnelSpriteNode)
+            if (i == 2) {
+                specialTunnel = loopTunnel
+            }
+        }
+       
         
         
         
@@ -57,13 +63,18 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                if (aTunnel===tunnel5) && (i==11) {
+                if (aTunnel===tunnel2) && (i==0) {
                     let dotCharacter = TreasureCharacter(imageNamed: "goldfish", currentTunnel: aTunnel, tunnelPosition: i)
                     dotCharacter.hi = true
                     self.addChild(dotCharacter)
                     maxScore += 1   // Keep track of the total number of treasure dots
-                } else if (aTunnel===tunnel6) {
-                    
+                    print("Hi tunnel")
+
+                } else if (aTunnel===tunnel2) && (i==23) {
+                    let dotCharacter = TreasureCharacter(imageNamed: "dog", currentTunnel: aTunnel, tunnelPosition: i)
+                    dotCharacter.TP = true
+                    self.addChild(dotCharacter)
+                    maxScore += 1   // Keep track of the total number of treasure dots
                 } else {
                     let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
@@ -131,6 +142,14 @@ class GameScene: SKScene {
                               mainCharacter.powerMeUp()
                                 mainCharacter.texture = SKTexture(imageNamed:"HI")
                             }
+                            else if (dotCharacter.TP) {
+                                mainCharacter.currentTunnel = allTunnels[0]
+                                mainCharacter.tunnelPosition = 1
+                                let action:SKAction =
+                                    SKAction.move(to:mainCharacter.currentTunnel.pointAtTunnelPosition(mainCharacter.tunnelPosition), duration:0.25)
+                                mainCharacter.run(action)
+                            }
+                            
                             // TODO if dotCharacter is a powerup treasure, make mainCharacter powered up
                         }
                         else if let anOpponent = otherCharacter as? OpponentCharacter { // If it is an opponent
