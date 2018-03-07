@@ -59,6 +59,7 @@ class GameScene: SKScene {
                     // set a cheesecake treasure
                     let dotCharacter = TreasureCharacter(imageNamed: "cheesecake", currentTunnel: aTunnel, tunnelPosition: i)
                     self.addChild(dotCharacter)
+                    dotCharacter.cheesecake=true
                 }
                 let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
                 self.addChild(dotCharacter)
@@ -113,6 +114,14 @@ class GameScene: SKScene {
                             dotCharacter.isHidden = true
                             allCharacters.remove(dotCharacter)
                             mainCharacter.treasureScore += 1
+                            if (dotCharacter.cheesecake==true) {
+                                mainCharacter.currentTunnel=allTunnels [4]
+                                mainCharacter.tunnelPosition=1
+                                let action:SKAction =
+                                    SKAction.move(to:mainCharacter.currentTunnel.pointAtTunnelPosition(mainCharacter.tunnelPosition),duration:0.25)
+                                mainCharacter.run(action)
+                            }
+                            
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
                             if (mainCharacter.treasureScore >= maxScore) {
