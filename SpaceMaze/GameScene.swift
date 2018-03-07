@@ -49,8 +49,14 @@ class GameScene: SKScene {
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
-                let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
-                self.addChild(dotCharacter)
+                if (aTunnel === tunnel2 && i == 7){
+                    let dotCharacter = TreasureCharacter(imageNamed: "squirrel", currentTunnel: aTunnel, tunnelPosition: i)
+                    dotCharacter.isTeleport = true
+                    self.addChild(dotCharacter)
+                } else {
+                    let dotCharacter = TreasureCharacter(imageNamed: "grayDot", currentTunnel: aTunnel, tunnelPosition: i)
+                    self.addChild(dotCharacter)
+                }
                 maxScore += 1   // Keep track of the total number of treasure dots
             }
         }
@@ -104,6 +110,13 @@ class GameScene: SKScene {
                             mainCharacter.treasureScore += 1
                             print("Treasure score is " + String(mainCharacter.treasureScore))
                             self.scoreLabel.text = "Score: \(mainCharacter.treasureScore)"
+                            if (dotCharacter.isTeleport) {
+                                mainCharacter.currentTunnel = allTunnels[2]
+                                mainCharacter.tunnelPosition = 3
+                                // Move to new position
+                                let action:SKAction = SKAction.move(to:mainCharacter.currentTunnel.pointAtTunnelPosition(mainCharacter.tunnelPosition), duration:0.25)
+                                mainCharacter.run(action)
+                            }
                             if (mainCharacter.treasureScore >= maxScore) {
                                 gameResultLabel.text = "You Win!"
                                 gameResultLabel.isHidden = false

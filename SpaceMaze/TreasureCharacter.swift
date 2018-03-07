@@ -12,5 +12,5 @@ import SpriteKit
 class TreasureCharacter:Character {
 
     //  TODO add a boolean variable to track whether this is a PowerUp treasure
-    
+    var isTeleport:Bool = false
 }
