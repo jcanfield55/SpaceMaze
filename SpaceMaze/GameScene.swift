@@ -50,7 +50,8 @@ class GameScene: SKScene {
         let tunnel5 = Tunnel(orientation:TunnelOrientation.verticalTunnel, length: 8, gridX: 5, gridY: 1, colorAlpha: 1.0)
         self.addChild(tunnel5.tunnelSpriteNode)
         let tunnel6 = Tunnel(orientation:TunnelOrientation.horizontalTunnel, length: 3, gridX: 4, gridY: 1, colorAlpha: 1.0)
-        self.addChild(tunnel6.tunnelSpriteNode) 
+        self.addChild(tunnel6.tunnelSpriteNode)
+        
         // Create dots to pick up in tunnels
         for aTunnel in allTunnels {
             for i:Int in 0 ..< aTunnel.length {
@@ -212,7 +213,7 @@ class GameScene: SKScene {
         if let theView:SKView = self.view {
             theView.presentScene(scene, transition:reveal)
             
- 
+            
             
         }
     }
